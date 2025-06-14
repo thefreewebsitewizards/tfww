@@ -90,9 +90,7 @@
     <section class="hero-houdini min-h-screen flex items-center pt-20 relative">
         <div class="container mx-auto px-4 py-20 hero-content">
             <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    <span class="typing">Your Website. On Us.</span><span class="static-text"></span>
-                </h1>
+                <h1 class="typing text-4xl md:text-6xl font-bold mb-6">Your Website. On Us.</h1>
                 <p class="fade-in text-xl md:text-2xl mb-8">Beautiful. Fast. 100% Free.<br>Helping small businesses go online — with zero cost and zero hassle.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="#apply" class="neon-button pulse px-8 py-4 rounded-full font-bold text-black transition mb-4 sm:mb-0">→ Apply for Your Free Website</a>
@@ -819,6 +817,15 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Typing Animation for Hero Text
+        const typingElement = document.querySelector('.typing');
+        if (typingElement) {
+            // Remove the blinking cursor after animation completes
+            setTimeout(() => {
+                typingElement.classList.add('completed');
+            }, 4500); // 3.5s typing + 1s delay
+        }
+        
         // Intersection Observer for animations
         const fadeElements = document.querySelectorAll('.fade-in');
         const slideElements = document.querySelectorAll('.slide-up');
