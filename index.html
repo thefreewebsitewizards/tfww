@@ -15,75 +15,42 @@
 <body class="bg-white text-gray-800">
     <!-- Sticky Navbar -->
     <nav class="sticky-nav fixed top-0 w-full z-50 py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="neon-text flex items-center">
-                <a href="#hero">
-                <span  class="text-xl font-bold">The Free Website Wizards</span>
-                </a>
+        <div class="container mx-auto px-4 flex items-center justify-between relative">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="#hero"><span class="neon-text text-2xl font-bold mr-8">The Free Website Wizards</span></a>
             </div>
             
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#how-it-works" class="btn-wave font-medium">
-                    <span class="link-text">
-                        <div>H</div><div>o</div><div>w</div><div> </div><div>I</div><div>t</div><div> </div><div>W</div><div>o</div><div>r</div><div>k</div><div>s</div>
-                    </span>
-                    <span class="link-hover">
-                        <div>H</div><div>o</div><div>w</div><div> </div><div>I</div><div>t</div><div> </div><div>W</div><div>o</div><div>r</div><div>k</div><div>s</div>
-                    </span>
-                </a>
-                <a href="#comparison" class="btn-wave font-medium">
-                    <span class="link-text">
-                        <div>W</div><div>h</div><div>y</div><div> </div><div>C</div><div>h</div><div>o</div><div>o</div><div>s</div><div>e</div><div> </div><div>U</div><div>s</div>
-                    </span>
-                    <span class="link-hover">
-                        <div>W</div><div>h</div><div>y</div><div> </div><div>C</div><div>h</div><div>o</div><div>o</div><div>s</div><div>e</div><div> </div><div>U</div><div>s</div>
-                    </span>
-                </a>
-                <a href="#portfolio" class="btn-wave font-medium">
-                    <span class="link-text">
-                        <div>P</div><div>o</div><div>r</div><div>t</div><div>f</div><div>o</div><div>l</div><div>i</div><div>o</div>
-                    </span>
-                    <span class="link-hover">
-                        <div>P</div><div>o</div><div>r</div><div>t</div><div>f</div><div>o</div><div>l</div><div>i</div><div>o</div>
-                    </span>
-                </a>
-                <a href="#testimonials" class="btn-wave font-medium">
-                    <span class="link-text">
-                        <div>T</div><div>e</div><div>s</div><div>t</div><div>i</div><div>m</div><div>o</div><div>n</div><div>i</div><div>a</div><div>l</div><div>s</div>
-                    </span>
-                    <span class="link-hover">
-                        <div>T</div><div>e</div><div>s</div><div>t</div><div>i</div><div>m</div><div>o</div><div>n</div><div>i</div><div>a</div><div>l</div><div>s</div>
-                    </span>
-                </a>
-                <a href="#faq" class="btn-wave font-medium">
-                    <span class="link-text">
-                        <div>F</div><div>A</div><div>Q</div>
-                    </span>
-                    <span class="link-hover">
-                        <div>F</div><div>A</div><div>Q</div>
-                    </span>
-                </a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#comparison" class="nav-link">Why Choose Us</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#faq" class="nav-link">FAQ</a>
             </div>
             
-            <!-- Desktop Apply Button -->
-            <a href="#apply" class="hidden md:block neon-button px-6 py-2 rounded-full font-medium text-black hover:shadow-lg transition">Apply Now</a>
-            
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-2xl z-50 relative">
-                <i class="fas fa-bars" id="menu-icon"></i>
-            </button>
+            <!-- Right side: Desktop Apply Button + Mobile Menu Button -->
+            <div class="flex items-center space-x-4">
+                <!-- Desktop Apply Button -->
+                <a href="#apply" class="hidden md:block neon-button px-6 py-2 rounded-full font-medium text-black hover:shadow-lg transition">Apply Now</a>
+                
+                <!-- Mobile Menu Button - Now inside navbar -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl relative z-50" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-0 left-0 w-full h-full bg-white transform translate-x-full transition-transform duration-300 ease-in-out z-40">
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-0 z-[9998] transform translate-x-full transition-transform duration-300 ease-in-out" role="navigation" aria-label="Mobile navigation">
             <div class="flex flex-col items-center justify-center h-full space-y-8 text-xl">
-                <a href="#how-it-works" class="mobile-menu-link font-medium hover:text-green-500 transition">How It Works</a>
-                <a href="#comparison" class="mobile-menu-link font-medium hover:text-green-500 transition">Why Choose Us</a>
-                <a href="#portfolio" class="mobile-menu-link font-medium hover:text-green-500 transition">Portfolio</a>
-                <a href="#testimonials" class="mobile-menu-link font-medium hover:text-green-500 transition">Testimonials</a>
-                <a href="#faq" class="mobile-menu-link font-medium hover:text-green-500 transition">FAQ</a>
-                <a href="#apply" class="mobile-menu-link neon-button px-8 py-4 rounded-full font-bold text-black transition mt-4">Apply Now</a>
+                <a href="#how-it-works" class="mobile-menu-link font-medium transition">How It Works</a>
+                <a href="#comparison" class="mobile-menu-link font-medium transition">Why Choose Us</a>
+                <a href="#portfolio" class="mobile-menu-link font-medium transition">Portfolio</a>
+                <a href="#testimonials" class="mobile-menu-link font-medium transition">Testimonials</a>
+                <a href="#faq" class="mobile-menu-link font-medium transition">FAQ</a>
+                <a href="#apply" class="mobile-menu-link neon-button px-8 py-4 rounded-full font-bold transition mt-4">Apply Now</a>
             </div>
         </div>
     </nav>
@@ -126,21 +93,21 @@
                 <div class="slide-up fade-in program-card p-8 text-center">
                     <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">2</div>
                     <h3 class="text-xl font-bold mb-3">Meet Us</h3>
-                    <p class="text-gray-600">Quick chat to learn exactly what you need for your website.</p>
+                    <p class="text-white">Quick chat to learn exactly what you need for your website.</p>
                 </div>
                 
                 <!-- Step 3 -->
                 <div class="slide-up fade-in program-card p-8 text-center">
                     <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">3</div>
                     <h3 class="text-xl font-bold mb-3">We Build It</h3>
-                    <p class="text-gray-600">Professionally designed just for you. No templates.</p>
+                    <p class="text-white">Professionally designed just for you. No templates.</p>
                 </div>
                 
                 <!-- Step 4 -->
                 <div class="slide-up fade-in program-card p-8 text-center">
                     <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">4</div>
                     <h3 class="text-xl font-bold mb-3">Launch</h3>
-                    <p class="text-gray-600">Website live. Your business online. Mission accomplished.</p>
+                    <p class="text-white">Website live. Your business online. Mission accomplished.</p>
                 </div>
             </div>
         </div>
@@ -327,7 +294,7 @@
                         <p><span class="check-icon">✅</span> $0 (Free)</p>
                     </div>
                     <div class="option-card onus-card">
-                        <h4>ON-US</h4>
+                        <h4>The Free Website Wizards</h4>
                         <p><span class="check-icon">✅</span> $0 (Free)</p>
                     </div>
                 </div>
@@ -346,7 +313,7 @@
                         <p><span class="cross-icon">❌</span> 3-5 weeks</p>
                     </div>
                     <div class="option-card onus-card">
-                        <h4>ON-US</h4>
+                        <h4>The Free Website Wizards</h4>
                         <p><span class="check-icon">✅</span> 7-10 days</p>
                     </div>
                 </div>
@@ -365,7 +332,7 @@
                         <p><span class="cross-icon">❌</span> Limited</p>
                     </div>
                     <div class="option-card onus-card">
-                        <h4>ON-US</h4>
+                        <h4>The Free Website Wizards</h4>
                         <p><span class="check-icon">✅</span> Built from Scratch for You</p>
                     </div>
                 </div>
@@ -384,7 +351,7 @@
                         <p><span class="cross-icon">❌</span> Lots of forms, long waits</p>
                     </div>
                     <div class="option-card onus-card">
-                        <h4>ON-US</h4>
+                        <h4>The Free Website Wizards</h4>
                         <p><span class="check-icon">✅</span> Stress-Free. Fast. Done With You.</p>
                     </div>
                 </div>
@@ -403,7 +370,7 @@
                         <p><span class="cross-icon">❌</span> Email only</p>
                     </div>
                     <div class="option-card onus-card">
-                        <h4>ON-US</h4>
+                        <h4>The Free Website Wizards</h4>
                         <p><span class="check-icon">✅</span> Direct chat & support</p>
                     </div>
                 </div>
@@ -422,7 +389,7 @@
                         <p><span class="cross-icon">❌</span> Upsells for extras</p>
                     </div>
                     <div class="option-card onus-card">
-                        <h4>ON-US</h4>
+                        <h4>The Free Website Wizards</h4>
                         <p><span class="check-icon">✅</span> No upsells. No pressure.</p>
                     </div>
                 </div>
@@ -495,7 +462,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="text-lg italic mb-6 text-gray-600">"ON-US made getting online effortless. Fast, friendly, and completely free — I'm amazed at how professional my site looks. It's brought in so many new customers!"</p>
+                    <p class="text-lg italic mb-6 text-gray-600">"The Free Website Wizards made getting online effortless. Fast, friendly, and completely free — I'm amazed at how professional my site looks. It's brought in so many new customers!"</p>
                     <div class="flex flex-col items-center">
                         <img src="https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png" alt="Sarah R." class="rounded-full mb-4 w-16 h-16">
                         <div>
@@ -533,7 +500,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="text-lg italic mb-6 text-gray-600">"As a small business owner, I didn't have time or money for a fancy website. ON-US gave me both - a beautiful site that represents my brand perfectly, at no cost."</p>
+                    <p class="text-lg italic mb-6 text-gray-600">"As a small business owner, I didn't have time or money for a fancy website. The Free Website Wizards gave me both - a beautiful site that represents my brand perfectly, at no cost."</p>
                     <div class="flex flex-col items-center">
                         <img src="https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png" alt="Jamie C." class="rounded-full mb-4 w-16 h-16">
                         <div>
@@ -945,29 +912,36 @@
             }
         });
         
-        // FAQ accordion
+        // Enhanced FAQ accordion
         const faqQuestions = document.querySelectorAll('.faq-question');
         faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
+            question.addEventListener('click', (e) => {
+                e.preventDefault();
                 const item = question.parentElement;
                 const content = item.querySelector('.accordion-content');
                 const icon = question.querySelector('i');
                 
+                // Close all other FAQ items
                 document.querySelectorAll('.faq-item').forEach(faq => {
                     if (faq !== item) {
-                        faq.querySelector('.accordion-content').style.maxHeight = null;
+                        const faqContent = faq.querySelector('.accordion-content');
                         const faqIcon = faq.querySelector('i');
+                        faqContent.style.maxHeight = null;
+                        faqContent.classList.remove('active');
                         faqIcon.classList.remove('fa-minus');
                         faqIcon.classList.add('fa-plus');
                     }
                 });
                 
-                if (content.style.maxHeight) {
+                // Toggle current FAQ item
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
                     content.style.maxHeight = null;
+                    content.classList.remove('active');
                     icon.classList.remove('fa-minus');
                     icon.classList.add('fa-plus');
                 } else {
                     content.style.maxHeight = content.scrollHeight + 'px';
+                    content.classList.add('active');
                     icon.classList.remove('fa-plus');
                     icon.classList.add('fa-minus');
                 }
@@ -995,24 +969,6 @@
             });
         }
         
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
        
     });
     // Enhanced Intersection Observer for table rows
@@ -1026,49 +982,114 @@ const tableObserver = new IntersectionObserver((entries) => {
 
 // Observe all fade-up elements (table rows)
 document.querySelectorAll('.fade-up').forEach(el => tableObserver.observe(el));
-// Mobile Menu Functionality
+// Mobile Menu Functionality - Rebuilt from Scratch
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 const menuIcon = document.getElementById('menu-icon');
+const body = document.body;
+
+// Smooth scrolling function for all navigation links
+function smoothScrollTo(targetId) {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+        const headerOffset = 80; // Account for fixed navbar height
+        const elementPosition = targetElement.offsetTop;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Add smooth scrolling to all navigation links (desktop and mobile)
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        
+        // If it's a mobile menu link, close the menu first
+        if (this.classList.contains('mobile-menu-link')) {
+            closeMobileMenu();
+            // Wait for menu to close before scrolling
+            setTimeout(() => {
+                smoothScrollTo(targetId);
+            }, 300);
+        } else {
+            // Desktop links scroll immediately
+            smoothScrollTo(targetId);
+        }
+    });
+});
 
 if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         
-        // Toggle icon
-        if (mobileMenuBtn.classList.contains('active')) {
-            menuIcon.classList.remove('fa-bars');
-            menuIcon.classList.add('fa-times');
+        const isActive = mobileMenu.classList.contains('active');
+        
+        if (isActive) {
+            closeMobileMenu();
         } else {
-            menuIcon.classList.remove('fa-times');
-            menuIcon.classList.add('fa-bars');
+            openMobileMenu();
         }
+    });
+    
+    // Open mobile menu
+    function openMobileMenu() {
+        mobileMenu.classList.add('active');
+        mobileMenuBtn.classList.add('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
         
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
-    });
+        // Change icon to X
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+        
+        // Prevent body scroll
+        body.style.overflow = 'hidden';
+        body.style.position = 'fixed';
+        body.style.width = '100%';
+    }
     
-    // Close menu when clicking on links
-    mobileMenuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-            menuIcon.classList.remove('fa-times');
-            menuIcon.classList.add('fa-bars');
-            document.body.style.overflow = 'auto';
-        });
-    });
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        
+        // Change icon back to hamburger
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+        
+        // Restore body scroll
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.width = '';
+    }
     
-    // Close menu when clicking outside
+    // Close menu when clicking on overlay (but not on menu content)
     mobileMenu.addEventListener('click', (e) => {
         if (e.target === mobileMenu) {
-            mobileMenu.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-            menuIcon.classList.remove('fa-times');
-            menuIcon.classList.add('fa-bars');
-            document.body.style.overflow = 'auto';
+            closeMobileMenu();
+        }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+            mobileMenuBtn.focus();
+        }
+    });
+    
+    // Ensure menu is closed on window resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
         }
     });
 }
