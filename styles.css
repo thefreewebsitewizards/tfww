@@ -694,3 +694,43 @@ input:focus, textarea:focus {
     }
 }
 
+/* Logo Slider Infinite Carousel Animation */
+.animate-scroll {
+    animation: infiniteScroll 30s linear infinite;
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logo-slider-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.logo-slider {
+    display: flex;
+    width: 200%; /* Double width to accommodate duplicated logos */
+}
+
+.logo-slider:hover {
+    animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .animate-scroll {
+        animation-duration: 20s;
+    }
+}
+
+@media (max-width: 480px) {
+    .animate-scroll {
+        animation-duration: 15s;
+    }
+}
