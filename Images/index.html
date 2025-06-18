@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richies Pro Wash | Professional Pressure Washing in Savannah, GA</title>
+    <meta name="description" content="Professional pressure washing services in Savannah, GA. House washing, roof cleaning, gutter brightening and more. Get 20% off your first service!">
+    <meta name="keywords" content="Savannah Pressure Washing, House Washing Savannah, Roof Washing Savannah GA, Professional Cleaning Services">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .water-bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 15s infinite ease-in-out;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+        
+        .before-after {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .before-after::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 2;
+        }
+        
+        .slider-control {
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: white;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: ew-resize;
+            z-index: 3;
+        }
+        
+        .slider-control::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .bubble-button {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bubble-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%, -50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .bubble-button:hover::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(25, 25);
+                opacity: 0;
+            }
+        }
+        
+        /* Hero Image Carousel Styles */
+        .hero-image-container {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: floatAndRotate 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatAndRotate {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-10px) rotate(1deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-5px) rotate(-1deg);
+            }
+        }
+        
+        .hero-image-container:hover {
+            animation-play-state: paused;
+            transform: translateY(-8px) rotate(0deg) scale(1.02);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-dot.active {
+            background-color: rgba(255,255,255,0.9) !important;
+        }
+        
+        .hero-slide img {
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-slide:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Enhanced floating effect for mobile */
+        @media (max-width: 768px) {
+            .hero-image-container {
+                margin-top: 2rem;
+                animation: mobileFloat 4s ease-in-out infinite;
+            }
+            
+            @keyframes mobileFloat {
+                0%, 100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-8px);
+                }
+            }
+        }
+        
+        /* Add subtle glow effect */
+        .hero-image-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .hero-image-container:hover::before {
+            opacity: 1;
+        }
+        
+        /* Smooth scrolling for the entire page */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhanced smooth scrolling with custom timing */
+        @media (prefers-reduced-motion: no-preference) {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+        
+        /* Navigation link hover effects */
+        nav a {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #4FC3F7;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Active navigation link styling */
+        nav a.active {
+            color: #4FC3F7 !important;
+        }
+        
+        nav a.active::after {
+            width: 100%;
+        }
+        
+        /* Service image hover glow effect */
+        .service-image-glow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .service-image-glow::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, 
+                rgba(79, 195, 247, 0.6), 
+                rgba(33, 150, 243, 0.4), 
+                rgba(79, 195, 247, 0.6));
+            border-radius: 1rem;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: blur(8px);
+        }
+        
+        .service-image-glow:hover::before {
+            opacity: 1;
+        }
+        
+        .service-image-glow:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(79, 195, 247, 0.25), 
+                        0 0 30px rgba(79, 195, 247, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation Bar -->
+    <header class="fixed w-full bg-[#121F41] text-white shadow-lg z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <!-- Logo with white border -->
+                    <div class="h-12 w-12 rounded-full  flex items-center justify-center overflow-hidden">
+                        <img src="Images/LOGO_Icon.jpg" alt="Richies Pro Wash Logo" class="w-full h-full object-cover">
+                    </div>
+                    <h1 class="ml-3 text-xl font-bold">Richies Pro Wash</h1>
+                </div>
+                
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#home" class="hover:text-blue-300 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-blue-300 transition">Services</a></li>
+                        <li><a href="#before-after" class="hover:text-blue-300 transition">Before & After</a></li>
+                        <li><a href="#about" class="hover:text-blue-300 transition">About</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-300 transition">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-blue-300 transition">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="md:hidden text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-[#121F41] text-white">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#121F41] via-[#121F41]/95 to-[#121F41]/80"></div>
+        <div class="relative container mx-auto px-4 z-10">
+            <div class="grid md:grid-cols-2 gap-8 items-center min-h-[500px]">
+                <!-- Text Content - Left Side -->
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                        Helping Beautify One House at a Time!!
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-200 leading-relaxed">
+                        Professional pressure washing services in Savannah and surrounding areas
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="booking.html" class="bubble-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 text-center">
+                            Book Now
+                        </a>
+                        <a href="#services" class="bubble-button bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded-full text-lg transition duration-300 text-center">
+                            Explore our services
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image Carousel - Right Side -->
+                <div class="relative w-full max-w-4xl mx-auto">
+                    <div class="hero-image-container relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
+                        <div class="hero-image-slider flex transition-transform duration-500 ease-in-out">
+                            <div class="hero-slide min-w-full">
+                                <img src="Images/roof_washing.jpg" alt="Professional Fence Cleaning Service" class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover">
+                            </div>
+                            <div class="hero-slide min-w-full">
+                                <img src="Images/fence_cleaning.jpeg" alt="Soft Washing Excellence" class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover">
+                            </div>
+                            <div class="hero-slide min-w-full">
+                                <img src="Images/Soft_washing.jpeg" alt="Roof Washing Service" class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover">
+                            </div>
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="hero-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition duration-300 hover:scale-110">
+                            <i class="fas fa-chevron-left text-xl"></i>
+                        </button>
+                        <button class="hero-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition duration-300 hover:scale-110">
+                            <i class="fas fa-chevron-right text-xl"></i>
+                        </button>
+                        
+                        <!-- Dots Indicator -->
+                        <div class="hero-dots absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition duration-300 active hover:scale-125" data-slide="0"></button>
+                            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition duration-300 hover:scale-125" data-slide="1"></button>
+                            <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition duration-300 hover:scale-125" data-slide="2"></button>
+                        </div>
+                        
+                        <!-- Quality Badge -->
+                        <div class="absolute top-4 right-4 bg-yellow-500 text-black px-4 py-2 rounded-full font-bold text-sm hover:scale-105 transition duration-300">
+                            ⭐ Premium Results
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Water bubble effects -->
+        <div id="bubbles" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-[#121F41]">Our Services</h2>
+            
+            <!-- Service Navigation Buttons -->
+            <div class="flex flex-col md:flex-row md:flex-nowrap md:justify-center gap-3 md:gap-4 mb-12 max-w-7xl mx-auto px-4">
+                <button onclick="showService('house-washing')" class="service-btn active px-4 md:px-6 py-3 bg-[#1565C0] text-white rounded-full font-medium hover:bg-[#0D47A1] transition duration-300 text-sm md:text-base whitespace-nowrap min-h-[48px]" data-service="house-washing">
+                    HOUSE WASHING
+                </button>
+                <button onclick="showService('roof-washing')" class="service-btn px-4 md:px-6 py-3 bg-gray-600 text-white rounded-full font-medium hover:bg-gray-700 transition duration-300 text-sm md:text-base whitespace-nowrap min-h-[48px]" data-service="roof-washing">
+                    ROOF WASHING
+                </button>
+                <button onclick="showService('driveway-cleaning')" class="service-btn px-4 md:px-6 py-3 bg-gray-600 text-white rounded-full font-medium hover:bg-gray-700 transition duration-300 text-sm md:text-base whitespace-nowrap min-h-[48px]" data-service="driveway-cleaning">
+                    DRIVEWAY CLEANING
+                </button>
+                <button onclick="showService('patio-cleaning')" class="service-btn px-4 md:px-6 py-3 bg-gray-600 text-white rounded-full font-medium hover:bg-gray-700 transition duration-300 text-sm md:text-base whitespace-nowrap min-h-[48px]" data-service="patio-cleaning">
+                    PATIO CLEANING
+                </button>
+                <button onclick="showService('gutter-brightening')" class="service-btn px-4 md:px-6 py-3 bg-gray-600 text-white rounded-full font-medium hover:bg-gray-700 transition duration-300 text-sm md:text-base whitespace-nowrap min-h-[48px]" data-service="gutter-brightening">
+                    GUTTER BRIGHTENING
+                </button>
+                <button onclick="showService('fence-cleaning')" class="service-btn px-4 md:px-6 py-3 bg-gray-600 text-white rounded-full font-medium hover:bg-gray-700 transition duration-300 text-sm md:text-base whitespace-nowrap min-h-[48px]" data-service="fence-cleaning">
+                    FENCE CLEANING
+                </button>
+            </div>
+            
+            <!-- Service Content Card -->
+            <div class="max-w-6xl mx-auto">
+                <!-- House Washing Service -->
+                <div id="house-washing" class="service-content bg-[#121F41] text-white rounded-2xl p-8 md:p-12 shadow-lg">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-6">House Washing</h3>
+                            <p class="text-lg mb-6 leading-relaxed">
+                                Transform your home's exterior with our professional house washing service. We use safe, effective soft washing techniques to remove dirt, mildew, algae, and stains from your siding, brick, stucco, and other exterior surfaces. Our eco-friendly approach protects your landscaping while delivering outstanding results.
+                            </p>
+                            <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                                Book Now
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#4FC3F7] opacity-20 rounded-full"></div>
+                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 opacity-30 rounded-full"></div>
+                            <img src="Images/house-wash.webp" alt="House washing service" class="service-image-glow relative z-10 w-full h-96 md:h-[500px] object-contain rounded-xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Roof Washing Service -->
+                <div id="roof-washing" class="service-content bg-[#121F41] text-white rounded-2xl p-8 md:p-12 shadow-lg hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-6">Roof Washing</h3>
+                            <p class="text-lg mb-6 leading-relaxed">
+                                Extend your roof's lifespan and improve your home's curb appeal with our specialized roof washing service. We safely remove harmful algae, moss, and lichen that can damage your shingles. Our gentle yet effective process protects your roof while restoring its original appearance.
+                            </p>
+                            <a href="booking.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                                Book Now
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#4FC3F7] opacity-20 rounded-full"></div>
+                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 opacity-30 rounded-full"></div>
+                            <img src="Images/roof_washing.jpg" alt="Roof washing service" class="service-image-glow relative z-10 w-full h-96 md:h-[500px] object-contain rounded-xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Driveway Cleaning Service -->
+                <div id="driveway-cleaning" class="service-content bg-[#121F41] text-white rounded-2xl p-8 md:p-12 shadow-lg hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-6">Driveway Cleaning</h3>
+                            <p class="text-lg mb-6 leading-relaxed">
+                                Restore your driveway's original beauty with our professional cleaning service. We remove oil stains, tire marks, dirt, and grime from concrete, asphalt, and paver driveways. Our powerful yet safe cleaning methods will make your driveway look like new again.
+                            </p>
+                            <a href="booking.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                                Book Now
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#4FC3F7] opacity-20 rounded-full"></div>
+                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 opacity-30 rounded-full"></div>
+                            <img src="Images/drive_way.jpg" alt="Driveway cleaning service" class="service-image-glow relative z-10 w-full h-96 md:h-[500px] object-contain rounded-xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Patio Cleaning Service -->
+                <div id="patio-cleaning" class="service-content bg-[#121F41] text-white rounded-2xl p-8 md:p-12 shadow-lg hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-6">Patio Cleaning</h3>
+                            <p class="text-lg mb-6 leading-relaxed">
+                                Revitalize your outdoor living space with our comprehensive patio cleaning service. We clean concrete, stone, brick, and composite patios, removing dirt, algae, mold, and stains. Our thorough process will restore your patio's beauty and make it a welcoming space for entertaining.
+                            </p>
+                            <a href="booking.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                                Book Now
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#4FC3F7] opacity-20 rounded-full"></div>
+                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 opacity-30 rounded-full"></div>
+                            <img src="Images/patio_clean.png" alt="Patio cleaning service" class="service-image-glow relative z-10 w-full h-96 md:h-[500px] object-contain rounded-xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gutter Brightening Service -->
+                <div id="gutter-brightening" class="service-content bg-[#121F41] text-white rounded-2xl p-8 md:p-12 shadow-lg hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-6">Gutter Brightening</h3>
+                            <p class="text-lg mb-6 leading-relaxed">
+                                Restore your gutters' original appearance with our specialized brightening service. We remove oxidation, tiger stripes, and discoloration from aluminum and vinyl gutters. This service dramatically improves your home's curb appeal by making your gutters look brand new.
+                            </p>
+                            <a href="booking.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                                Book Now
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#4FC3F7] opacity-20 rounded-full"></div>
+                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 opacity-30 rounded-full"></div>
+                            <img src="/Images/gutter_brightening.jpeg" alt="Gutter brightening service" class="service-image-glow relative z-10 w-full h-96 md:h-[500px] object-contain rounded-xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Fence Cleaning Service -->
+                <div id="fence-cleaning" class="service-content bg-[#121F41] text-white rounded-2xl p-8 md:p-12 shadow-lg hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-6">Fence Cleaning</h3>
+                            <p class="text-lg mb-6 leading-relaxed">
+                                Protect and beautify your fence with our professional cleaning service. We safely clean wood, vinyl, aluminum, and composite fencing, removing dirt, mildew, algae, and stains. Our gentle approach preserves your fence material while restoring its original appearance.
+                            </p>
+                            <a href="booking.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                                Book Now
+                            </a>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#4FC3F7] opacity-20 rounded-full"></div>
+                            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-200 opacity-30 rounded-full"></div>
+                            <img src="Images/fence_cleaning.jpeg" alt="Fence cleaning service" class="service-image-glow relative z-10 w-full h-96 md:h-[500px] object-contain rounded-xl shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Section -->
+    <section id="before-after" class="py-16 md:py-24 bg-[#121F41] text-white relative overflow-hidden">
+        <!-- Floating Bubbles -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="water-bubble" style="width: 50px; height: 50px; left: 10%; top: 20%;"></div>
+            <div class="water-bubble" style="width: 30px; height: 30px; left: 20%; top: 60%;"></div>
+            <div class="water-bubble" style="width: 40px; height: 40px; left: 80%; top: 30%;"></div>
+            <div class="water-bubble" style="width: 25px; height: 25px; left: 70%; top: 70%;"></div>
+            <div class="water-bubble" style="width: 35px; height: 35px; left: 40%; top: 80%;"></div>
+            <div class="water-bubble" style="width: 45px; height: 45px; left: 90%; top: 40%;"></div>
+            <!-- Additional Bubbles -->
+            <div class="water-bubble" style="width: 55px; height: 55px; left: 15%; top: 40%;"></div>
+            <div class="water-bubble" style="width: 28px; height: 28px; left: 30%; top: 25%;"></div>
+            <div class="water-bubble" style="width: 42px; height: 42px; left: 60%; top: 50%;"></div>
+            <div class="water-bubble" style="width: 38px; height: 38px; left: 85%; top: 65%;"></div>
+            <div class="water-bubble" style="width: 32px; height: 32px; left: 25%; top: 85%;"></div>
+            <div class="water-bubble" style="width: 48px; height: 48px; left: 75%; top: 15%;"></div>
+            <div class="water-bubble" style="width: 36px; height: 36px; left: 45%; top: 35%;"></div>
+            <div class="water-bubble" style="width: 44px; height: 44px; left: 65%; top: 90%;"></div>
+            <div class="water-bubble" style="width: 52px; height: 52px; left: 5%; top: 55%;"></div>
+            <div class="water-bubble" style="width: 34px; height: 34px; left: 95%; top: 75%;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">See the Difference</h2>
+            
+            <!-- Single Large Before/After Slider -->
+            <div class="max-w-4xl mx-auto">
+                <div class="before-after-slider relative rounded-2xl overflow-hidden shadow-2xl bg-white border-4 border-white">
+                    <!-- Before/After Images Container -->
+                    <div class="relative w-full h-96 md:h-[500px]">
+                        <!-- After Image (Background) - Default to roof washing -->
+                        <img id="after-image" src="Images/roof_washing1.jpg" alt="After cleaning" class="w-full h-full object-cover transition-all duration-300 ease-out">
+                        
+                        <!-- Before Image (Overlay) - Default to roof washing -->
+                        <div id="before-overlay" class="absolute inset-0 overflow-hidden transition-all duration-150 ease-out" style="width: 50%;">
+                            <img id="before-image" src="Images/roof_washing2.jpg" alt="Before cleaning" class="w-full h-full object-cover transition-all duration-300 ease-out">
+                        </div>
+                        
+                        <!-- Slider Handle -->
+                        <div id="slider-handle" class="absolute top-0 h-full w-1 bg-white cursor-ew-resize z-10 transition-all duration-150 ease-out" style="left: 50%;">
+                            <!-- Circular Handle -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border-4 border-blue-500 flex items-center justify-center overflow-hidden transition-all duration-200 ease-out hover:scale-110 hover:shadow-xl">
+                                <img src="Images/LOGO_Icon.jpg" alt="Richies Pro Wash Logo" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        
+                        <!-- Labels -->
+                        <div class="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ease-out">
+                            BEFORE
+                        </div>
+                        <div class="absolute top-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 ease-out">
+                            AFTER
+                        </div>
+                    </div>
+                    
+                    <!-- Service Title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                        <h3 id="service-title" class="text-2xl font-bold text-white mb-2 transition-all duration-300 ease-out">SOFT WASHING</h3>
+                        <p id="service-description" class="text-white/90 transition-all duration-300 ease-out">Professional soft washing removes dirt, mildew, and stains without damaging your property</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Thumbnails -->
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button onclick="changeImage(1)" class="thumbnail-btn active w-20 h-20 rounded-lg overflow-hidden border-3 border-white opacity-100 transition-all duration-300 ease-out hover:scale-105">
+                        <img src="Images/roof_washing1.jpg" alt="Roof Washing" class="w-full h-full object-cover transition-all duration-300 ease-out">
+                    </button>
+                    <button onclick="changeImage(2)" class="thumbnail-btn w-20 h-20 rounded-lg overflow-hidden border-3 border-gray-300 opacity-70 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105">
+                        <img src="Images/fence2.jpeg" alt="Fence Cleaning" class="w-full h-full object-cover transition-all duration-300 ease-out">
+                    </button>
+                    <button onclick="changeImage(3)" class="thumbnail-btn w-20 h-20 rounded-lg overflow-hidden border-3 border-gray-300 opacity-70 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105">
+                        <img src="Images/roof1.jpeg" alt="Soft Washing" class="w-full h-full object-cover transition-all duration-300 ease-out">
+                    </button>
+                    <button onclick="changeImage(4)" class="thumbnail-btn w-20 h-20 rounded-lg overflow-hidden border-3 border-gray-300 opacity-70 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105">
+                        <img src="Images/After_2.png" alt="Driveway Cleaning" class="w-full h-full object-cover transition-all duration-300 ease-out">
+                    </button>
+                    <button onclick="changeImage(5)" class="thumbnail-btn w-20 h-20 rounded-lg overflow-hidden border-3 border-gray-300 opacity-70 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105">
+                        <img src="Images/patio_2.png" alt="Surface Restoration" class="w-full h-full object-cover transition-all duration-300 ease-out">
+                    </button>
+                    <button onclick="changeImage(6)" class="thumbnail-btn w-20 h-20 rounded-lg overflow-hidden border-3 border-gray-300 opacity-70 hover:opacity-100 transition-all duration-300 ease-out hover:scale-105">
+                        <img src="Images/After_gutter.jpeg" alt="Gutter Cleaning" class="w-full h-full object-cover transition-all duration-300 ease-out">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#121F41]">About Richies Pro Wash</h2>
+                
+                <div class="bg-[#121F41] text-white rounded-xl p-6 md:p-12 shadow-md">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 md:gap-8">
+                            <div class="flex-shrink-0 hidden md:block">
+                                <img src="Images/LOGO_Icon.jpg" alt="Richies Pro Wash Logo" class="w-32 h-24 object-cover">
+                            </div>
+                            <div class="md:border-l-4 md:border-blue-600 md:pl-6 w-full">
+                                <p class="text-base md:text-lg leading-relaxed">
+                                    At Richies Pro Wash, we're more than just a cleaning service — we're exterior cleaning professionals committed to excellence. With a focus on quality, care, and customer satisfaction, our team delivers expert pressure washing solutions that restore the beauty of your home while protecting your property.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 md:gap-8 mt-6 md:mt-8">
+                            <div class="bg-white/10 rounded-lg p-4 md:p-6 shadow-sm">
+                                <h3 class="text-lg md:text-xl font-bold text-blue-300 mb-3 md:mb-4">Professional Expertise</h3>
+                                <p class="text-white/90 text-sm md:text-base">
+                                    Every job is handled with precision and professionalism, whether we're cleaning roofs, siding, gutters, or driveways. We use the latest soft-wash and pressure-washing techniques to ensure safe, effective results — without damage.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-white/10 rounded-lg p-4 md:p-6 shadow-sm">
+                                <h3 class="text-lg md:text-xl font-bold text-blue-300 mb-3 md:mb-4">Local Community Focus</h3>
+                                <p class="text-white/90 text-sm md:text-base">
+                                    Based in Savannah, Georgia, we take pride in serving our local community with reliable, honest service. From the moment you call to the final rinse, you can trust us to treat your home with the same respect and attention to detail we'd give our own.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-6 md:mt-8">
+                            <p class="text-lg md:text-xl font-semibold text-white">
+                                Let us help you bring back the shine — the right way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 bg-[#121F41] text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Customers Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40">
+                    <div class="flex items-center mb-4">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <span class="ml-2 text-sm">2 weeks ago</span>
+                    </div>
+                    <p class="mb-4">"Richies Pro Wash did an amazing job on my home's exterior. The difference is night and day! They were professional, thorough, and reasonably priced. I'll definitely be using them again next spring."</p>
+                    <div class="flex items-center">
+                        <div class="h-10 w-10 bg-blue-300 rounded-full mr-3"></div>
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-sm text-white/80">Savannah, GA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40">
+                    <div class="flex items-center mb-4">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <span class="ml-2 text-sm">1 month ago</span>
+                    </div>
+                    <p class="mb-4">"Our roof had black stains all over it from algae. Richie came out and transformed it back to looking brand new. His team was careful not to damage any plants around our home and cleaned up everything when done."</p>
+                    <div class="flex items-center">
+                        <div class="h-10 w-10 bg-blue-300 rounded-full mr-3"></div>
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-sm text-white/80">Pooler, GA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40">
+                    <div class="flex items-center mb-4">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                        <span class="ml-2 text-sm">3 months ago</span>
+                    </div>
+                    <p class="mb-4">"Best pressure washing service in Savannah! They arrived on time, worked efficiently, and my driveway looks brand new. Their attention to detail is impressive. Will recommend to all my neighbors!"</p>
+                    <div class="flex items-center">
+                        <div class="h-10 w-10 bg-blue-300 rounded-full mr-3"></div>
+                        <div>
+                            <h4 class="font-bold">Lisa M.</h4>
+                            <p class="text-sm text-white/80">Richmond Hill, GA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-block bubble-button bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                    Read More Reviews
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-[#121F41]">Get in Touch</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-6 text-[#121F41]">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">Phone</h4>
+                                    <a href="tel:+19126759231" class="text-blue-600 hover:underline">(912) 675-9231</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">Email</h4>
+                                    <a href="mailto:richiesprowash@gmail.com" class="text-blue-600 hover:underline">richiesprowash@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">Location</h4>
+                                    <p>Savannah, Georgia</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">Hours</h4>
+                                    <p>Mon-Fri: 8 AM – 5 PM<br>Sat-Sun: Closed</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-share-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-700">Follow Us</h4>
+                                    <div class="flex space-x-4 mt-2">
+                                        <a href="https://www.facebook.com/richards.columbus.7" target="_blank" class="h-8 w-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/richies_pro_wash/" target="_blank" class="h-8 w-8 bg-pink-600 hover:bg-pink-700 text-white rounded-full flex items-center justify-center">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <div class="h-48 bg-gray-200 rounded-lg overflow-hidden">
+                                <!-- Maps iframe - replace with actual embed code -->
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.3448850869767!2d-81.09873092391002!3d31.673873295882058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f763c54c6ffe35%3A0x37e21dd3ec2b6b5e!2sRichies%20Pro%20Wash!5e0!3m2!1sen!2sus!4v1686251234567!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-8 shadow-2xl hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-shadow duration-300 text-white">
+                        <h3 class="text-xl font-bold mb-6 text-white">Send Us a Message</h3>
+                        
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-white mb-1">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-white mb-1">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-white mb-1">Phone</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label for="service" class="block text-sm font-medium text-white mb-1">Service Needed</label>
+                                    <select id="service" class="w-full px-4 py-3 rounded-lg text-gray-700 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent">
+                                        <option value="">Select a service</option>
+                                        <option value="house">House Washing</option>
+                                        <option value="roof">Roof Washing</option>
+                                        <option value="surface">Surface Cleaning</option>
+                                        <option value="gutter">Gutter Cleaning</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <label for="message" class="block text-sm font-medium text-white mb-1">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"></textarea>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <button type="submit" class="w-full bubble-button bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-4 px-6 rounded-lg transition duration-300">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#121F41] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Richies Pro Wash</h4>
+                    <p class="mb-4">Helping beautify one house at a time in Savannah and surrounding areas.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/richards.columbus.7" target="_blank" class="h-10 w-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/richies_pro_wash/" target="_blank" class="h-10 w-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-300 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-blue-300 transition">Services</a></li>
+                        <li><a href="#before-after" class="hover:text-blue-300 transition">Before & After</a></li>
+                        <li><a href="#about" class="hover:text-blue-300 transition">About</a></li>
+                        <li><a href="#testimonials" class="hover:text-blue-300 transition">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-blue-300 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-300 transition">House Washing</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Roof Washing</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Driveway Cleaning</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Patio Cleaning</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Gutter Brightening</a></li>
+                        <li><a href="#" class="hover:text-blue-300 transition">Fence Cleaning</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-blue-300"></i>
+                            <a href="tel:+19126759231" class="hover:text-blue-300 transition">(912) 675-9231</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-300"></i>
+                            <a href="mailto:richiesprowash@gmail.com" class="hover:text-blue-300 transition">richiesprowash@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-blue-300"></i>
+                            <span>Savannah, GA</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-2 text-blue-300"></i>
+                            <span>Mon-Fri: 8 AM - 5 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm">
+                <p>© <span id="year"></span> Richies Pro Wash. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Book Now Button (Mobile Only) -->
+    <div class="fixed bottom-6 right-6 md:hidden z-50">
+        <a href="booking.html" class="bubble-button bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold h-16 w-16 rounded-full flex items-center justify-center shadow-xl transition">
+            <span class="block sm:hidden">Book</span>
+            <span class="hidden sm:block">Book Now</span>
+        </a>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Create water bubbles
+        function createBubbles() {
+            const bubblesContainer = document.getElementById('bubbles');
+            bubblesContainer.innerHTML = '';
+            
+            for (let i = 0; i < 15; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'water-bubble';
+                
+                const size = Math.random() * 30 + 10;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = 10 + Math.random() * 20;
+                
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${posX}%`;
+                bubble.style.bottom = `-${size}px`;
+                bubble.style.animationDelay = `${delay}s`;
+                bubble.style.animationDuration = `${duration}s`;
+                
+                bubblesContainer.appendChild(bubble);
+            }
+        }
+        
+        // Initialize before/after sliders
+        function initBeforeAfterSliders() {
+            const sliders = document.querySelectorAll('.before-after');
+            
+            sliders.forEach(slider => {
+                const beforeImage = slider.dataset.before;
+                const afterImage = slider.dataset.after;
+                const beforeDiv = slider.querySelector('img');
+                
+                const sliderControl = document.createElement('div');
+                sliderControl.className = 'slider-control';
+                
+                const container = slider.querySelector('.relative');
+                container.appendChild(sliderControl);
+                
+                let isDragging = false;
+                
+                sliderControl.addEventListener('mousedown', () => {
+                    isDragging = true;
+                });
+                
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+                
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    
+                    const containerRect = container.getBoundingClientRect();
+                    const containerWidth = containerRect.width;
+                    let xPos = e.clientX - containerRect.left;
+                    
+                    // Ensure position stays within container
+                    xPos = Math.max(0, Math.min(xPos, containerWidth));
+                    
+                    // Update slider position
+                    sliderControl.style.left = `${xPos}px`;
+                    
+                    // Update before image width
+                    const beforeImageDiv = container.querySelector('div');
+                    beforeImageDiv.style.width = `${xPos}px`;
+                });
+                
+                // Touch events for mobile
+                sliderControl.addEventListener('touchstart', () => {
+                    isDragging = true;
+                });
+                
+                document.addEventListener('touchend', () => {
+                    isDragging = false;
+                });
+                
+                document.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    
+                    const touch = e.touches[0];
+                    const containerRect = container.getBoundingClientRect();
+                    const containerWidth = containerRect.width;
+                    let xPos = touch.clientX - containerRect.left;
+                    
+                    // Ensure position stays within container
+                    xPos = Math.max(0, Math.min(xPos, containerWidth));
+                    
+                    // Update slider position
+                    sliderControl.style.left = `${xPos}px`;
+                    
+                    // Update before image width
+                    const beforeImageDiv = container.querySelector('div');
+                    beforeImageDiv.style.width = `${xPos}px`;
+                });
+            });
+        }
+        
+        // Mobile menu toggle
+        function initMobileMenu() {
+            const mobileMenuButton = document.querySelector('button.md\\:hidden');
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'fixed inset-0 bg-[#121F41] z-50 flex flex-col items-center justify-center hidden';
+            mobileMenu.id = 'mobile-menu';
+            
+            const mobileMenuLinks = [
+                { text: 'Home', href: '#home' },
+                { text: 'Services', href: '#services' },
+                { text: 'Before & After', href: '#before-after' },
+                { text: 'About', href: '#about' },
+                { text: 'Testimonials', href: '#testimonials' },
+                { text: 'Contact', href: '#contact' }
+            ];
+            
+            mobileMenuLinks.forEach(link => {
+                const linkElement = document.createElement('a');
+                linkElement.href = link.href;
+                linkElement.textContent = link.text;
+                linkElement.className = 'text-white text-2xl py-4 hover:text-blue-300 transition';
+                mobileMenu.appendChild(linkElement);
+            });
+            
+            const closeButton = document.createElement('button');
+            closeButton.className = 'absolute top-4 right-4 text-white text-3xl';
+            closeButton.innerHTML = '<i class="fas fa-times"></i>';
+            closeButton.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+            
+            mobileMenu.appendChild(closeButton);
+            document.body.appendChild(mobileMenu);
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+        
+        // Hero Image Carousel
+        let heroCurrentSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroTotalSlides = heroSlides.length;
+        const heroSlider = document.querySelector('.hero-image-slider');
+        const heroDots = document.querySelectorAll('.hero-dot');
+        
+        function updateHeroSlider() {
+            const translateX = -heroCurrentSlide * 100;
+            heroSlider.style.transform = `translateX(${translateX}%)`;
+            
+            // Update dots
+            heroDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === heroCurrentSlide);
+            });
+        }
+        
+        function nextHeroSlide() {
+            heroCurrentSlide = (heroCurrentSlide + 1) % heroTotalSlides;
+            updateHeroSlider();
+        }
+        
+        function prevHeroSlide() {
+            heroCurrentSlide = (heroCurrentSlide - 1 + heroTotalSlides) % heroTotalSlides;
+            updateHeroSlider();
+        }
+        
+        function goToHeroSlide(slideIndex) {
+            heroCurrentSlide = slideIndex;
+            updateHeroSlider();
+        }
+        
+        // Event listeners for hero carousel
+        document.querySelector('.hero-next').addEventListener('click', nextHeroSlide);
+        document.querySelector('.hero-prev').addEventListener('click', prevHeroSlide);
+        
+        heroDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToHeroSlide(index));
+        });
+        
+        // Auto-play hero carousel
+        setInterval(nextHeroSlide, 5000);
+        
+        // Initialize hero slider
+        updateHeroSlider();
+        
+        // Smooth scrolling for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        // Calculate offset for fixed header
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetSection.offsetTop - headerHeight - 20;
+                        
+                        // Smooth scroll to target
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Add active state to clicked link
+                        navLinks.forEach(navLink => navLink.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Highlight active section on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPos = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Initialize everything when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            createBubbles();
+            initBeforeAfterSliders();
+            initMobileMenu();
+            
+            // Show the first service by default
+            showService('house-washing');
+            
+            // Recreate bubbles on resize for better positioning
+            window.addEventListener('resize', createBubbles);
+        });
+        function showService(serviceId) {
+            // Hide all service content
+            const allServices = document.querySelectorAll('.service-content');
+            allServices.forEach(service => {
+                service.classList.add('hidden');
+            });
+            
+            // Show selected service
+            const selectedService = document.getElementById(serviceId);
+            if (selectedService) {
+                selectedService.classList.remove('hidden');
+            }
+            
+            // Update button states
+            const allButtons = document.querySelectorAll('.service-btn');
+            allButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.remove('bg-[#1565C0]');
+                btn.classList.add('bg-gray-600');
+                btn.classList.remove('hover:bg-[#0D47A1]');
+                btn.classList.add('hover:bg-gray-700');
+                btn.classList.add('text-white');
+                btn.classList.remove('text-gray-700');
+            });
+            
+            // Set active button
+            const activeButton = document.querySelector(`[data-service="${serviceId}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+                activeButton.classList.remove('bg-gray-600');
+                activeButton.classList.add('bg-[#1565C0]');
+                activeButton.classList.remove('hover:bg-gray-700');
+                activeButton.classList.add('hover:bg-[#0D47A1]');
+            }
+        }
+        
+        // Enhanced Before/After Slider Functionality with Smooth Animations
+        function initBeforeAfterSliders() {
+            const slider = document.getElementById('slider-handle');
+            const beforeOverlay = document.getElementById('before-overlay');
+            const beforeImage = document.getElementById('before-image');
+            const container = slider.parentElement;
+            
+            let isDragging = false;
+            let animationFrame = null;
+            
+            // Smooth update function with requestAnimationFrame
+            function smoothUpdateSlider(clientX) {
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+                
+                animationFrame = requestAnimationFrame(() => {
+                    const rect = container.getBoundingClientRect();
+                    const x = clientX - rect.left;
+                    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+                    
+                    // Apply smooth transitions when dragging
+                    if (isDragging) {
+                        beforeOverlay.style.transition = 'none';
+                        slider.style.transition = 'none';
+                    } else {
+                        beforeOverlay.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                        slider.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                    }
+                    
+                    // Update overlay width to match slider position exactly
+                    beforeOverlay.style.width = percentage + '%';
+                    
+                    // Update slider position
+                    slider.style.left = percentage + '%';
+                });
+            }
+            
+            // Enhanced mouse events
+            slider.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                slider.style.cursor = 'grabbing';
+                document.body.style.userSelect = 'none';
+                e.preventDefault();
+            });
+            
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    smoothUpdateSlider(e.clientX);
+                }
+            });
+            
+            document.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    slider.style.cursor = 'ew-resize';
+                    document.body.style.userSelect = '';
+                    
+                    // Re-enable smooth transitions
+                    beforeOverlay.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                    slider.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                }
+            });
+            
+            // Enhanced touch events for mobile with better performance
+            slider.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                e.preventDefault();
+            }, { passive: false });
+            
+            document.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    e.preventDefault();
+                    smoothUpdateSlider(e.touches[0].clientX);
+                }
+            }, { passive: false });
+            
+            document.addEventListener('touchend', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    
+                    // Re-enable smooth transitions
+                    beforeOverlay.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                    slider.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                }
+            });
+            
+            // Enhanced click anywhere on the image to move slider with smooth animation
+            container.addEventListener('click', (e) => {
+                if (!isDragging && e.target !== slider) {
+                    // Enable smooth transition for click
+                    beforeOverlay.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                    slider.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                    
+                    smoothUpdateSlider(e.clientX);
+                }
+            });
+            
+            // Add keyboard support for accessibility
+            slider.addEventListener('keydown', (e) => {
+                const currentLeft = parseFloat(slider.style.left) || 50;
+                let newLeft = currentLeft;
+                
+                switch(e.key) {
+                    case 'ArrowLeft':
+                        newLeft = Math.max(0, currentLeft - 5);
+                        break;
+                    case 'ArrowRight':
+                        newLeft = Math.min(100, currentLeft + 5);
+                        break;
+                    default:
+                        return;
+                }
+                
+                e.preventDefault();
+                
+                // Enable smooth transition for keyboard
+                beforeOverlay.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                slider.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                
+                beforeOverlay.style.width = newLeft + '%';
+                slider.style.left = newLeft + '%';
+            });
+            
+            // Make slider focusable for keyboard navigation
+            slider.setAttribute('tabindex', '0');
+            slider.setAttribute('role', 'slider');
+            slider.setAttribute('aria-label', 'Before and after comparison slider');
+        }
+        
+        // Enhanced Change Image Function with smooth transitions
+        function changeImage(imageNumber) {
+            const beforeImage = document.getElementById('before-image');
+            const afterImage = document.getElementById('after-image');
+            const serviceTitle = document.getElementById('service-title');
+            const serviceDescription = document.getElementById('service-description');
+            
+            // Add fade effect during image change
+            beforeImage.style.opacity = '0';
+            afterImage.style.opacity = '0';
+            
+            setTimeout(() => {
+                // Update images based on image number with correct mappings
+                if (imageNumber === 1) {
+                    // Roof washing: roof_washing2 (before) -> roof_washing1 (after)
+                    beforeImage.src = 'Images/roof_washing2.jpg';
+                    afterImage.src = 'Images/roof_washing1.jpg';
+                } else if (imageNumber === 2) {
+                    // Fence cleaning: fence1 (before) -> fence2 (after)
+                    beforeImage.src = 'Images/fence1.jpeg';
+                    afterImage.src = 'Images/fence2.jpeg';
+                } else if (imageNumber === 3) {
+                    // Soft washing: roof2 (before) -> roof1 (after) - SWAPPED
+                    beforeImage.src = 'Images/roof2.jpeg';
+                    afterImage.src = 'Images/roof1.jpeg';
+                } else if (imageNumber === 4) {
+                    // Driveway cleaning: before_2 (before) -> after_2 (after)
+                    beforeImage.src = 'Images/Before_2.png';
+                    afterImage.src = 'Images/After_2.png';
+                } else if (imageNumber === 5) {
+                    // Surface Restoration: patio_1 (before) -> patio_2 (after)
+                    beforeImage.src = 'Images/patio_1.png';
+                    afterImage.src = 'Images/patio_2.png';
+                } else if (imageNumber === 6) {
+                    // Gutter Cleaning: before_3 (before) -> after_3 (after) - SWAPPED
+                    beforeImage.src = 'Images/before_gutter.jpeg';
+                    afterImage.src = 'Images/After_gutter.jpeg';
+                }
+                
+                // Fade images back in
+                beforeImage.style.opacity = '1';
+                afterImage.style.opacity = '1';
+            }, 150);
+            
+            // Update service information with smooth transition
+            const serviceInfo = {
+                1: {
+                    title: 'ROOF WASHING',
+                    description: 'Expert roof washing using specialized low-pressure techniques to safely remove algae, moss, black streaks, and stains while protecting your roof materials'
+                },
+                2: {
+                    title: 'FENCE CLEANING',
+                    description: 'Professional fence restoration service that removes years of dirt, mildew, weathering, and discoloration to bring back your fence\'s original beauty'
+                },
+                3: {
+                    title: 'SOFT WASHING',
+                    description: 'Gentle yet effective soft washing technique that safely removes dirt, mildew, algae, and organic stains from delicate surfaces without causing damage'
+                },
+                4: {
+                    title: 'DRIVEWAY CLEANING',
+                    description: 'High-pressure cleaning that transforms oil-stained, dirty driveways and concrete surfaces back to their pristine original condition'
+                },
+                5: {
+                    title: 'SURFACE RESTORATION',
+                    description: 'Complete outdoor surface renewal for patios, decks, walkways, and outdoor living areas using professional-grade cleaning techniques'
+                },
+                6: {
+                    title: 'GUTTER CLEANING',
+                    description: 'Our professional gutter cleaning removes debris and restores your gutters to like-new condition, protecting your home from water damage. '
+                }
+            };
+            
+            // Smooth text transition
+            serviceTitle.style.opacity = '0';
+            serviceDescription.style.opacity = '0';
+            
+            setTimeout(() => {
+                serviceTitle.textContent = serviceInfo[imageNumber].title;
+                serviceDescription.textContent = serviceInfo[imageNumber].description;
+                serviceTitle.style.opacity = '1';
+                serviceDescription.style.opacity = '1';
+            }, 150);
+            
+            // Update thumbnail styles with smooth transitions
+            document.querySelectorAll('.thumbnail-btn').forEach((btn, index) => {
+                if (index + 1 === imageNumber) {
+                    btn.classList.add('active', 'border-blue-500', 'opacity-100');
+                    btn.classList.remove('border-gray-300', 'opacity-70');
+                } else {
+                    btn.classList.remove('active', 'border-blue-500', 'opacity-100');
+                    btn.classList.add('border-gray-300', 'opacity-70');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

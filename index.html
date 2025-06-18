@@ -68,16 +68,16 @@
                 </p>
             </div>
         </div>
-        
-        <!-- Wizard Character Removed -->
+         <!-- Bottom fade overlay -->
+         <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/80 to-transparent pointer-events-none z-10"></div> 
     </section>
-    
+
     <!-- Logo Slider Section -->
-    <section class="py-12 bg-white ">
-        <div class="container mx-auto px-6">
+    <section class="py-12 logo-slider-bg">
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-8">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">Trusted by Amazing Businesses</h3>
-                <p class="text-gray-600">See some of the websites we've built for our clients</p>
+                <h3 class="text-2xl font-bold text-white mb-2">Trusted by Amazing Businesses</h3>
+                <p class="text-white">See some of the websites we've built for our clients</p>
             </div>
             
             <!-- Logo Slider Container -->
@@ -122,7 +122,7 @@
     </section>
 
     <!-- Why Website Important Section -->
-    <section id="why" class="py-20 bg-white">
+    <section id="why" class="py-20 bg-white mb-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 fade-in slide-in-left">
@@ -146,6 +146,82 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Carousel Section -->
+<section class=" bg-black">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="font-monument text-3xl md:text-4xl mb-4 text-white">Our Work in Action</h2>
+            <p class="text-gray-300 text-lg">See the magic we create for businesses like yours</p>
+        </div>
+        
+        <!-- Image Carousel -->
+        <div class="relative w-full max-w-4xl mx-auto">
+            <div class="hero-image-container relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white purple-glow-container">
+                <div class="hero-image-slider flex transition-transform duration-500 ease-in-out">
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/allseason.png" alt="JLS Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/carrying.png" alt="All Season Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/celebrations.png" alt="Celebrations Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/himalayan.png" alt="Himalayan Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/JLS.png" alt="Karhaus Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/karhaus.png" alt="Karhaus Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/kimsfresh.png" alt="Karhaus Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/kurts.png" alt="Karhaus Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/manuel.png" alt="Karhaus Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/mickeys.png" alt="Karhaus Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/olympic.png" alt="Karhaus Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                    <div class="hero-slide min-w-full">
+                        <img src="Images/Website-thumbnail/richies.png" alt="Karhaus Website" class="w-full h-auto object-contain bg-white rounded-lg">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="hero-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-purple-700 p-3 rounded-full transition duration-300 hover:scale-110 hover-glow">
+                    <i class="fas fa-chevron-left text-xl"></i>
+                </button>
+                <button class="hero-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-purple-700 p-3 rounded-full transition duration-300 hover:scale-110 hover-glow">
+                    <i class="fas fa-chevron-right text-xl"></i>
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="hero-dots absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition duration-300 active hover:scale-125 hover-glow" data-slide="0"></button>
+                    <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition duration-300 hover:scale-125 hover-glow" data-slide="1"></button>
+                    <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition duration-300 hover:scale-125 hover-glow" data-slide="2"></button>
+                    <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition duration-300 hover:scale-125 hover-glow" data-slide="3"></button>
+                    <button class="hero-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition duration-300 hover:scale-125 hover-glow" data-slide="4"></button>
+                </div>
+                
+                <!-- Quality Badge -->
+                <div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-full font-bold text-sm hover:scale-105 transition duration-300 purple-glow">
+                    ⭐ Our Work
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     
     <!-- Services Section -->
     <section id="services" class="py-20 bg-black text-white bg-magic-pattern">
@@ -183,103 +259,372 @@
         </div>
     </section>
     
-    <!-- Comparison Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="font-monument text-3xl md:text-4xl mb-16 text-center fade-in">The Free Website Wizards Difference</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Other Free Website Makers -->
-                <div class="bg-gray-100 p-8 rounded-xl shadow-md fade-in slide-in-left hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
-                    <h3 class="font-bold text-xl mb-6 text-center">Other Free Website Makers</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="text-green-500 mr-3 text-xl">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>$0 (Free)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-red-500 mr-3 text-xl">
-                                <i class="fas fa-times"></i>
-                            </div>
-                            <span>3-5 weeks</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-red-500 mr-3 text-xl">
-                                <i class="fas fa-times"></i>
-                            </div>
-                            <span>Limited</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-red-500 mr-3 text-xl">
-                                <i class="fas fa-times"></i>
-                            </div>
-                            <span>Lots of forms, long waits</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-red-500 mr-3 text-xl">
-                                <i class="fas fa-times"></i>
-                            </div>
-                            <span>Email only</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-red-500 mr-3 text-xl">
-                                <i class="fas fa-times"></i>
-                            </div>
-                            <span>Upsells for extras</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Us -->
-                <div class="bg-white p-8 rounded-xl shadow-md border-2 border-purple-400 relative overflow-visible fade-in slide-in-right hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="absolute -top-3 -right-3 bg-purple-400 text-yellow-300 px-4 py-2 rounded-full font-bold text-sm shadow-lg z-10">
-                        WIZARD APPROVED
-                    </div>
-                    <h3 class="font-bold text-xl mb-6 text-center">Free Website Wizards</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <div class="text-purple-400 mr-3 text-xl">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>$0 (Free)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-purple-400 mr-3 text-xl">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>7-10 days</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-purple-400 mr-3 text-xl">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Built from Scratch for You</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-purple-400 mr-3 text-xl">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Stress-Free. Fast. Done With You.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-purple-400 mr-3 text-xl">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>Direct chat & support</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-purple-400 mr-3 text-xl">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <span>No upsells. No pressure.</span>
-                        </li>
-                    </ul>
-                </div>
+<!-- Comparison Section -->
+<section class="py-20 magic-bg nebula-bg">
+    <div class="container mx-auto px-6">
+        <h2 class="font-monument text-3xl md:text-4xl mb-16 text-center text-white fade-in">Website Service Comparison</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <!-- Typical Web Agencies -->
+            <div class="bg-gray-100 p-6 rounded-xl shadow-md fade-in slide-in-left hover:shadow-lg transition-all duration-300 hover:-translate-y-2 floating-card">
+                <h3 class="font-bold text-lg mb-6 text-center">Typical Web Agencies</h3>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>You Own the Website</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Usually Includes Hosting & SSL</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Mobile-Friendly Design</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Basic SEO Setup Often Included</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Fast Loading Speed</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Custom Domain Usually Connected</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-red-500 mr-3 text-lg">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <span>High Upfront Cost ($500–$5,000+)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-red-500 mr-3 text-lg">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <span>Sales Calls and Quotes Required</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-yellow-500 mr-3 text-lg">
+                            ⚠️
+                        </div>
+                        <span>Visuals Are Functional but Basic</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-red-500 mr-3 text-lg">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <span>Long Turnaround Time (2–6 Weeks)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-yellow-500 mr-3 text-lg">
+                            ⚠️
+                        </div>
+                        <span>Developer Time Varies (10–15 Hours)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-yellow-500 mr-3 text-lg">
+                            ⚠️
+                        </div>
+                        <span>Sometimes Custom-Coded</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-yellow-500 mr-3 text-lg">
+                            ⚠️
+                        </div>
+                        <span>Sometimes Built from Scratch</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-yellow-500 mr-3 text-lg">
+                            ⚠️
+                        </div>
+                        <span>Visual Appeal Depends on Budget</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-yellow-500 mr-3 text-lg">
+                            ⚠️
+                        </div>
+                        <span>Unique Design Depends on Package</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-red-500 mr-3 text-lg">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <span>No "Magic" or Wow Factor</span>
+                    </li>
+                </ul>
             </div>
+
+             <!-- The Free Website Wizards -->
+             <div class="bg-white p-6 rounded-xl shadow-md border-8 border-purple-600 relative overflow-visible fade-in slide-in-right hover:shadow-xl transition-all duration-300 hover:-translate-y-2 floating-card floating-delay-2">
+                <div class="absolute -top-3 -right-3 bg-purple-400 text-yellow-400 px-4 py-2 rounded-full font-bold text-sm shadow-lg z-10 pulse-glow">
+                    WIZARD APPROVED
+                </div>
+                <h3 class="font-bold text-lg mb-6 text-center">The Free Website Wizards</h3>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Free</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>You Own the Website</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Includes Hosting & SSL</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Mobile-Friendly Design</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Basic SEO Setup</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Fast Loading Speed</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Custom Domain Connected</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>1-Minute Application Form</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Visuals Are Clean, Sleek, and Branded</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Super-Fast Turnaround (1–3 Days)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Developer Time: 17–20 Hours</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Fully Hand-Coded</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Built from Scratch — No Reuse</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Designed to Impress</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>100% Unique to Each Client</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>"Magic" Factor: Absolutely</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- The Free Website Guys -->
+            <div class="bg-gray-50 p-6 rounded-xl shadow-md fade-in hover:shadow-lg transition-all duration-300 hover:-translate-y-2 floating-card floating-delay-1">
+                <h3 class="font-bold text-lg mb-6 text-center">The Free Website Guys</h3>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Free</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>You Own the Website</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Includes Hosting & SSL</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Mobile-Friendly Design</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Basic SEO Setup</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Fast Loading Speed</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Custom Domain Connected</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>1-Minute Application Form</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-yellow-500 mr-3 text-lg">
+                            ⚠️
+                        </div>
+                        <span>Visuals Are Functional but Basic</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Fast Turnaround (About 1–2 Weeks)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-green-500 mr-3 text-lg">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span>Developer Time: 7–10 Hours</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-red-500 mr-3 text-lg">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <span>Mostly Templated Code</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-red-500 mr-3 text-lg">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <span>Template-Based Build</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-red-500 mr-3 text-lg">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <span>Minimal Emphasis on Visual Design</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-red-500 mr-3 text-lg">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <span>Layouts Are Often Reused</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="text-yellow-500 mr-3 text-lg">
+                            ⚠️
+                        </div>
+                        <span>"Magic" Factor: Kinda</span>
+                    </li>
+                </ul>
+            </div>
+            
+           
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Secret Reveal Section -->
+<section class="relative py-32 overflow-hidden">
+    <!-- Video Background -->
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
+        <source src="Images/bg-video.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
+    
+    <!-- Content -->
+    <div class="relative z-20 container mx-auto px-6 text-center">
+        <h2 class="font-montserrat font-bold text-4xl md:text-6xl mb-8 text-white fade-in leading-tight">
+            WE'RE GOING TO <span class="text-purple-400 glow-text">LET YOU IN ON A HUGE SECRET...</span>
+        </h2>
+        
+        <div class="max-w-4xl mx-auto mb-12">
+            <p class="text-xl md:text-2xl text-white mb-6 fade-in" style="animation-delay: 0.3s;">
+                If you don't have a professional website, your business is more than 80% <span class="text-red-400 font-bold underline">less</span> likely to succeed.
+            </p>
+            
+            <p class="text-lg md:text-xl text-gray-200 fade-in" style="animation-delay: 0.6s;">
+                A Facebook or Instagram page just isn't going to cut it. On average, businesses without a professional website fail at 8x the normal rate.
+            </p>
+        </div>
+        
+        <!-- CTA Button -->
+        <div class="fade-in" style="animation-delay: 0.9s;">
+            <button id="openModalBtn" class="bg-gradient-to-r from-blue-400 to-purple-500 text-black font-bold px-12 py-6 rounded-full text-xl hover:shadow-2xl hover:shadow-yellow-400/30 transition-all duration-300 transform hover:scale-105 pulse-button">
+                Apply to get your website built by professionals — for free!
+            </button>
+        </div>
+    </div>
+    
+    <!-- Floating Particles -->
+    <div class="absolute inset-0 z-15">
+        <div class="floating-particle particle-1">✨</div>
+        <div class="floating-particle particle-2">⭐</div>
+        <div class="floating-particle particle-3">💫</div>
+        <div class="floating-particle particle-4">🌟</div>
+        <div class="floating-particle particle-5">✨</div>
+    </div>
+</section>
     
     <!-- Benefits Section -->
     <section class="py-20 bg-black text-white">
@@ -290,6 +635,7 @@
                 <!-- Benefit 1 -->
                 <div class="bg-gray-900 p-6 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20">
                     <div class="text-purple-400 text-3xl mb-4">
+                        🔨
                     </div>
                     <h3 class="font-bold text-lg mb-2 text-white">Build Credibility</h3>
                     <p class="text-gray-300">A professional website makes your business look established and trustworthy.</p>
@@ -368,33 +714,42 @@
             </div>
         </div>
     </section>
-    
-    <!-- Ratings Section -->
-    <!-- Add this to the <style> section in the head -->
-    <style>
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
+
+    <!-- Step by Step Guide Section -->
+    <section class="py-20 relative overflow-hidden magic-bg nebula-bg">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12 fade-in slide-in-left">
+                    <h2 class="font-montserrat text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                        WE'LL <span class="text-purple-400 glow-text">GUIDE YOU STEP BY STEP.</span>
+                    </h2>
+                    <p class="text-lg font-montserrat text-gray-300 mb-6">
+                        Not technically savvy? Never had a website built for you before? Don't worry. We'll guide you step by step through the process with videos and clear instructions as we work together to build you your dream website.
+                    </p>
+                    <p class="text-lg font-montserrat text-gray-300 mb-8">
+                        We've worked with everyone from hyper-savvy 25-year-old startup founders to elderly business owners who need some extra support.
+                    </p>
+                    <div class="fade-in-up">
+                        <a href="#apply" class="bg-gradient-to-r from-purple-500 to-purple-700 text-white font-bold px-10 py-4 rounded-full text-lg hover:shadow-2xl hover:shadow-purple-400/30 transition-all duration-300 transform hover:scale-105 pulse-button">
+                            Apply now! Let's do some Magic!
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right Image -->
+                <div class="lg:w-1/2 fade-in slide-in-right">
+                    <div class="relative">
+                        <img src="https://images.pexels.com/photos/3765030/pexels-photo-3765030.jpeg" alt="Professional guidance" class="rounded-lg shadow-2xl w-full max-w-lg mx-auto float">
+                        <!-- Decorative elements -->
+                        <div class="absolute -top-4 -right-4 w-8 h-8 bg-purple-400 rounded-full opacity-60 animate-pulse"></div>
+                        <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-300 rounded-full opacity-40 animate-pulse" style="animation-delay: 0.5s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        .bounce-star {
-            animation: bounce 2s infinite;
-            color: #FCD34D;
-        }
-        
-        .bounce-star:nth-child(1) { animation-delay: 0s; }
-        .bounce-star:nth-child(2) { animation-delay: 0.2s; }
-        .bounce-star:nth-child(3) { animation-delay: 0.4s; }
-        .bounce-star:nth-child(4) { animation-delay: 0.6s; }
-        .bounce-star:nth-child(5) { animation-delay: 0.8s; }
-    </style>
+    </section>
     
     <section class="py-16 bg-purple-800 text-black">
         <div class="container mx-auto px-6">
@@ -422,163 +777,606 @@
         </div>
     </section>
     
-  <!-- Testimonials Section -->
-<section id="testimonials" class="py-20 bg-black text-white relative overflow-hidden">
-    <div class="container mx-auto px-6 relative">
-        <h2 class="font-monument text-3xl md:text-4xl mb-16 text-center fade-in text-white">What Our Clients Say</h2>
+     <!-- Testimonial Section -->
+<section class="py-16 bg-black">
+    <div class="container mx-auto px-6">
+        <h2 class="font-monument text-3xl md:text-4xl mb-12 text-center fade-in text-white">What Our Clients Say</h2>
         
-        <!-- Testimonial Slider Container -->
-        <div class="relative max-w-6xl mx-auto mb-12">
+        <!-- Testimonial Cards Container -->
+        <div class="flex justify-center items-center">
             <!-- Testimonial Cards -->
-            <div class="testimonial-slider flex overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-slide bg-gray-900 p-8 rounded-xl shadow-md border border-purple-400/20 flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 snap-start">
-                    <div class="text-purple-400 text-4xl mb-4">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p class="text-lg mb-6 leading-relaxed">
-                        Couldn't believe it's free — and it looks amazing! The Free Website Wizards transformed my small bakery's online presence in just days.
-                    </p>
-                    <div class="flex items-center">
-                        <div class="mr-4">
-                            <div class="w-12 h-12 rounded-full bg-purple-400 flex items-center justify-center text-black font-bold">SJ</div>
+                <div class="testimonial-card bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl shadow-xl border border-purple-400/20 transition-all duration-300 hover:shadow-purple-500/20 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="text-purple-400 text-4xl mb-4">
+                            <i class="fas fa-quote-left"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Sarah Johnson</h4>
-                            <p class="text-purple-400">Sweet Treats Bakery</p>
+                        <p class="text-lg mb-6 leading-relaxed text-gray-100">
+                            Couldn't believe it's free — and it looks amazing! The Free Website Wizards transformed my small bakery's online presence in just days.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="mr-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">SJ</div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Sarah Johnson</h4>
+                                <p class="text-purple-400">Sweet Treats Bakery</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-slide bg-gray-900 p-8 rounded-xl shadow-md border border-purple-400/20 flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 snap-start">
-                    <div class="text-purple-400 text-4xl mb-4">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p class="text-lg mb-6 leading-relaxed">
-                        Professional, fast, and super easy. The team was fantastic to work with and understood exactly what I needed for my consulting business.
-                    </p>
-                    <div class="flex items-center">
-                        <div class="mr-4">
-                            <div class="w-12 h-12 rounded-full bg-purple-400 flex items-center justify-center text-black font-bold">MT</div>
+                <div class="testimonial-card bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl shadow-xl border border-purple-400/20 transition-all duration-300 hover:shadow-purple-500/20 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="text-purple-400 text-4xl mb-4">
+                            <i class="fas fa-quote-left"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Michael Thompson</h4>
-                            <p class="text-purple-400">Business Consultant</p>
+                        <p class="text-lg mb-6 leading-relaxed text-gray-100">
+                            Professional, fast, and super easy. The team was fantastic to work with and understood exactly what I needed for my consulting business.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="mr-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">MT</div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Michael Thompson</h4>
+                                <p class="text-purple-400">Business Consultant</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-slide bg-gray-900 p-8 rounded-xl shadow-md border border-purple-400/20 flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 snap-start">
-                    <div class="text-purple-400 text-4xl mb-4">
-                        <i class="fas fa-quote-left"></i>
-                    </div>
-                    <p class="text-lg mb-6 leading-relaxed">
-                        I recommend them to every business owner I know. Finally a web design service that actually cares about small businesses.
-                    </p>
-                    <div class="flex items-center">
-                        <div class="mr-4">
-                            <div class="w-12 h-12 rounded-full bg-purple-400 flex items-center justify-center text-black font-bold">LM</div>
+                <div class="testimonial-card bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-xl shadow-xl border border-purple-400/20 transition-all duration-300 hover:shadow-purple-500/20 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="text-purple-400 text-4xl mb-4">
+                            <i class="fas fa-quote-left"></i>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Lisa Martinez</h4>
-                            <p class="text-purple-400">Local Florist</p>
+                        <p class="text-lg mb-6 leading-relaxed text-gray-100">
+                            I recommend them to every business owner I know. Finally a web design service that actually cares about small businesses.
+                        </p>
+                        <div class="flex items-center">
+                            <div class="mr-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">LM</div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Lisa Martinez</h4>
+                                <p class="text-purple-400">Local Florist</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Navigation Arrows -->
-            <button class="testimonial-prev absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-purple-400 text-black rounded-full w-10 h-10 flex items-center justify-center z-10">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="testimonial-next absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-purple-400 text-black rounded-full w-10 h-10 flex items-center justify-center z-10">
-                <i class="fas fa-chevron-right"></i>
-            </button>
         </div>
     </div>
 </section>
     
-    <!-- Apply Section -->
-    <section id="apply" class="py-20 bg-black text-white">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-gray-900 rounded-xl p-8 md:p-12 shadow-lg relative overflow-hidden border border-purple-400/30">
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-purple-400 rounded-full opacity-20"></div>
-                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-400 rounded-full opacity-20"></div>
-                
-                <h2 class="font-monument text-3xl md:text-4xl mb-8 text-center fade-in text-white">Apply for Your Free Website Today</h2>
-                
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block mb-2 font-medium text-gray-300">Your Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400">
-                        </div>
-                        <div>
-                            <label for="business" class="block mb-2 font-medium text-gray-300">Business Name</label>
-                            <input type="text" id="business" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400">
-                        </div>
-                    </div>
+        <!-- Apply Section - Updated to trigger modal -->
+        <section id="apply" class="py-20 bg-black text-white">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="bg-gray-900 rounded-xl p-8 md:p-12 shadow-lg relative overflow-hidden border border-purple-400/30">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-purple-400 rounded-full opacity-20"></div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-400 rounded-full opacity-20"></div>
                     
-                    <div>
-                        <label for="email" class="block mb-2 font-medium text-gray-300">Email Address</label>
-                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400">
-                    </div>
+                    <h2 class="font-monument text-3xl md:text-4xl mb-8 text-center fade-in text-white">Apply for Your Free Website Today</h2>
                     
-                    <div>
-                        <label for="about" class="block mb-2 font-medium text-gray-300">Tell Us About Your Business</label>
-                        <textarea id="about" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400"></textarea>
-                    </div>
-                    
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-purple-400 text-black font-bold px-8 py-4 rounded-full text-lg hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 transform hover:scale-105 glow">
+                    <div class="text-center">
+                        <button id="openModalBtn" class="bg-purple-400 text-black font-bold px-8 py-4 rounded-full text-lg hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 transform hover:scale-105 glow">
                             Start My Website — For Free
                         </button>
+                        <p class="text-sm text-gray-400 mt-3">Takes less than 2 minutes • No hidden fees</p>
                     </div>
-                </form>
+                </div>
+            </div>
+        </section>
+    
+           <!-- Modal Popup -->
+    <div id="wizardModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div id="modalCard" class="bg-gradient-to-br from-purple-900 via-gray-900 to-black rounded-2xl shadow-2xl max-w-md w-full relative transform scale-95 transition-transform duration-300 border border-purple-400/30" style="box-shadow: 0 0 50px rgba(168, 85, 247, 0.3);">
+                <!-- Close Button -->
+                <button id="closeModalBtn" class="absolute top-4 right-4 text-white hover:text-purple-400 transition-colors duration-200 text-2xl z-10 w-8 h-8 flex items-center justify-center rounded-full hover:bg-purple-400/20">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <!-- Magical Background Pattern -->
+                <div class="absolute inset-0 opacity-10 rounded-2xl" style="background-image: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);"></div>
+                
+                <!-- Modal Content -->
+                <div class="p-8 relative z-10">
+                    <!-- Header -->
+                    <div class="text-center mb-8">
+                        <div class="text-purple-400 text-4xl mb-4">
+                            🔮
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Let's Create Your Website</h3>
+                        <p class="text-gray-300 text-sm">Just a few quick questions to get started</p>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="mb-8">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-gray-400">Step <span id="currentStep">1</span> of 4</span>
+                            <span class="text-sm text-purple-400" id="progressPercent">25%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full transition-all duration-500" style="width: 25%;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Steps -->
+                    <form id="wizardForm">
+                        <!-- Step 1 -->
+                        <div class="step-content" id="step1">
+                            <label class="block text-white font-medium mb-3">Describe the website you want to build:</label>
+                            <textarea id="websiteDescription" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Tell us about your business and what kind of website you need..."></textarea>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="step-content hidden" id="step2">
+                            <label class="block text-white font-medium mb-3">What is your first name?</label>
+                            <input type="text" id="firstName" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Enter your first name">
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="step-content hidden" id="step3">
+                            <label class="block text-white font-medium mb-3">What is your email?</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="your@email.com">
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="step-content hidden" id="step4">
+                            <label class="block text-white font-medium mb-3">(Optional) What's your phone number?</label>
+                            <input type="tel" id="phoneNumber" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="+1 (555) 123-4567">
+                        </div>
+                        
+                        <!-- Success Message -->
+                        <div class="step-content hidden text-center" id="successStep">
+                            <div class="text-6xl text-green-400 mb-4 animate-bounce">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h4 class="text-2xl font-bold text-white mb-2">🎉 Awesome!</h4>
+                            <p class="text-gray-300">We'll reach out soon to start building your magical website!</p>
+                        </div>
+                    </form>
+                    
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between mt-8" id="navigationButtons">
+                        <button type="button" id="backBtn" class="px-6 py-3 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-purple-400 transition-all duration-200 hidden">
+                            <i class="fas fa-arrow-left mr-2"></i>Back
+                        </button>
+                        <button type="button" id="nextBtn" class="ml-auto px-8 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105" style="box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);">
+                            Next <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+
+<!-- FAQ Section -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <!-- FAQ Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                FREQUENTLY <span class="text-purple-600">ASKED QUESTIONS</span>
+            </h2>
+        </div>
+        
+        <!-- FAQ Tabs -->
+        <div class="flex flex-wrap justify-center mb-8 gap-4">
+            <button class="faq-tab active bg-purple-500 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-purple-600" data-tab="offer">
+                OUR OFFER
+            </button>
+            <button class="faq-tab bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-300" data-tab="applying">
+                APPLYING
+            </button>
+            <button class="faq-tab bg-gray-200 text-gray-700 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-gray-300" data-tab="process">
+                OUR PROCESS
+            </button>
+        </div>
+        
+        <!-- FAQ Content -->
+        <div class="faq-content">
+            <!-- Our Offer Tab -->
+            <div id="offer-content" class="faq-tab-content">
+                <div class="space-y-4">
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>WHY DO YOU BUILD FREE WEBSITES?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We believe every business deserves a professional online presence. By building free websites, we help small businesses and entrepreneurs get started without the financial burden, while building our portfolio and gaining valuable experience.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>HOW CAN YOU AFFORD THIS?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We keep costs low by using efficient development processes and modern tools. We also offer premium services for businesses that need additional features, which helps support our free website program.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>HOW DO I KNOW THIS IS LEGITIMATE?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Check out our portfolio of completed websites, read testimonials from our clients, and feel free to contact our previous customers. We're transparent about our process and happy to provide references.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>I ALREADY HAVE WEB HOSTING WITH ANOTHER COMPANY. AM I STILL ELIGIBLE?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Absolutely! We can work with your existing hosting provider. We'll build your website and help you deploy it to your current hosting account.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>I'M ALREADY SIGNED UP WITH BLUEHOST OR NEXCESS.</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Perfect! We work seamlessly with both Bluehost and Nexcess. We can integrate with your existing hosting setup and get your website live quickly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>WHAT IF I CHANGE MY MIND ABOUT HAVING A WEBSITE AND WANT TO CANCEL?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>No problem at all! You can cancel at any time during the process. There are no contracts or commitments. If we've already started work, you'll keep whatever has been completed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>I WANT A WEBSITE BUT I DON'T WANT TO SIGN UP FOR WEB HOSTING.</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We can build your website and provide you with all the files. You can then choose to host it wherever you'd like, or we can recommend affordable hosting options when you're ready.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>ARE THERE ANY HIDDEN COSTS OR SUBSCRIPTION FEES?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>No hidden costs whatsoever! The website development is completely free. The only costs you might have are optional hosting fees if you choose to host with us, or domain registration if you need a custom domain name.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>DO I NEED TO HAVE A DOMAIN NAME ALREADY?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Not at all! We can help you choose and register a domain name, or if you prefer, we can build your website first and you can add a domain later. We'll guide you through the entire process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Applying Tab -->
+            <div id="applying-content" class="faq-tab-content hidden">
+                <div class="space-y-4">
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>HOW DO I APPLY?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Simply click the "Apply for Free Website" button above and fill out our quick application form. It takes less than 2 minutes and asks for basic information about your business and website needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>WHAT DO YOU LOOK FOR IN AN APPLICATION?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We look for genuine businesses or entrepreneurs who need a website to grow their venture. We prioritize applications that clearly describe their business goals and how a website would help them succeed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>HOW LONG DOES IT TAKE FOR YOU TO REVIEW AN APPLICATION?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We typically review applications within 24-48 hours. If your application is approved, we'll contact you immediately to start the website development process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Our Process Tab -->
+            <div id="process-content" class="faq-tab-content hidden">
+                <div class="space-y-4">
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>WHAT PLATFORM DO YOU USE TO BUILD WEBSITES?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We use modern, responsive web technologies including HTML5, CSS3, and JavaScript. We also work with popular platforms like WordPress when appropriate for your needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>WHAT KINDS OF WEBSITES DO YOU BUILD?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We build all types of business websites including portfolios, service businesses, restaurants, retail stores, professional services, and more. Each website is custom-designed to match your brand and business goals.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>DO I NEED TO BE TECHNICALLY SAVVY TO LAUNCH A WEBSITE?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Not at all! We handle all the technical aspects for you. We'll also provide training on how to update your website content if you want to make changes yourself in the future.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>HOW DOES THE WEBSITE DESIGN PROCESS WORK?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>After approval, we'll schedule a consultation to understand your vision. We then create a custom design, get your feedback, make revisions, and launch your website. You're involved in every step!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>HOW LONG WILL IT TAKE TO BUILD MY WEBSITE?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Most websites are completed within 1-2 weeks, depending on complexity and how quickly you provide feedback and content. We'll give you a timeline estimate after reviewing your specific needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>WILL I HAVE FULL CONTROL OVER MY OWN WEBSITE?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Absolutely! Once your website is complete, you own it completely. We'll provide you with all login credentials and teach you how to make updates yourself.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>WILL I BE ABLE TO MAKE EDITS TO MY OWN WEBSITE?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Yes! We build websites that are easy to update. We'll provide training and documentation so you can make content changes, add new pages, and update information whenever you need to.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>HOW WILL THE WEBSITE BE TURNED OVER TO ME?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We'll schedule a handover session where we'll walk you through your new website, provide all login credentials, and show you how to make updates. You'll also receive documentation for future reference.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>DO I NEED TO HAVE MY WEBSITE CONTENT ALL READY?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>Not necessarily! While having content ready speeds up the process, we can help you create compelling content for your website. We'll guide you on what content works best for your industry.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 font-bold text-gray-800 hover:text-purple-600 transition-colors duration-300 flex justify-between items-center">
+                            <span>DO YOU PROVIDE LONG-TERM SUPPORT FOR MY WEBSITE?</span>
+                            <i class="fas fa-plus text-purple-600 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                            <p>We provide 30 days of free support after launch to help with any questions or minor adjustments. After that, we offer affordable maintenance packages for ongoing support and updates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     
     <!-- Contact Section -->
-    <section class="py-16 bg-black text-white">
-        <div class="container mx-auto px-6">
-            <h2 class="font-monument text-3xl md:text-4xl mb-12 text-center fade-in">Connect With Us</h2>
+<section class="py-16 bg-gradient-to-r from-purple-900 to-purple-800 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
+            <!-- Logo Section -->
+            <div class="mb-8 md:mb-0 md:mr-12">
+                <img src="Images/logo-transparent.png" alt="The Free Website Guys Logo" class="h-24 md:h-32 w-auto">
+            </div>
             
-            <div class="flex justify-center space-x-8 md:space-x-12">
-                <a href="#" class="text-3xl hover:text-purple-400 transition duration-300">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="text-3xl hover:text-purple-400 transition duration-300">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-3xl hover:text-purple-400 transition duration-300">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" class="text-3xl hover:text-purple-400 transition duration-300">
-                    <i class="fas fa-envelope"></i>
-                </a>
+            <!-- Contact Information -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Address -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-map-marker-alt text-purple-800"></i>
+                        </div>
+                        <span class="text-gray-300 text-sm font-medium">Address:</span>
+                    </div>
+                    <div class="text-white">
+                        <p class="font-semibold">8 The Green, Ste A</p>
+                        <p>Dover, DE 19901</p>
+                    </div>
+                </div>
+                
+                <!-- Phone -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-phone-alt text-purple-800"></i>
+                        </div>
+                        <span class="text-gray-300 text-sm font-medium">Phone:</span>
+                    </div>
+                    <div class="text-white">
+                        <p class="font-semibold">(302) 219-0702</p>
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-envelope text-purple-800"></i>
+                        </div>
+                        <span class="text-gray-300 text-sm font-medium">Email:</span>
+                    </div>
+                    <div class="text-white">
+                        <p class="font-semibold">hello@thefreewebsiteguys.com</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     
-    <!-- Footer -->
-    <footer class="py-8 bg-gray-900 text-gray-400 text-sm">
-        <div class="container mx-auto px-6">
+<footer class="py-16 bg-gradient-to-b from-purple-900 to-purple-950 text-white">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <!-- Navigation Column -->
+            <div>
+                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">NAVIGATION</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">How It Works</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Examples</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Social Impact</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">FAQs</a></li>
+                </ul>
+            </div>
+            
+            <!-- Second Navigation Column -->
+            <div>
+                <h3 class="text-lg font-bold mb-6 text-transparent">.</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Apply</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Why We Do This</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Our Story</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Affiliate Program</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Additional Services</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources Column -->
+            <div>
+                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">RESOURCES</h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Services</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Blogs</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Tools</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Videos</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300">Reviews</a></li>
+                </ul>
+            </div>
+            
+            <!-- Social Media Column -->
+            <div>
+                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">SOCIAL MEDIA</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                            <i class="fab fa-facebook mr-3"></i>
+                            Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                            <i class="fab fa-youtube mr-3"></i>
+                            Youtube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                            <i class="fab fa-instagram mr-3"></i>
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                            <i class="fab fa-behance mr-3"></i>
+                            Behance
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                            <i class="fab fa-linkedin mr-3"></i>
+                            LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottom Section -->
+        <div class="border-t border-purple-800 pt-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0 flex items-center">
-                    <img src="https://via.placeholder.com/30x30" alt="Logo" class="h-6 mr-2">
-                    <span>The Free Website Wizards © 2025 | Made with magic <span class="text-purple-400">🧙‍♂️</span></span>
+                    <span class="text-gray-300">© 2023 </span>
+                    <span class="text-blue-400 font-semibold mx-1">THE FREE WEBSITE GUYS</span>
+                    <span class="text-gray-300">©. All rights reserved.</span>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="hover:text-purple-400 transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-purple-400 transition">Terms of Service</a>
-                    <a href="#" class="hover:text-purple-400 transition">FAQ</a>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Terms and Conditions</a>
+                    <div class="flex items-center text-gray-300">
+                        <i class="fas fa-globe mr-2"></i>
+                        <span>English (United States)</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
     
     <script>
         tailwind.config = {
@@ -655,61 +1453,296 @@
                 observer.observe(el);
             });
         });
-        // Testimonial Slider
-function initTestimonialSlider() {
-    const slider = document.querySelector('.testimonial-slider');
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const prevBtn = document.querySelector('.testimonial-prev');
-    const nextBtn = document.querySelector('.testimonial-next');
-    
-    if (!slider || !slides.length) return;
-    
-    let currentIndex = 0;
-    const slideWidth = slides[0].clientWidth;
-    const gap = 16; // 1rem gap between slides
-    
-    // Calculate total width needed for scrolling
-    const totalWidth = (slideWidth + gap) * slides.length;
-    slider.style.width = `${totalWidth}px`;
-    
-    function updateSlider() {
-        const scrollAmount = currentIndex * (slideWidth + gap);
-        slider.scrollTo({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-    
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlider();
-    });
-    
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateSlider();
-    });
-    
-    // Auto-scroll every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateSlider();
-    }, 5000);
-    
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        const newSlideWidth = slides[0].clientWidth;
-        if (newSlideWidth !== slideWidth) {
-            location.reload(); // Simple solution for demo
-        }
-    });
-}
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    initTestimonialSlider();
-    // Your other initialization code...
-});
+        // Hero Image Carousel
+        let heroCurrentSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroTotalSlides = heroSlides.length;
+        const heroSlider = document.querySelector('.hero-image-slider');
+        const heroDots = document.querySelectorAll('.hero-dot');
+        
+        function updateHeroSlider() {
+            const translateX = -heroCurrentSlide * 100;
+            heroSlider.style.transform = `translateX(${translateX}%)`;
+            
+            // Update dots
+            heroDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === heroCurrentSlide);
+            });
+        }
+        
+        function nextHeroSlide() {
+            heroCurrentSlide = (heroCurrentSlide + 1) % heroTotalSlides;
+            updateHeroSlider();
+        }
+        
+        function prevHeroSlide() {
+            heroCurrentSlide = (heroCurrentSlide - 1 + heroTotalSlides) % heroTotalSlides;
+            updateHeroSlider();
+        }
+        
+        function goToHeroSlide(slideIndex) {
+            heroCurrentSlide = slideIndex;
+            updateHeroSlider();
+        }
+        
+        // Event listeners for hero carousel
+        document.querySelector('.hero-next').addEventListener('click', nextHeroSlide);
+        document.querySelector('.hero-prev').addEventListener('click', prevHeroSlide);
+        
+        heroDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToHeroSlide(index));
+        });
+        
+        // Auto-play hero carousel
+        setInterval(nextHeroSlide, 5000);
+        
+        // Initialize hero slider
+        updateHeroSlider();
+
+              // Modal functionality - Wrap in DOMContentLoaded to ensure elements exist
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal functionality
+            let currentStepIndex = 1;
+            const totalSteps = 4;
+            
+            const modal = document.getElementById('wizardModal');
+            const modalCard = document.getElementById('modalCard');
+            const openModalBtn = document.getElementById('openModalBtn');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const backBtn = document.getElementById('backBtn');
+            const progressBar = document.getElementById('progressBar');
+            const currentStepSpan = document.getElementById('currentStep');
+            const progressPercent = document.getElementById('progressPercent');
+            const navigationButtons = document.getElementById('navigationButtons');
+            
+            // Check if elements exist before adding event listeners
+            if (!modal || !modalCard || !openModalBtn || !closeModalBtn) {
+                console.error('Modal elements not found');
+                return;
+            }
+            
+            // Open modal
+            openModalBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalCard.classList.remove('scale-95');
+                    modalCard.classList.add('scale-100');
+                }, 10);
+            });
+            
+            // Close modal function
+            function closeModal() {
+                modal.classList.add('opacity-0');
+                modalCard.classList.remove('scale-100');
+                modalCard.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    resetForm();
+                }, 300);
+            }
+            
+            // Close modal with X button
+            closeModalBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Close button clicked'); // Debug log
+                closeModal();
+            });
+            
+            // Close modal when clicking outside (backdrop)
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    console.log('Backdrop clicked'); // Debug log
+                    closeModal();
+                }
+            });
+            
+            // Prevent modal from closing when clicking inside the modal card
+            modalCard.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            
+            // Reset form
+            function resetForm() {
+                currentStepIndex = 1;
+                document.querySelectorAll('.step-content').forEach(step => step.classList.add('hidden'));
+                const step1 = document.getElementById('step1');
+                if (step1) step1.classList.remove('hidden');
+                updateProgress();
+                updateButtons();
+                const form = document.getElementById('wizardForm');
+                if (form) form.reset();
+                if (navigationButtons) navigationButtons.classList.remove('hidden');
+            }
+            
+            // Update progress bar
+            function updateProgress() {
+                if (!progressBar || !currentStepSpan || !progressPercent) return;
+                const progress = (currentStepIndex / totalSteps) * 100;
+                progressBar.style.width = progress + '%';
+                currentStepSpan.textContent = currentStepIndex;
+                progressPercent.textContent = Math.round(progress) + '%';
+            }
+            
+            // Update navigation buttons
+            function updateButtons() {
+                if (!backBtn || !nextBtn) return;
+                if (currentStepIndex === 1) {
+                    backBtn.classList.add('hidden');
+                } else {
+                    backBtn.classList.remove('hidden');
+                }
+                
+                if (currentStepIndex === totalSteps) {
+                    nextBtn.innerHTML = 'Submit 🔮';
+                } else {
+                    nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right ml-2"></i>';
+                }
+            }
+            
+            // Show step with animation
+            function showStep(stepIndex) {
+                document.querySelectorAll('.step-content').forEach(step => {
+                    step.classList.add('hidden');
+                });
+                
+                const targetStep = document.getElementById('step' + stepIndex);
+                if (!targetStep) return;
+                targetStep.classList.remove('hidden');
+                targetStep.style.opacity = '0';
+                targetStep.style.transform = 'translateX(20px)';
+                
+                setTimeout(() => {
+                    targetStep.style.transition = 'all 0.3s ease';
+                    targetStep.style.opacity = '1';
+                    targetStep.style.transform = 'translateX(0)';
+                }, 10);
+            }
+            
+            // Next button functionality
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (currentStepIndex < totalSteps) {
+                        currentStepIndex++;
+                        showStep(currentStepIndex);
+                        updateProgress();
+                        updateButtons();
+                    } else {
+                        // Submit form
+                        submitForm();
+                    }
+                });
+            }
+            
+            // Back button functionality
+            if (backBtn) {
+                backBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (currentStepIndex > 1) {
+                        currentStepIndex--;
+                        showStep(currentStepIndex);
+                        updateProgress();
+                        updateButtons();
+                    }
+                });
+            }
+            
+            // Submit form
+            function submitForm() {
+                // Hide navigation buttons
+                if (navigationButtons) navigationButtons.classList.add('hidden');
+                
+                // Show success message
+                document.querySelectorAll('.step-content').forEach(step => step.classList.add('hidden'));
+                const successStep = document.getElementById('successStep');
+                if (successStep) successStep.classList.remove('hidden');
+                
+                // Update progress to 100%
+                if (progressBar) progressBar.style.width = '100%';
+                if (progressPercent) progressPercent.textContent = '100%';
+                if (currentStepSpan) currentStepSpan.textContent = '✓';
+                
+                // Auto close after 3 seconds
+                setTimeout(() => {
+                    closeModal();
+                }, 3000);
+            }
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!modal.classList.contains('hidden')) {
+                    if (e.key === 'Escape') {
+                        closeModal();
+                    } else if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        if (nextBtn) nextBtn.click();
+                    }
+                }
+            });
+            
+            // Initialize the form
+            updateProgress();
+            updateButtons();
+        });
+                // FAQ Functionality
+                document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching
+            const faqTabs = document.querySelectorAll('.faq-tab');
+            const faqContents = document.querySelectorAll('.faq-tab-content');
+            
+            faqTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs
+                    faqTabs.forEach(t => {
+                        t.classList.remove('active', 'bg-purple-500', 'text-white');
+                        t.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active', 'bg-purple-500', 'text-white');
+                    this.classList.remove('bg-gray-200', 'text-gray-700');
+                    
+                    // Hide all content
+                    faqContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // Show target content
+                    document.getElementById(targetTab + '-content').classList.remove('hidden');
+                });
+            });
+            
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle answer visibility
+                    answer.classList.toggle('hidden');
+                    
+                    // Toggle icon
+                    if (answer.classList.contains('hidden')) {
+                        icon.classList.remove('fa-minus', 'rotate-180');
+                        icon.classList.add('fa-plus');
+                    } else {
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus', 'rotate-180');
+                    }
+                });
+            });
+        });
+
     </script>
 </body>
 </html>

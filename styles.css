@@ -1,5 +1,5 @@
   
-        @keyframes sparkle {
+@keyframes sparkle {
             0% { opacity: 0; transform: scale(0.5); }
             50% { opacity: 1; transform: scale(1); }
             100% { opacity: 0; transform: scale(0.5); }
@@ -341,3 +341,356 @@
 .testimonial-dot.active {
     background-color: rgba(147, 51, 234, 1);
 }
+
+/* Hero Image Carousel Styles */
+.hero-image-container {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: floatAndRotate 6s ease-in-out infinite;
+}
+
+@keyframes floatAndRotate {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(-1deg);
+    }
+}
+
+.hero-image-container:hover {
+    animation-play-state: paused;
+    transform: translateY(-8px) rotate(0deg) scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.hero-dot.active {
+    background-color: rgba(255,255,255,0.9) !important;
+}
+
+.hero-slide img {
+    transition: transform 0.3s ease;
+}
+
+.hero-slide:hover img {
+    transform: scale(1.05);
+}
+
+/* Enhanced floating effect for mobile */
+@media (max-width: 768px) {
+    .hero-image-container {
+        margin-top: 2rem;
+        animation: mobileFloat 4s ease-in-out infinite;
+    }
+    
+    @keyframes mobileFloat {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+}
+
+/* Add subtle glow effect */
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hero-image-container:hover::before {
+    opacity: 1;
+}
+/* Smooth section blend */
+.hero-to-slider-transition {
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(147, 51, 234, 0.02) 25%,
+        rgba(147, 51, 234, 0.05) 50%,
+        rgba(147, 51, 234, 0.02) 75%,
+        transparent 100%);
+}
+
+/* Enhanced Testimonial Styles */
+.testimonial-slider {
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-slide {
+    transition: all 0.4s ease;
+    transform-origin: center center;
+}
+
+.testimonial-slide:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(147, 51, 234, 0.1), 0 10px 10px -5px rgba(147, 51, 234, 0.04);
+    border-color: rgba(147, 51, 234, 0.4) !important;
+}
+
+.testimonial-dot.active {
+    background-color: rgba(147, 51, 234, 1) !important;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-track {
+        gap: 1rem;
+    }
+    
+    .testimonial-slide {
+        width: 100% !important;
+    }
+}
+
+.testimonial-prev,
+.testimonial-next {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    transform: translateY(-50%) scale(1.1);
+    background: rgba(147, 51, 234, 0.8) !important;
+    color: white !important;
+    box-shadow: 0 8px 25px rgba(147, 51, 234, 0.4);
+}
+
+.testimonial-dot {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.testimonial-dot.active {
+    transform: scale(1.3);
+    background-color: rgba(147, 51, 234, 1);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.7);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-slider {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .testimonial-slide {
+        min-width: 85%;
+    }
+    
+    .testimonial-prev,
+    .testimonial-next {
+        width: 8px;
+        height: 8px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Floating Animation for Testimonial Cards */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.testimonial-card {
+    animation: float 3s ease-in-out infinite;
+}
+
+.testimonial-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.testimonial-card:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.testimonial-card:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.testimonial-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(147, 51, 234, 0.1), 0 10px 10px -5px rgba(147, 51, 234, 0.04);
+    border-color: rgba(147, 51, 234, 0.4) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-card {
+        margin-bottom: 2rem;
+    }
+}
+/* Modal Styles */
+.step-content {
+    min-height: 120px;
+}
+
+/* Glow effect for buttons */
+.glow {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.glow:hover {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+}
+
+/* Smooth transitions for form inputs */
+input:focus, textarea:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+}
+
+/* Success animation */
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+        transform: translate3d(0, -30px, 0);
+    }
+    70% {
+        transform: translate3d(0, -15px, 0);
+    }
+    90% {
+        transform: translate3d(0, -4px, 0);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 1s ease infinite;
+}
+
+/* Secret Section Animations */
+.glow-text {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(168, 85, 247, 0.6);
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-pulse {
+    from {
+        text-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(168, 85, 247, 0.6);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(168, 85, 247, 1), 0 0 60px rgba(168, 85, 247, 0.8), 0 0 80px rgba(168, 85, 247, 0.4);
+    }
+}
+
+.floating-rocket {
+    animation: rocket-float 4s ease-in-out infinite;
+}
+
+@keyframes rocket-float {
+    0%, 100% {
+        transform: translateY(0px) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(-5deg);
+    }
+}
+
+.pulse-button {
+    animation: pulse-glow-button 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow-button {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.5), 0 0 40px rgba(168, 85, 247, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.8), 0 0 60px rgba(168, 85, 247, 0.5), 0 0 80px rgba(168, 85, 247, 0.3);
+    }
+}
+
+/* Floating Particles */
+.floating-particle {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.particle-1 {
+    top: 20%;
+    left: 10%;
+    animation: float-particle 6s ease-in-out infinite;
+}
+
+.particle-2 {
+    top: 30%;
+    right: 15%;
+    animation: float-particle 8s ease-in-out infinite reverse;
+    animation-delay: -2s;
+}
+
+.particle-3 {
+    top: 60%;
+    left: 20%;
+    animation: float-particle 7s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+.particle-4 {
+    top: 70%;
+    right: 25%;
+    animation: float-particle 9s ease-in-out infinite reverse;
+    animation-delay: -1s;
+}
+
+.particle-5 {
+    top: 40%;
+    left: 50%;
+    animation: float-particle 5s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+@keyframes float-particle {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        opacity: 0.7;
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(90deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px) translateX(-15px) rotate(180deg);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateY(-30px) translateX(5px) rotate(270deg);
+        opacity: 0.8;
+    }
+}
+
