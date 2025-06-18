@@ -3,1100 +3,714 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Free Website Wizards | Your Website. Made with Magic.</title>
+    <title>The Free Website Wizards - Websites Made Easy</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nerko+One&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=WDXL+Lubrifont+TC&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
 </head>
-
-<body class="bg-white text-gray-800">
-    <!-- Sticky Navbar -->
-    <nav class="sticky-nav fixed top-0 w-full z-50 py-4">
-        <div class="container mx-auto px-4 flex items-center justify-between relative">
-            <!-- Logo -->
-            <div class="flex items-center">
-                <a href="#hero"><span class="neon-text text-2xl font-bold mr-8">The Free Website Wizards</span></a>
-            </div>
-            
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#comparison" class="nav-link">Why Choose Us</a>
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-            </div>
-            
-            <!-- Right side: Desktop Apply Button + Mobile Menu Button -->
-            <div class="flex items-center space-x-4">
-                <!-- Desktop Apply Button -->
-                <a href="#apply" class="hidden md:block neon-button px-6 py-2 rounded-full font-medium text-black hover:shadow-lg transition">Apply Now</a>
-                
-                <!-- Mobile Menu Button - Now inside navbar -->
-                <button id="mobile-menu-btn" class="md:hidden text-2xl relative z-50" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <i class="fas fa-bars" id="menu-icon"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu md:hidden fixed inset-0 z-[9998] transform translate-x-full transition-transform duration-300 ease-in-out" role="navigation" aria-label="Mobile navigation">
-            <div class="flex flex-col items-center justify-center h-full space-y-8 text-xl">
-                <a href="#how-it-works" class="mobile-menu-link font-medium transition">How It Works</a>
-                <a href="#comparison" class="mobile-menu-link font-medium transition">Why Choose Us</a>
-                <a href="#portfolio" class="mobile-menu-link font-medium transition">Portfolio</a>
-                <a href="#testimonials" class="mobile-menu-link font-medium transition">Testimonials</a>
-                <a href="#faq" class="mobile-menu-link font-medium transition">FAQ</a>
-                <a href="#apply" class="mobile-menu-link neon-button px-8 py-4 rounded-full font-bold transition mt-4">Apply Now</a>
-            </div>
-        </div>
-    </nav>
-
+<body class="font-poppins bg-black text-gray-800 overflow-x-hidden">
+    
+    <!-- Floating Stars Background -->
+    <div id="stars-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <!-- Floating Particles Background -->
+    <div id="particles-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    
     <!-- Hero Section -->
-    <section id="hero" class="hero-houdini min-h-screen flex items-center pt-20 relative">
-        <!-- Video Background -->
-        <video autoplay muted loop playsinline preload="auto" class="hero-video">
-            <source src="Images/hero-section-bg.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <div class="container mx-auto px-4 py-20 hero-content">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="typing neon-text text-4xl md:text-6xl font-bold mb-6">Websites, Done Magically!</h1>
-                <p class="fade-in text-xl md:text-2xl mb-8">We build beautiful, professional websites 100% FREE for small businesses — fast, personalized, magical.</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#apply" class="neon-button pulse px-8 py-4 rounded-full font-bold text-black transition mb-4 sm:mb-0">→ Apply for Your Free Website</a>
-                    <a href="#how-it-works" class="px-8 py-4 rounded-full font-medium border-2 border-white hover:border-green-500 hover:text-green-500 transition text-white">Learn More ↓</a>
+    <section class="min-h-screen flex flex-col justify-center relative overflow-hidden magic-bg nebula-bg">
+        <!-- Trust Badge at Top - Centered -->
+            <div class="absolute top-6 left-0 right-0 mx-auto z-30 fade-in-up" style="animation-delay: 0.2s; width: fit-content;">
+                <div class="flex items-center justify-center bg-black bg-opacity-40 rounded-full px-6 py-3 backdrop-blur-sm border border-purple-400/30">
+                    <div class="text-center">
+                        <div class="text-white text-sm font-semibold text-center">Rated #1 out of 48,000+ web agencies</div>
+                        <div class="flex items-center justify-center mt-1">
+                            <div class="flex text-yellow-400 mr-2">
+                                <i class="fas fa-star text-xs"></i>
+                                <i class="fas fa-star text-xs"></i>
+                                <i class="fas fa-star text-xs"></i>
+                                <i class="fas fa-star text-xs"></i>
+                                <i class="fas fa-star text-xs"></i>
+                            </div>
+                            <span class="text-white text-xs">⭐ 5.0 out of 5 | Clutch</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        
+        <!-- Main Hero Content -->
+        <div class="container mx-auto px-6 relative z-20 text-center">
+            <!-- Logo - Made Larger -->
+            <div class="mb-8 fade-in-up" style="animation-delay: 0.4s;">
+                <img src="Images/logo-transparent.png" alt="The Free Website Wizards" class="h-32 w-auto mx-auto wizard-glow">
+            </div>
+            
+            <!-- Main Headline -->
+            <h1 class="font-montserrat font-black hero-title mb-6 leading-tight fade-in-up" style="animation-delay: 0.6s;">
+                <span class="gradient-text">Your Business, Website-Ready — For Free.</span>
+            </h1>
+            
+            <!-- Subheading -->
+            <p class="hero-subtitle font-montserrat font-medium mb-10 max-w-4xl mx-auto text-gray-200 fade-in-up" style="animation-delay: 0.8s;">
+                We're The Free Website Wizards — creating powerful, professional websites without the complicated stuff. Totally free. No catch.
+            </p>
+            
+            <!-- CTA Button -->
+            <div class="fade-in-up" style="animation-delay: 1s;">
+                <a href="#apply" class="neon-button inline-block text-white font-bold px-10 py-4 rounded-full text-lg transform transition-all duration-300">
+                    Apply for Free Website
+                </a>
+                <p class="text-sm text-gray-400 mt-3 font-inter">
+                    Takes less than 1 minute • No hidden fees
+                </p>
+            </div>
         </div>
+        
+        <!-- Wizard Character Removed -->
     </section>
     
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-20 bg-gray-50 relative overflow-hidden" style="background-image: url('Images/comparison-bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container mx-auto px-4">
-            <h2 class="slide-up text-3xl md:text-4xl font-bold text-center gradient-text mb-16">We Make Websites Easy.</h2>
-            
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="slide-up fade-in program-card p-8 text-center">
-                    <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">1</div>
-                    <h3 class="text-xl font-bold mb-3">Apply</h3>
-                    <p class="text-white">Short, simple form. Tell us about your business in minutes.</p>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="slide-up fade-in program-card p-8 text-center">
-                    <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">2</div>
-                    <h3 class="text-xl font-bold mb-3">Meet Us</h3>
-                    <p class="text-white">Quick chat to learn exactly what you need for your website.</p>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="slide-up fade-in program-card p-8 text-center">
-                    <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">3</div>
-                    <h3 class="text-xl font-bold mb-3">We Build It</h3>
-                    <p class="text-white">Professionally designed just for you. No templates.</p>
-                </div>
-                
-                <!-- Step 4 -->
-                <div class="slide-up fade-in program-card p-8 text-center">
-                    <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">4</div>
-                    <h3 class="text-xl font-bold mb-3">Launch</h3>
-                    <p class="text-white">Website live. Your business online. Mission accomplished.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Logo Slider Section -->
-    <section id="logo-slides" class="py-16 bg-gray-50 relative overflow-hidden" style="background-image: url('Images/comparison-bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container mx-auto px-4">
-            <h2 class="slide-up gradient-text text-3xl md:text-4xl font-bold text-center mb-12">Websites We've Built</h2>
+    <section class="py-12 bg-white ">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Trusted by Amazing Businesses</h3>
+                <p class="text-gray-600">See some of the websites we've built for our clients</p>
+            </div>
             
-            <div class="logo-slider py-8">
-                <div class="logo-track">
+            <!-- Logo Slider Container -->
+            <div class="logo-slider-container overflow-hidden">
+                <div class="logo-slider flex items-center space-x-12 animate-scroll">
                     <!-- First set of logos -->
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/JLS.png" alt="JLS Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/allseason.png" alt="All Season Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/carryingcub.jpg" alt="Carrying Cub Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/celebrations.png" alt="Celebrations Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/himalayan.png" alt="Himalayan Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/karhaus.png" alt="Karhaus Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/kimsfresh.png" alt="Kim's Fresh Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/kurts.png" alt="Kurt's Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/manuel.png" alt="Manuel Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/mickeys.png" alt="Mickey's Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/olympic.jpg" alt="Olympic Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/richies.jpg" alt="Richie's Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/topshine.png" alt="Top Shine Website Logo" />
+                    <div class="flex items-center space-x-12 flex-shrink-0">
+                        <img src="Images/Website-we-built/JLS.png" alt="JLS" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/allseason.png" alt="All Season" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/carryingcub.jpg" alt="Carrying Cub" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/celebrations.png" alt="Celebrations" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/himalayan.png" alt="Himalayan" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/karhaus.png" alt="Karhaus" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/kimsfresh.png" alt="Kims Fresh" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/kurts.png" alt="Kurts" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/manuel.png" alt="Manuel" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/mickeys.png" alt="Mickeys" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/olympic.jpg" alt="Olympic" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/richies.jpg" alt="Richies" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/topshine.png" alt="Topshine" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
                     </div>
                     
                     <!-- Duplicate set for seamless loop -->
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/JLS.png" alt="JLS Website Logo" />
+                    <div class="flex items-center space-x-12 flex-shrink-0">
+                        <img src="Images/Website-we-built/JLS.png" alt="JLS" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/allseason.png" alt="All Season" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/carryingcub.jpg" alt="Carrying Cub" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/celebrations.png" alt="Celebrations" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/himalayan.png" alt="Himalayan" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/karhaus.png" alt="Karhaus" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/kimsfresh.png" alt="Kims Fresh" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/kurts.png" alt="Kurts" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/manuel.png" alt="Manuel" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/mickeys.png" alt="Mickeys" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/olympic.jpg" alt="Olympic" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/richies.jpg" alt="Richies" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                        <img src="Images/Website-we-built/topshine.png" alt="Topshine" class="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
                     </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/allseason.png" alt="All Season Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/carryingcub.jpg" alt="Carrying Cub Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/celebrations.png" alt="Celebrations Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/himalayan.png" alt="Himalayan Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/karhaus.png" alt="Karhaus Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/kimsfresh.png" alt="Kim's Fresh Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/kurts.png" alt="Kurt's Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/manuel.png" alt="Manuel Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/mickeys.png" alt="Mickey's Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/olympic.jpg" alt="Olympic Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/richies.jpg" alt="Richie's Website Logo" />
-                    </div>
-                    <div class="logo-item">
-                        <img src="Images/Website-we-built/topshine.png" alt="Top Shine Website Logo" />
-                    </div>
-                    
                 </div>
-            </div>
-            
-            <p class="slide-up text-white text-center mb-12 mt-12">Join the growing businesses that trust us!</p>
-            <div class="text-center mt-16">
-                <a href="#apply" class="neon-button px-8 py-3 rounded-full font-bold text-black hover:shadow-lg transition inline-block">→ Get Started Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
-<section id="comparison" class="py-20 bg-gray-50 relative overflow-hidden" style="background-image: url('Images/comparison-bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-    
-    <!-- Floating particles background -->
-    <div class="floating-particles"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-        <h2 class="slide-up gradient-text text-3xl md:text-4xl font-bold text-center mb-4 text-white">Why Small Businesses Love <span class="neon-text">The Wizards</span></h2>
-        <p class="slide-up text-center text-gray-200 mb-16">We're changing the game for small business websites</p>
-        
-        <!-- Desktop Table View -->
-        <div class="floating-table-card slide-up hidden md:block">
-            <!-- Floating particles inside card -->
-            <div class="floating-particles-card"></div>
-            
-            <div class="overflow-x-hidden overflow-y-hidden">
-                <table class="animated-table glass-effect w-full rounded-xl overflow-hidden">
-                    <thead class="bg-gradient-to-r from-gray-100 to-gray-200">
-                        <tr>
-                            <th class="py-4 px-6 text-left font-semibold text-gray-800">Feature</th>
-                            <th class="py-4 px-6 text-left font-semibold text-gray-800">Most Developers</th>
-                            <th class="py-4 px-6 text-left font-semibold text-gray-800">Other Free</th>
-                            <th class="py-4 px-6 text-left font-semibold neon-text highlight-column onus-column">The Free Website Wizards</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="fade-up border-b border-gray-200" style="animation-delay: 0.1s">
-                            <td class="py-4 px-6 font-medium">Cost</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> $$$ (Expensive)</td>
-                            <td class="py-4 px-6"><span class="check-icon">✅</span> $0 (Free)</td>
-                            <td class="py-4 px-6 highlight-cell onus-column font-bold"><span class="check-icon">✅</span> $0 (Free)</td>
-                        </tr>
-                        <tr class="fade-up border-b border-gray-200" style="animation-delay: 0.2s">
-                            <td class="py-4 px-6 font-medium">Turnaround Time</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> 4-8 weeks</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> 3-5 weeks</td>
-                            <td class="py-4 px-6 highlight-cell onus-column font-bold"><span class="check-icon">✅</span> 7-10 days</td>
-                        </tr>
-                        <tr class="fade-up border-b border-gray-200" style="animation-delay: 0.3s">
-                            <td class="py-4 px-6 font-medium">Personalization</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> Generic templates</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> Limited</td>
-                            <td class="py-4 px-6 highlight-cell onus-column font-bold"><span class="check-icon">✅</span> Built from Scratch for You</td>
-                        </tr>
-                        <tr class="fade-up border-b border-gray-200" style="animation-delay: 0.4s">
-                            <td class="py-4 px-6 font-medium">Process</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> Complicated & slow</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> Lots of forms, long waits</td>
-                            <td class="py-4 px-6 highlight-cell onus-column font-bold"><span class="check-icon">✅</span> Stress-Free. Fast. Done With You.</td>
-                        </tr>
-                        <tr class="fade-up border-b border-gray-200" style="animation-delay: 0.5s">
-                            <td class="py-4 px-6 font-medium">Support</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> Minimal or extra charges</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> Email only</td>
-                            <td class="py-4 px-6 highlight-cell onus-column font-bold"><span class="check-icon">✅</span> Direct chat & support</td>
-                        </tr>
-                        <tr class="fade-up" style="animation-delay: 0.6s">
-                            <td class="py-4 px-6 font-medium">Ongoing Costs</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> $$$ for hosting & updates</td>
-                            <td class="py-4 px-6"><span class="cross-icon">❌</span> Upsells for extras</td>
-                            <td class="py-4 px-6 highlight-cell onus-column font-bold"><span class="check-icon">✅</span> No upsells. No pressure.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <!-- Mobile Card View -->
-        <div class="md:hidden space-y-6">
-            <!-- Cost Card -->
-            <div class="comparison-card slide-up" style="animation-delay: 0.1s">
-                <h3 class="comparison-feature">💰 Cost</h3>
-                <div class="comparison-options">
-                    <div class="option-card competitor">
-                        <h4>Most Developers</h4>
-                        <p><span class="cross-icon">❌</span> $$$ (Expensive)</p>
-                    </div>
-                    <div class="option-card competitor">
-                        <h4>Other Free</h4>
-                        <p><span class="check-icon">✅</span> $0 (Free)</p>
-                    </div>
-                    <div class="option-card onus-card">
-                        <h4>The Free Website Wizards</h4>
-                        <p><span class="check-icon">✅</span> $0 (Free)</p>
-                    </div>
+    <!-- Why Website Important Section -->
+    <section id="why" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in slide-in-left">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Business Website" class="rounded-lg shadow-xl w-full max-w-md mx-auto float hover:shadow-[0_0_15px_#9333EA] transition-all duration-300">
                 </div>
-            </div>
-            
-            <!-- Turnaround Time Card -->
-            <div class="comparison-card slide-up" style="animation-delay: 0.2s">
-                <h3 class="comparison-feature">⏱️ Turnaround Time</h3>
-                <div class="comparison-options">
-                    <div class="option-card competitor">
-                        <h4>Most Developers</h4>
-                        <p><span class="cross-icon">❌</span> 4-8 weeks</p>
-                    </div>
-                    <div class="option-card competitor">
-                        <h4>Other Free</h4>
-                        <p><span class="cross-icon">❌</span> 3-5 weeks</p>
-                    </div>
-                    <div class="option-card onus-card">
-                        <h4>The Free Website Wizards</h4>
-                        <p><span class="check-icon">✅</span> 7-10 days</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Personalization Card -->
-            <div class="comparison-card slide-up" style="animation-delay: 0.3s">
-                <h3 class="comparison-feature">🎨 Personalization</h3>
-                <div class="comparison-options">
-                    <div class="option-card competitor">
-                        <h4>Most Developers</h4>
-                        <p><span class="cross-icon">❌</span> Generic templates</p>
-                    </div>
-                    <div class="option-card competitor">
-                        <h4>Other Free</h4>
-                        <p><span class="cross-icon">❌</span> Limited</p>
-                    </div>
-                    <div class="option-card onus-card">
-                        <h4>The Free Website Wizards</h4>
-                        <p><span class="check-icon">✅</span> Built from Scratch for You</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Process Card -->
-            <div class="comparison-card slide-up" style="animation-delay: 0.4s">
-                <h3 class="comparison-feature">⚡ Process</h3>
-                <div class="comparison-options">
-                    <div class="option-card competitor">
-                        <h4>Most Developers</h4>
-                        <p><span class="cross-icon">❌</span> Complicated & slow</p>
-                    </div>
-                    <div class="option-card competitor">
-                        <h4>Other Free</h4>
-                        <p><span class="cross-icon">❌</span> Lots of forms, long waits</p>
-                    </div>
-                    <div class="option-card onus-card">
-                        <h4>The Free Website Wizards</h4>
-                        <p><span class="check-icon">✅</span> Stress-Free. Fast. Done With You.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Support Card -->
-            <div class="comparison-card slide-up" style="animation-delay: 0.5s">
-                <h3 class="comparison-feature">🤝 Support</h3>
-                <div class="comparison-options">
-                    <div class="option-card competitor">
-                        <h4>Most Developers</h4>
-                        <p><span class="cross-icon">❌</span> Minimal or extra charges</p>
-                    </div>
-                    <div class="option-card competitor">
-                        <h4>Other Free</h4>
-                        <p><span class="cross-icon">❌</span> Email only</p>
-                    </div>
-                    <div class="option-card onus-card">
-                        <h4>The Free Website Wizards</h4>
-                        <p><span class="check-icon">✅</span> Direct chat & support</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Ongoing Costs Card -->
-            <div class="comparison-card slide-up" style="animation-delay: 0.6s">
-                <h3 class="comparison-feature">💸 Ongoing Costs</h3>
-                <div class="comparison-options">
-                    <div class="option-card competitor">
-                        <h4>Most Developers</h4>
-                        <p><span class="cross-icon">❌</span> $$$ for hosting & updates</p>
-                    </div>
-                    <div class="option-card competitor">
-                        <h4>Other Free</h4>
-                        <p><span class="cross-icon">❌</span> Upsells for extras</p>
-                    </div>
-                    <div class="option-card onus-card">
-                        <h4>The Free Website Wizards</h4>
-                        <p><span class="check-icon">✅</span> No upsells. No pressure.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Portfolio Section with Gallery Effect -->
-<section id="portfolio" class="py-20 relative overflow-hidden">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="slide-up gradient-text text-3xl md:text-5xl font-bold mb-4">Websites We've Built for <span class="neon-text">The Wizards</span></h2>
-            <p class="slide-up text-2xl">See what we've created for businesses like yours</p>
-        </div>
-        
-        <!-- Portfolio Gallery -->
-        <div class="portfolio-gallery">
-            <figure class="portfolio-roll">
-                <i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i>
-                </i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i>
-                <figcaption>Business: <strong>Karhaus</strong></figcaption>
-            </figure>
-
-            <figure class="portfolio-roll">
-                <i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i>
-                </i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i>
-                <figcaption>Business: <strong>JLS Services</strong></figcaption>
-            </figure>
-
-            <figure class="portfolio-roll">
-                <i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i>
-                </i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i>
-                <figcaption>Business: <strong>All Season</strong></figcaption>
-            </figure>
-
-            <figure class="portfolio-roll">
-                <i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i>
-                </i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i>
-                <figcaption>Business: <strong>Celebrations</strong></figcaption>
-            </figure>
-
-            <figure class="portfolio-roll">
-                <i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i>
-                </i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i>
-                <figcaption>Business: <strong>Himalayan Restaurant</strong></figcaption>
-            </figure>
-
-            <figure class="portfolio-roll">
-                <i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i><i>
-                </i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i></i>
-                <figcaption>Business: <strong>Kim's Fresh Market</strong></figcaption>
-            </figure>
-        </div>
-    </div>
-</section>
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gray-50 relative overflow-hidden" style="background-image: url('Images/comparison-bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-        
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="slide-up gradient-text text-3xl md:text-4xl font-bold text-center mb-16 text-white">What Business Owners Are Saying About <span class="neon-text">The Wizards</span></h2>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Testimonial 1 -->
-                <div class="slide-up fade-in program-card p-8 text-center">
-                    <div class="flex justify-center mb-4 text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-lg italic mb-6 text-gray-600">"The Free Website Wizards made getting online effortless. Fast, friendly, and completely free — I'm amazed at how professional my site looks. It's brought in so many new customers!"</p>
-                    <div class="flex flex-col items-center">
-                        <img src="https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png" alt="Sarah R." class="rounded-full mb-4 w-16 h-16">
+                <div class="md:w-1/2 md:pl-12 fade-in slide-in-right">
+                    <h2 class="font-monument text-3xl md:text-4xl mb-6">Why Every Business Deserves a Website</h2>
+                    <p class="text-lg mb-8">
+                        In a digital world, your website is your home online. Without one, you're invisible. A website makes your business searchable, professional, and ready for growth — and we'll build yours for free.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="mr-4 text-purple-400 text-3xl">
+                            <i class="fas fa-magic"></i>
+                        </div>
                         <div>
-                            <h4 class="font-bold neon-text text-green-400 mb-1">Sarah R.</h4>
-                            <p class="text-gray-600">Boutique Owner</p>
+                            <h3 class="font-bold text-lg">Wizard-Level Magic</h3>
+                            <p>We transform your vision into a stunning digital presence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-black text-white bg-magic-pattern">
+        <div class="container mx-auto px-6">
+            <h2 class="font-monument text-3xl md:text-4xl mb-16 text-center fade-in text-white">Our Magical Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20">
+                    <div class="text-purple-400 text-4xl mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-white">Custom Website Design</h3>
+                    <p class="text-gray-300">Tailored to your brand with unique layouts and features that make you stand out from competitors.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20" style="animation-delay: 0.2s;">
+                    <div class="text-purple-400 text-4xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-white">Responsive on All Devices</h3>
+                    <p class="text-gray-300">Your website will look perfect on phones, tablets, and desktops - no matter what device your customers use.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-900 p-8 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20" style="animation-delay: 0.4s;">
+                    <div class="text-purple-400 text-4xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-white">Free Support</h3>
+                    <p class="text-gray-300">We handle all the technical stuff and provide ongoing support to keep your site running smoothly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comparison Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-monument text-3xl md:text-4xl mb-16 text-center fade-in">The Free Website Wizards Difference</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Other Free Website Makers -->
+                <div class="bg-gray-100 p-8 rounded-xl shadow-md fade-in slide-in-left hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                    <h3 class="font-bold text-xl mb-6 text-center">Other Free Website Makers</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="text-green-500 mr-3 text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>$0 (Free)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-red-500 mr-3 text-xl">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>3-5 weeks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-red-500 mr-3 text-xl">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Limited</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-red-500 mr-3 text-xl">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Lots of forms, long waits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-red-500 mr-3 text-xl">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Email only</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-red-500 mr-3 text-xl">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <span>Upsells for extras</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Us -->
+                <div class="bg-white p-8 rounded-xl shadow-md border-2 border-purple-400 relative overflow-visible fade-in slide-in-right hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="absolute -top-3 -right-3 bg-purple-400 text-yellow-300 px-4 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                        WIZARD APPROVED
+                    </div>
+                    <h3 class="font-bold text-xl mb-6 text-center">Free Website Wizards</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <div class="text-purple-400 mr-3 text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>$0 (Free)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-purple-400 mr-3 text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>7-10 days</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-purple-400 mr-3 text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Built from Scratch for You</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-purple-400 mr-3 text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Stress-Free. Fast. Done With You.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-purple-400 mr-3 text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>Direct chat & support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="text-purple-400 mr-3 text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span>No upsells. No pressure.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="py-20 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-monument text-3xl md:text-4xl mb-16 text-center fade-in text-white">Benefits of a Professional Website</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Benefit 1 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20">
+                    <div class="text-purple-400 text-3xl mb-4">
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">Build Credibility</h3>
+                    <p class="text-gray-300">A professional website makes your business look established and trustworthy.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20" style="animation-delay: 0.1s;">
+                    <div class="text-purple-400 text-3xl mb-4">
+                        🌍
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">Boost Online Presence</h3>
+                    <p class="text-gray-300">Be found by customers searching for your products or services online.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20" style="animation-delay: 0.2s;">
+                    <div class="text-purple-400 text-3xl mb-4">
+                        💼
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">More Customers</h3>
+                    <p class="text-gray-300">Convert website visitors into paying customers with clear calls-to-action.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20" style="animation-delay: 0.3s;">
+                    <div class="text-purple-400 text-3xl mb-4">
+                        🚀
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">Stand Out from Competitors</h3>
+                    <p class="text-gray-300">Differentiate your business with a unique, professional online presence.</p>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20" style="animation-delay: 0.4s;">
+                    <div class="text-purple-400 text-3xl mb-4">
+                        📱
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">Works on Any Device</h3>
+                    <p class="text-gray-300">Your website will look great whether viewed on phone, tablet, or desktop.</p>
+                </div>
+                
+                <!-- Benefit 6 -->
+                <div class="bg-gray-900 p-6 rounded-xl shadow-md hover-glow hover-scale transition-all duration-300 fade-in slide-in-up border border-purple-400/20" style="animation-delay: 0.5s;">
+                    <div class="text-purple-400 text-3xl mb-4">
+                        🔍
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-white">SEO Optimized</h3>
+                    <p class="text-gray-300">Built to rank well in search engines so customers can find you easily.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Free Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in slide-in-left">
+                    <h2 class="font-monument text-3xl md:text-4xl mb-6">Wait... Why Free?</h2>
+                    <p class="text-lg mb-8">
+                        We grow by helping YOU grow. We work with awesome businesses like yours to showcase our work and build long-term partnerships. We'll never charge you upfront — that's the wizard promise.
+                    </p>
+                    <div class="flex items-center bg-purple-400 bg-opacity-20 p-4 rounded-lg">
+                        <div class="mr-4 text-purple-400 text-3xl">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Our Business Model</h3>
+                            <p>We earn through premium upgrades and partnerships — not by charging small businesses.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12 fade-in slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Team working" class="rounded-lg shadow-xl w-full max-w-md mx-auto float">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ratings Section -->
+    <!-- Add this to the <style> section in the head -->
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .bounce-star {
+            animation: bounce 2s infinite;
+            color: #FCD34D;
+        }
+        
+        .bounce-star:nth-child(1) { animation-delay: 0s; }
+        .bounce-star:nth-child(2) { animation-delay: 0.2s; }
+        .bounce-star:nth-child(3) { animation-delay: 0.4s; }
+        .bounce-star:nth-child(4) { animation-delay: 0.6s; }
+        .bounce-star:nth-child(5) { animation-delay: 0.8s; }
+    </style>
+    
+    <section class="py-16 bg-purple-800 text-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Large Logo on the Left -->
+                <div class="md:w-1/2 mb-6 md:mb-0 flex justify-center md:justify-end md:pr-4">
+                    <img src="Images/logo-transparent.png" alt="The Free Website Wizards" class="h-40 md:h-52 lg:h-64 w-auto">
+                </div>
+                
+                <!-- Text Content on the Right -->
+                <div class="md:w-1/2 text-center md:text-left md:pl-4">
+                    <div class="text-3xl mb-4 fade-in">
+                        <i class="fas fa-star bounce-star"></i>
+                        <i class="fas fa-star bounce-star"></i>
+                        <i class="fas fa-star bounce-star"></i>
+                        <i class="fas fa-star bounce-star"></i>
+                        <i class="fas fa-star bounce-star"></i>
+                    </div>
+                    <h2 class="font-montserrat text-4xl font-bold text-white md:text-3xl mb-4 fade-in">5.0 Average Rating</h2>
+                    <p class="text-lg fade-in font-montserrat text-white">
+                        Thousands of businesses trust The Free Website Wizards. Join the growing community who said YES to a free, beautiful website.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  <!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-black text-white relative overflow-hidden">
+    <div class="container mx-auto px-6 relative">
+        <h2 class="font-monument text-3xl md:text-4xl mb-16 text-center fade-in text-white">What Our Clients Say</h2>
+        
+        <!-- Testimonial Slider Container -->
+        <div class="relative max-w-6xl mx-auto mb-12">
+            <!-- Testimonial Cards -->
+            <div class="testimonial-slider flex overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide bg-gray-900 p-8 rounded-xl shadow-md border border-purple-400/20 flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 snap-start">
+                    <div class="text-purple-400 text-4xl mb-4">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        Couldn't believe it's free — and it looks amazing! The Free Website Wizards transformed my small bakery's online presence in just days.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-400 flex items-center justify-center text-black font-bold">SJ</div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Sarah Johnson</h4>
+                            <p class="text-purple-400">Sweet Treats Bakery</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="slide-up fade-in program-card p-8 text-center">
-                    <div class="flex justify-center mb-4 text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="testimonial-slide bg-gray-900 p-8 rounded-xl shadow-md border border-purple-400/20 flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 snap-start">
+                    <div class="text-purple-400 text-4xl mb-4">
+                        <i class="fas fa-quote-left"></i>
                     </div>
-                    <p class="text-lg italic mb-6 text-gray-600">"They handled everything. I love how my site turned out, and I didn't have to stress about any of the technical stuff. Best of all, it didn't cost me a dime!"</p>
-                    <div class="flex flex-col items-center">
-                        <img src="https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png" alt="Mike T." class="rounded-full mb-4 w-16 h-16">
+                    <p class="text-lg mb-6 leading-relaxed">
+                        Professional, fast, and super easy. The team was fantastic to work with and understood exactly what I needed for my consulting business.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-400 flex items-center justify-center text-black font-bold">MT</div>
+                        </div>
                         <div>
-                            <h4 class="font-bold neon-text text-green-400 mb-1">Mike T.</h4>
-                            <p class="text-gray-600">Auto Mechanic</p>
+                            <h4 class="font-bold text-lg">Michael Thompson</h4>
+                            <p class="text-purple-400">Business Consultant</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Testimonial 3 -->
-                <div class="slide-up fade-in program-card p-8 text-center">
-                    <div class="flex justify-center mb-4 text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="testimonial-slide bg-gray-900 p-8 rounded-xl shadow-md border border-purple-400/20 flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 snap-start">
+                    <div class="text-purple-400 text-4xl mb-4">
+                        <i class="fas fa-quote-left"></i>
                     </div>
-                    <p class="text-lg italic mb-6 text-gray-600">"As a small business owner, I didn't have time or money for a fancy website. The Free Website Wizards gave me both - a beautiful site that represents my brand perfectly, at no cost."</p>
-                    <div class="flex flex-col items-center">
-                        <img src="https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png" alt="Jamie C." class="rounded-full mb-4 w-16 h-16">
+                    <p class="text-lg mb-6 leading-relaxed">
+                        I recommend them to every business owner I know. Finally a web design service that actually cares about small businesses.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <div class="w-12 h-12 rounded-full bg-purple-400 flex items-center justify-center text-black font-bold">LM</div>
+                        </div>
                         <div>
-                            <h4 class="font-bold neon-text text-green-400 mb-1">Jamie C.</h4>
-                            <p class="text-gray-600">Cafe Owner</p>
+                            <h4 class="font-bold text-lg">Lisa Martinez</h4>
+                            <p class="text-purple-400">Local Florist</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-white relative overflow-hidden" style="background-image: url('Images/comparison-bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-        
-        <div class="container mx-auto px-4 max-w-3xl relative z-10">
-            <h2 class="slide-up gradient-text text-3xl md:text-4xl font-bold text-center mb-4 text-white">Questions About <span class="neon-text">The Wizards</span>? We've Got Answers.</h2>
-            <p class="slide-up text-center text-gray-200 mb-16">Everything you need to know about our free website service</p>
             
-            <div class="space-y-4">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left p-6 font-medium transition flex justify-between items-center">
-                        <span>Is it really free?</span>
-                        <i class="fas fa-plus transition-transform"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="p-6 pt-0 text-gray-600">
-                            <p>Yes. 100% free. No hidden fees. It's really on us. We believe every small business deserves a professional online presence without the financial burden.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Navigation Arrows -->
+            <button class="testimonial-prev absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-purple-400 text-black rounded-full w-10 h-10 flex items-center justify-center z-10">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="testimonial-next absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-purple-400 text-black rounded-full w-10 h-10 flex items-center justify-center z-10">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+    
+    <!-- Apply Section -->
+    <section id="apply" class="py-20 bg-black text-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-gray-900 rounded-xl p-8 md:p-12 shadow-lg relative overflow-hidden border border-purple-400/30">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-purple-400 rounded-full opacity-20"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-400 rounded-full opacity-20"></div>
                 
-                <!-- FAQ Item 2 -->
-                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left p-6 font-medium transition flex justify-between items-center">
-                        <span>What's the catch?</span>
-                        <i class="fas fa-plus transition-transform"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="p-6 pt-0 text-gray-600">
-                            <p>There isn't one. Helping you helps us too. We may occasionally showcase your site in our portfolio (with your permission), but there's no obligation.</p>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="font-monument text-3xl md:text-4xl mb-8 text-center fade-in text-white">Apply for Your Free Website Today</h2>
                 
-                <!-- FAQ Item 3 -->
-                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left p-6 font-medium transition flex justify-between items-center">
-                        <span>How do you make money?</span>
-                        <i class="fas fa-plus transition-transform"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="p-6 pt-0 text-gray-600">
-                            <p>We're funded by sponsors and partners who believe in supporting small businesses. We may offer premium add-ons in the future, but the core website service will always remain free.</p>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium text-gray-300">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400">
+                        </div>
+                        <div>
+                            <label for="business" class="block mb-2 font-medium text-gray-300">Business Name</label>
+                            <input type="text" id="business" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400">
                         </div>
                     </div>
-                </div>
-                
-                <!-- FAQ Item 4 -->
-                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left p-6 font-medium transition flex justify-between items-center">
-                        <span>What if I need changes later?</span>
-                        <i class="fas fa-plus transition-transform"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="p-6 pt-0 text-gray-600">
-                            <p>We provide free minor updates for 6 months after launch. After that, we offer affordable maintenance plans, but you're never obligated to use them.</p>
-                        </div>
+                    
+                    <div>
+                        <label for="email" class="block mb-2 font-medium text-gray-300">Email Address</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400">
                     </div>
-                </div>
-                
-                <!-- FAQ Item 5 -->
-                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="faq-question w-full text-left p-6 font-medium transition flex justify-between items-center">
-                        <span>Who qualifies for a free website?</span>
-                        <i class="fas fa-plus transition-transform"></i>
-                    </button>
-                    <div class="accordion-content">
-                        <div class="p-6 pt-0 text-gray-600">
-                            <p>Any legitimate small business or entrepreneur with fewer than 10 employees qualifies. We prioritize businesses that currently don't have a website or have an outdated one.</p>
-                        </div>
+                    
+                    <div>
+                        <label for="about" class="block mb-2 font-medium text-gray-300">Tell Us About Your Business</label>
+                        <textarea id="about" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400"></textarea>
                     </div>
-                </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-purple-400 text-black font-bold px-8 py-4 rounded-full text-lg hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 transform hover:scale-105 glow">
+                            Start My Website — For Free
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section id="apply" class="py-20 bg-gradient-to-r from-green-50 to-white" style="background-image: url('Images/comparison-bg.png'); background-size: cover; background-position: center; background-attachment: fixed;">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl neon-text md:text-4xl font-bold mb-6"><span class="neon-text">Ready for Your Free Website?</span></h2>
-            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Join hundreds of small businesses who've launched their online presence with zero cost and zero hassle.</p>
-            <a href="#" class="neon-button pulse px-8 py-4 rounded-full font-bold text-black hover:shadow-lg transition inline-block">→ Apply Now</a>
+    
+    <!-- Contact Section -->
+    <section class="py-16 bg-black text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-monument text-3xl md:text-4xl mb-12 text-center fade-in">Connect With Us</h2>
+            
+            <div class="flex justify-center space-x-8 md:space-x-12">
+                <a href="#" class="text-3xl hover:text-purple-400 transition duration-300">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="text-3xl hover:text-purple-400 transition duration-300">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-3xl hover:text-purple-400 transition duration-300">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="text-3xl hover:text-purple-400 transition duration-300">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <span class="text-xl neon-text font-bold">The Free Website Wizards</span>
-                    </div>
-                    <p class="text-gray-400">Helping small businesses thrive online with beautiful, free websites.</p>
-                    <p class="text-gray-400 mt-4">© 2025 The Free Website Wizards. All rights reserved.</p>
+    <footer class="py-8 bg-gray-900 text-gray-400 text-sm">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 flex items-center">
+                    <img src="https://via.placeholder.com/30x30" alt="Logo" class="h-6 mr-2">
+                    <span>The Free Website Wizards © 2025 | Made with magic <span class="text-purple-400">🧙‍♂️</span></span>
                 </div>
-                
-                <div class="md:text-center">
-                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#how-it-works" class="text-gray-400 hover:text-green-400 transition">How It Works</a></li>
-                        <li><a href="#comparison" class="text-gray-400 hover:text-green-400 transition">Why Choose Us</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-green-400 transition">Portfolio</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-green-400 transition">Testimonials</a></li>
-                        <li><a href="#faq" class="text-gray-400 hover:text-green-400 transition">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <div class="md:text-right">
-                    <h3 class="text-lg font-bold mb-4">Connect With Us</h3>
-                    <div class="flex space-x-4 justify-center md:justify-end mb-6">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-500 transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-500 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-500 transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-500 transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                    <a href="#" class="neon-button px-6 py-2 rounded-full font-medium text-black hover:shadow-lg transition inline-block">→ Apply for Free</a>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-purple-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-purple-400 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-purple-400 transition">FAQ</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Floating Chat Button -->
-    <div class="fixed bottom-8 right-8">
-        <button class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition hover:scale-110 pulse">
-            <i class="fab fa-whatsapp text-2xl"></i>
-        </button>
-    </div>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="fixed bottom-8 left-8 w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-500 transition opacity-0 invisible">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+    
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Typing Animation for Hero Text
-        const typingElement = document.querySelector('.typing');
-        if (typingElement) {
-            // Remove the blinking cursor after animation completes
-            setTimeout(() => {
-                typingElement.classList.add('completed');
-            }, 4500); // 3.5s typing + 1s delay
-        }
-        
-        // Intersection Observer for animations
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const slideElements = document.querySelectorAll('.slide-up');
-        
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
                 }
-            });
-        }, { threshold: 0.1 });
-        
-        const slideObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        fadeElements.forEach(el => fadeObserver.observe(el));
-        slideElements.forEach(el => slideObserver.observe(el));
-        
-        // Sticky navbar effects
-        const navbar = document.querySelector('.sticky-nav');
-        const hero = document.querySelector('.hero-houdini');
-        
-        function checkHeroInView() {
-            const rect = hero.getBoundingClientRect();
-            if (rect.bottom > 80 && rect.top < window.innerHeight) {
-                navbar.classList.add('transparent');
-            } else {
-                navbar.classList.remove('transparent');
             }
         }
-        
-        window.addEventListener('scroll', () => {
-            // Navbar shrink effect
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+          // Create floating stars
+          function createStars() {
+            const starsContainer = document.getElementById('stars-container');
+            const numberOfStars = 50;
             
-            // Hero transparency check
-            checkHeroInView();
-        });
-        
-        checkHeroInView();
-        
-        // Portfolio Carousel JavaScript
-        function setXOff(slider, value) {
-            if (!slider) {
-                slider = document.querySelector(".slider");
+            for (let i = 0; i < numberOfStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 3 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 2 + 's';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                starsContainer.appendChild(star);
             }
-            slider.style.setProperty("--x-off", `${value}%`);
-        }
-
-        function hookPortfolioEvents() {
-            const slider = document.querySelector(".slider");
-
-            // The primary navigation buttons
-            function activate(e) {
-                const items = document.querySelectorAll(".slide");
-                if (e.target.closest(".nav")) {
-                    setXOff(slider, 0);
-
-                    setTimeout(() => {
-                        if (e.target.closest(".next")) {
-                            slider.append(items[0]);
-                        }
-                        if (e.target.closest(".prev")) {
-                            slider.prepend(items[items.length - 1]);
-                        }
-                    }, 100);
-                }
-            }
-
-            // Allow swiping on mobile
-            let sliding = false;
-            let origX = 0;
-
-            function slide(e) {
-                if (!sliding) return;
-
-                const { touches } = e;
-                const first = touches[0];
-                const val = first.screenX - origX;
-
-                setXOff(slider, Math.max(-50, Math.min(50, val)));
-
-                if (val < -50) {
-                    sliding = false;
-                    setXOff(slider, 0);
-                    document.querySelector(".next").click();
-                } else if (val > 50) {
-                    sliding = false;
-                    setXOff(slider, 0);
-                    document.querySelector(".prev").click();
-                }
-            }
-
-            document.addEventListener("click", activate);
-            document.addEventListener("touchmove", slide);
-            document.addEventListener("touchstart", (e) => {
-                sliding = true;
-                origX = e.touches[0].screenX;
-            });
-            document.addEventListener("touchend", () => {
-                sliding = false;
-                setXOff(null, 0);
-            });
-
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "ArrowRight") {
-                    document.querySelector(".next").click();
-                } else if (e.key === "ArrowLeft") {
-                    document.querySelector(".prev").click();
-                }
-            });
         }
         
-        // Initialize portfolio carousel
-        hookPortfolioEvents();
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles-container');
+            
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 4 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                particlesContainer.appendChild(particle);
+                
+                // Remove particle after animation
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 20000);
+            }, 500);
+        }
         
-        // Mobile Portfolio Navigation JavaScript - Updated for single card view
-        function initMobilePortfolio() {
-            const wrapper = document.getElementById('portfolioCardsWrapper');
-            const cards = document.querySelectorAll('.portfolio-card');
-            const dots = document.querySelectorAll('.nav-dot');
-            const prevBtn = document.getElementById('mobilePrevBtn');
-            const nextBtn = document.getElementById('mobileNextBtn');
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            createParticles();
             
-            let currentIndex = 0;
-            const totalCards = cards.length;
+            // Keep existing scroll animations for other sections
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
             
-            function updateCarousel() {
-                // Update card positions and active states
-                cards.forEach((card, index) => {
-                    card.classList.remove('active');
-                    if (index === currentIndex) {
-                        card.classList.add('active');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
                 });
-                
-                // Update dots
-                dots.forEach((dot, index) => {
-                    dot.classList.remove('active');
-                    if (index === currentIndex) {
-                        dot.classList.add('active');
-                    }
-                });
-                
-                // Calculate scroll position for single card view
-                const scrollPosition = currentIndex * 100; // 100% width per card
-                wrapper.style.transform = `translateX(-${scrollPosition}%)`;
-            }
+            }, observerOptions);
             
-            function nextCard() {
-                currentIndex = (currentIndex + 1) % totalCards;
-                updateCarousel();
-            }
-            
-            function prevCard() {
-                currentIndex = (currentIndex - 1 + totalCards) % totalCards;
-                updateCarousel();
-            }
-            
-            function goToCard(index) {
-                currentIndex = index;
-                updateCarousel();
-            }
-            
-            // Event listeners
-            nextBtn.addEventListener('click', nextCard);
-            prevBtn.addEventListener('click', prevCard);
-            
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => goToCard(index));
-            });
-            
-            // Touch/swipe support
-            let startX = 0;
-            let isDragging = false;
-            
-            wrapper.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                isDragging = true;
-            });
-            
-            wrapper.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-            });
-            
-            wrapper.addEventListener('touchend', (e) => {
-                if (!isDragging) return;
-                
-                const endX = e.changedTouches[0].clientX;
-                const diffX = startX - endX;
-                
-                if (Math.abs(diffX) > 50) { // Minimum swipe distance
-                    if (diffX > 0) {
-                        nextCard();
-                    } else {
-                        prevCard();
-                    }
-                }
-                
-                isDragging = false;
-            });
-            
-            // Auto-play (optional)
-            let autoPlayInterval;
-            
-            function startAutoPlay() {
-                autoPlayInterval = setInterval(nextCard, 5000); // Slower for single card view
-            }
-            
-            function stopAutoPlay() {
-                clearInterval(autoPlayInterval);
-            }
-            
-            // Start auto-play and pause on interaction
-            startAutoPlay();
-            
-            wrapper.addEventListener('touchstart', stopAutoPlay);
-            wrapper.addEventListener('mouseenter', stopAutoPlay);
-            wrapper.addEventListener('mouseleave', startAutoPlay);
-            
-            // Initialize
-            updateCarousel();
-        }
-        
-        // Initialize mobile portfolio when DOM is loaded
-        if (window.innerWidth < 768) {
-            initMobilePortfolio();
-        }
-        
-        // Re-initialize on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth < 768) {
-                initMobilePortfolio();
-            }
-        });
-        
-        // Enhanced FAQ accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', (e) => {
-                e.preventDefault();
-                const item = question.parentElement;
-                const content = item.querySelector('.accordion-content');
-                const icon = question.querySelector('i');
-                
-                // Close all other FAQ items
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    if (faq !== item) {
-                        const faqContent = faq.querySelector('.accordion-content');
-                        const faqIcon = faq.querySelector('i');
-                        faqContent.style.maxHeight = null;
-                        faqContent.classList.remove('active');
-                        faqIcon.classList.remove('fa-minus');
-                        faqIcon.classList.add('fa-plus');
-                    }
-                });
-                
-                // Toggle current FAQ item
-                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-                    content.style.maxHeight = null;
-                    content.classList.remove('active');
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
-                } else {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                    content.classList.add('active');
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
-                }
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
             });
         });
-        
-        // Scroll to top button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-        if (scrollToTopBtn) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    scrollToTopBtn.classList.remove('opacity-0', 'invisible');
-                    scrollToTopBtn.classList.add('opacity-100', 'visible');
-                } else {
-                    scrollToTopBtn.classList.remove('opacity-100', 'visible');
-                    scrollToTopBtn.classList.add('opacity-0', 'invisible');
-                }
-            });
-            
-            scrollToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-        
-       
-    });
-    // Enhanced Intersection Observer for table rows
-const tableObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, { threshold: 0.1 });
-
-// Observe all fade-up elements (table rows)
-document.querySelectorAll('.fade-up').forEach(el => tableObserver.observe(el));
-// Mobile Menu Functionality - Rebuilt from Scratch
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-const menuIcon = document.getElementById('menu-icon');
-const body = document.body;
-
-// Smooth scrolling function for all navigation links
-function smoothScrollTo(targetId) {
-    const targetElement = document.querySelector(targetId);
-    if (targetElement) {
-        const headerOffset = 80; // Account for fixed navbar height
-        const elementPosition = targetElement.offsetTop;
-        const offsetPosition = elementPosition - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
+        // Testimonial Slider
+function initTestimonialSlider() {
+    const slider = document.querySelector('.testimonial-slider');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+    
+    if (!slider || !slides.length) return;
+    
+    let currentIndex = 0;
+    const slideWidth = slides[0].clientWidth;
+    const gap = 16; // 1rem gap between slides
+    
+    // Calculate total width needed for scrolling
+    const totalWidth = (slideWidth + gap) * slides.length;
+    slider.style.width = `${totalWidth}px`;
+    
+    function updateSlider() {
+        const scrollAmount = currentIndex * (slideWidth + gap);
+        slider.scrollTo({
+            left: scrollAmount,
             behavior: 'smooth'
         });
     }
-}
-
-// Add smooth scrolling to all navigation links (desktop and mobile)
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        
-        // If it's a mobile menu link, close the menu first
-        if (this.classList.contains('mobile-menu-link')) {
-            closeMobileMenu();
-            // Wait for menu to close before scrolling
-            setTimeout(() => {
-                smoothScrollTo(targetId);
-            }, 300);
-        } else {
-            // Desktop links scroll immediately
-            smoothScrollTo(targetId);
-        }
-    });
-});
-
-if (mobileMenuBtn && mobileMenu) {
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const isActive = mobileMenu.classList.contains('active');
-        
-        if (isActive) {
-            closeMobileMenu();
-        } else {
-            openMobileMenu();
-        }
+    
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
     });
     
-    // Open mobile menu
-    function openMobileMenu() {
-        mobileMenu.classList.add('active');
-        mobileMenuBtn.classList.add('active');
-        mobileMenuBtn.setAttribute('aria-expanded', 'true');
-        
-        // Change icon to X
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-        
-        // Prevent body scroll
-        body.style.overflow = 'hidden';
-        body.style.position = 'fixed';
-        body.style.width = '100%';
-    }
-    
-    // Close mobile menu
-    function closeMobileMenu() {
-        mobileMenu.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        
-        // Change icon back to hamburger
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-        
-        // Restore body scroll
-        body.style.overflow = '';
-        body.style.position = '';
-        body.style.width = '';
-    }
-    
-    // Close menu when clicking on overlay (but not on menu content)
-    mobileMenu.addEventListener('click', (e) => {
-        if (e.target === mobileMenu) {
-            closeMobileMenu();
-        }
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
     });
     
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            closeMobileMenu();
-            mobileMenuBtn.focus();
-        }
-    });
+    // Auto-scroll every 5 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    }, 5000);
     
-    // Ensure menu is closed on window resize to desktop
+    // Handle window resize
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
-            closeMobileMenu();
+        const newSlideWidth = slides[0].clientWidth;
+        if (newSlideWidth !== slideWidth) {
+            location.reload(); // Simple solution for demo
         }
     });
 }
 
-       
-
-</script>
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initTestimonialSlider();
+    // Your other initialization code...
+});
+    </script>
 </body>
 </html>
-
+   
