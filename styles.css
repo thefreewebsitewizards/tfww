@@ -1294,10 +1294,9 @@ footer .fab:hover {
     transition: all 0.3s ease;
 }
 
-/* Optimized Comparison Table Styles - No Hover Effects */
+/* Optimized Comparison Table Styles - No Purple Effects */
 .comparison-table-container {
     position: relative;
-    box-shadow: 0 0 30px rgba(147, 51, 234, 0.4), 0 0 60px rgba(147, 51, 234, 0.2);
     border-radius: 1rem;
     overflow: hidden;
 }
@@ -1307,30 +1306,15 @@ footer .fab:hover {
     position: relative;
 }
 
-.comparison-table::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, 
-        rgba(147, 51, 234, 0.6), 
-        rgba(168, 85, 247, 0.4), 
-        rgba(147, 51, 234, 0.6), 
-        rgba(168, 85, 247, 0.4));
-    background-size: 400% 400%;
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0.7;
-    animation: gradient-rotate 4s ease-in-out infinite;
-    filter: blur(8px);
+.comparison-header {
+    background: #111827;
+    position: relative;
 }
 
-.comparison-header {
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(168, 85, 247, 0.1));
-    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
-    position: relative;
+/* Purple background for Free Website Wizards header (4th column) */
+.comparison-table thead tr th:nth-child(4) {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(168, 85, 247, 0.2)) !important;
+    border: 1px solid rgba(147, 51, 234, 0.5) !important;
 }
 
 /* Removed all hover effects for better performance */
@@ -1339,31 +1323,37 @@ footer .fab:hover {
 }
 
 .feature-cell {
-    background: linear-gradient(90deg, rgba(147, 51, 234, 0.1), transparent);
+    background: #111827;
     font-weight: 600;
-    text-shadow: 0 0 5px rgba(168, 85, 247, 0.4);
 }
 
 .comparison-cell {
     font-size: 0.9rem;
-    /* Removed transitions for better performance */
+    background: #111827;
+    border: 1px solid rgba(75, 85, 99, 0.3);
 }
 
-/* Wizard column highlight - now last column */
+/* Purple background for Free Website Wizards column (4th column) */
 .comparison-table tbody tr td:nth-child(4) {
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(168, 85, 247, 0.05));
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(168, 85, 247, 0.1)) !important;
+    border: 1px solid rgba(147, 51, 234, 0.4) !important;
     position: relative;
 }
 
-.comparison-table tbody tr td:nth-child(4)::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, #9333ea, #a855f7);
-    box-shadow: 0 0 10px rgba(147, 51, 234, 0.8);
+/* Other columns (1st, 2nd, 3rd) get neutral styling */
+.comparison-table tbody tr td:nth-child(1),
+.comparison-table tbody tr td:nth-child(2),
+.comparison-table tbody tr td:nth-child(3) {
+    background: #111827 !important;
+    border: 1px solid rgba(75, 85, 99, 0.3) !important;
+}
+
+/* Other header cells get neutral styling */
+.comparison-table thead tr th:nth-child(1),
+.comparison-table thead tr th:nth-child(2),
+.comparison-table thead tr th:nth-child(3) {
+    background: #111827 !important;
+    border: 1px solid rgba(75, 85, 99, 0.3) !important;
 }
 
 /* Enhanced glow effects for special cells */
