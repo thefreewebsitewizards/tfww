@@ -1274,3 +1274,155 @@ animation-duration: 15s;
         margin: 0 auto;
     }
 }
+
+/* Smooth scrolling for navigation links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced smooth scrolling with offset for fixed headers */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Offset scroll position to account for any fixed headers */
+section {
+    scroll-margin-top: 2rem;
+}
+
+/* Footer navigation hover effects */
+footer a:hover {
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+footer .fab:hover {
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
+/* Comparison Table Styles */
+.comparison-table-container {
+    position: relative;
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.4), 0 0 60px rgba(147, 51, 234, 0.2);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.comparison-table {
+    border-spacing: 0;
+    position: relative;
+}
+
+.comparison-table::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(147, 51, 234, 0.6), 
+        rgba(168, 85, 247, 0.4), 
+        rgba(147, 51, 234, 0.6), 
+        rgba(168, 85, 247, 0.4));
+    background-size: 400% 400%;
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0.7;
+    animation: gradient-rotate 4s ease-in-out infinite;
+    filter: blur(8px);
+}
+
+.comparison-header {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(168, 85, 247, 0.1));
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+    position: relative;
+}
+
+.comparison-row:hover {
+    background: rgba(147, 51, 234, 0.1) !important;
+    transform: scale(1.01);
+    box-shadow: inset 0 0 20px rgba(147, 51, 234, 0.2);
+}
+
+.feature-cell {
+    background: linear-gradient(90deg, rgba(147, 51, 234, 0.1), transparent);
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(168, 85, 247, 0.4);
+}
+
+.comparison-cell {
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.comparison-cell:hover {
+    background: rgba(147, 51, 234, 0.15) !important;
+    transform: scale(1.05);
+}
+
+/* Wizard column highlight */
+.comparison-table tbody tr td:nth-child(3) {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(168, 85, 247, 0.05));
+    position: relative;
+}
+
+.comparison-table tbody tr td:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #9333ea, #a855f7);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.8);
+}
+
+/* Enhanced glow effects for special cells */
+.pulse-glow {
+    animation: pulse-glow-button 2s ease-in-out infinite;
+}
+
+/* Mobile responsiveness for table */
+@media (max-width: 768px) {
+    .comparison-table-container {
+        margin: 0 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .comparison-header {
+        padding: 0.75rem 0.5rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .feature-cell, .comparison-cell {
+        padding: 0.75rem 0.5rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .comparison-table {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .comparison-table-container {
+        margin: 0 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    .comparison-header {
+        padding: 0.5rem 0.25rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .feature-cell, .comparison-cell {
+        padding: 0.5rem 0.25rem !important;
+        font-size: 0.7rem !important;
+    }
+    
+    .comparison-table {
+        min-width: 500px;
+    }
+}
