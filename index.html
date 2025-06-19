@@ -1130,21 +1130,24 @@
 
     
     <!-- Contact Section -->
-<section class="py-16 bg-gradient-to-r from-purple-900 to-purple-800 text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/20"></div>
+<section class="py-16 bg-gradient-to-r from-purple-900 to-purple-800 text-white relative overflow-hidden transition-all duration-700 ease-in-out hover:from-purple-800 hover:to-purple-700">
+    <!-- Animated overlay -->
+    <div class="absolute inset-0 bg-black/20 transition-opacity duration-500 hover:bg-black/10"></div>
+    <!-- Gradient overlay for smooth transitions -->
+    <div class="absolute inset-0 bg-gradient-to-t from-transparent via-purple-900/10 to-transparent opacity-0 transition-opacity duration-700 hover:opacity-100"></div>
     <div class="container mx-auto px-6 relative z-10">
         <div class="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
             <!-- Logo Section -->
-            <div class="mb-8 md:mb-0 md:mr-12">
+            <div class="mb-8 md:mb-0 md:mr-12 transform transition-transform duration-500 hover:scale-105">
                 <img src="Images/logo-transparent.png" alt="The Free Website Guys Logo" class="h-24 md:h-32 w-auto">
             </div>
             
             <!-- Contact Information -->
             <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                 <!-- Whatsapp -->
-                <div class="flex flex-col items-center md:items-start">
+                <div class="flex flex-col items-center md:items-start transform transition-all duration-300 hover:translate-y-[-4px] hover:scale-105">
                     <div class="flex items-center mb-2">
-                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3 transition-all duration-300 hover:bg-purple-100 hover:scale-110">
                             <i class="fab fa-whatsapp text-purple-800"></i>
                         </div>
                         <span class="text-gray-300 text-sm font-medium">WhatsApp:</span>
@@ -1155,9 +1158,9 @@
                 </div>
                 
                 <!-- Phone -->
-                <div class="flex flex-col items-center md:items-start">
+                <div class="flex flex-col items-center md:items-start transform transition-all duration-300 hover:translate-y-[-4px] hover:scale-105">
                     <div class="flex items-center mb-2">
-                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3 transition-all duration-300 hover:bg-purple-100 hover:scale-110">
                             <i class="fas fa-phone-alt text-purple-800"></i>
                         </div>
                         <span class="text-gray-300 text-sm font-medium">Phone:</span>
@@ -1168,9 +1171,9 @@
                 </div>
                 
                 <!-- Email -->
-                <div class="flex flex-col items-center md:items-start">
+                <div class="flex flex-col items-center md:items-start transform transition-all duration-300 hover:translate-y-[-4px] hover:scale-105">
                     <div class="flex items-center mb-2">
-                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+                        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3 transition-all duration-300 hover:bg-purple-100 hover:scale-110">
                             <i class="fas fa-envelope text-purple-800"></i>
                         </div>
                         <span class="text-gray-300 text-sm font-medium">Email:</span>
@@ -1185,58 +1188,62 @@
 </section>
 
     
-<footer class="py-16 bg-gradient-to-b from-purple-900 to-purple-950 text-white">
-    <div class="container mx-auto px-6">
+<footer class="py-16 bg-gradient-to-b from-purple-900 to-purple-950 text-white relative overflow-hidden transition-all duration-700 ease-in-out">
+    <!-- Animated background overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-800/20 via-transparent to-purple-800/20 opacity-0 transition-opacity duration-1000 hover:opacity-100"></div>
+    <!-- Floating particles effect overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-purple-950/50 via-transparent to-purple-900/30 transition-opacity duration-500"></div>
+    <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <!-- Navigation Column -->
-            <div>
-                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">NAVIGATION</h3>
+            <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
+                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">NAVIGATION</h3>
                 <ul class="space-y-3">
-                    <li><a href="#" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Home</a></li>
-                    <li><a href="#why" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Why Website</a></li>
-                    <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Our Services</a></li>
-                    <li><a href="#apply" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Apply Now</a></li>
-                    <li><a href="#faq" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">FAQ</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Home</a></li>
+                    <li><a href="#why" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Why Website</a></li>
+                    <li><a href="#services" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Our Services</a></li>
+                    <li><a href="#apply" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Apply Now</a></li>
+                    <li><a href="#faq" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">FAQ</a></li>
                 </ul>
             </div>
             
             <!-- Second Navigation Column -->
-            <div>
-                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">EXPLORE</h3>
+            <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
+                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">EXPLORE</h3>
                 <ul class="space-y-3">
-                    <li><a href="#our-work" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Our Work</a></li>
-                    <li><a href="#testimonials" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Testimonials</a></li>
-                    <li><a href="#guide" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Step by Step Guide</a></li>
-                    <li><a href="#benefits" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Website Benefits</a></li>
-                    <li><a href="#why-free" class="text-gray-300 hover:text-white transition duration-300 smooth-scroll">Why Free?</a></li>
+                    <li><a href="#our-work" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Our Work</a></li>
+                    <li><a href="#testimonials" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Testimonials</a></li>
+                    <li><a href="#guide" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Step by Step Guide</a></li>
+                    <li><a href="#benefits" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Website Benefits</a></li>
+                    <li><a href="#why-free" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Why Free?</a></li>
                 </ul>
             </div>
             
             <!-- Social Media Column -->
-            <div>
-                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">SOCIAL MEDIA</h3>
+            <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
+                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">SOCIAL MEDIA</h3>
                 <ul class="space-y-3">
                     <li>
-                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
-                            <i class="fab fa-facebook mr-3"></i>
+                        <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
+                            <i class="fab fa-facebook mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Facebook
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
-                            <i class="fab fa-tiktok mr-3"></i>
+                        <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
+                            <i class="fab fa-tiktok mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Tiktok
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
-                            <i class="fab fa-instagram mr-3"></i>
+                        <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
+                            <i class="fab fa-instagram mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Instagram
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
-                            <i class="fab fa-whatsapp mr-3"></i>
+                        <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
+                            <i class="fab fa-whatsapp mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Whatsapp
                         </a>
                     </li>
@@ -1244,24 +1251,24 @@
             </div>
             
             <!-- Contact Column -->
-            <div>
-                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">CONTACT</h3>
+            <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
+                <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">CONTACT</h3>
                 <ul class="space-y-3">
-                    <li class="text-gray-300">
-                        <i class="fas fa-envelope mr-3"></i>
+                    <li class="text-gray-300 transition-all duration-300 hover:text-white hover:translate-x-2">
+                        <i class="fas fa-envelope mr-3 transition-transform duration-300 hover:scale-110"></i>
                         info@freewebsitewizards.com
                     </li>
-                    <li class="text-gray-300">
-                        <i class="fas fa-phone mr-3"></i>
+                    <li class="text-gray-300 transition-all duration-300 hover:text-white hover:translate-x-2">
+                        <i class="fas fa-phone mr-3 transition-transform duration-300 hover:scale-110"></i>
                         +1 (555) 123-4567
                     </li>
-                    <li class="text-gray-300">
-                        <i class="fas fa-clock mr-3"></i>
+                    <li class="text-gray-300 transition-all duration-300 hover:text-white hover:translate-x-2">
+                        <i class="fas fa-clock mr-3 transition-transform duration-300 hover:scale-110"></i>
                         Mon-Fri 9AM-6PM EST
                     </li>
                     <li>
-                        <a href="#apply" class="text-purple-400 hover:text-purple-300 transition duration-300 smooth-scroll">
-                            <i class="fas fa-magic mr-3"></i>
+                        <a href="#apply" class="text-purple-400 hover:text-purple-300 transition-all duration-300 smooth-scroll hover:translate-x-2 hover:scale-105 inline-block">
+                            <i class="fas fa-magic mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Get Started Today
                         </a>
                     </li>
@@ -1270,18 +1277,18 @@
         </div>
         
         <!-- Bottom Section -->
-        <div class="border-t border-purple-800 pt-8">
+        <div class="border-t border-purple-800 pt-8 transition-all duration-500 hover:border-purple-600">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0 flex items-center">
+                <div class="mb-4 md:mb-0 flex items-center transition-all duration-300 hover:scale-105">
                     <span class="text-gray-300">© 2025 </span>
-                    <span class="text-blue-400 font-semibold mx-1">THE FREE WEBSITE WIZARDS</span>
+                    <span class="text-blue-400 font-semibold mx-1 transition-colors duration-300 hover:text-blue-300">THE FREE WEBSITE WIZARDS</span>
                     <span class="text-gray-300">©. All rights reserved.</span>
                 </div>
                 <div class="flex items-center space-x-6">
-                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition duration-300">Terms and Conditions</a>
-                    <div class="flex items-center text-gray-300">
-                        <i class="fas fa-globe mr-2"></i>
+                    <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Privacy Policy</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Terms and Conditions</a>
+                    <div class="flex items-center text-gray-300 transition-all duration-300 hover:text-white">
+                        <i class="fas fa-globe mr-2 transition-transform duration-300 hover:rotate-12"></i>
                         <span>English (United States)</span>
                     </div>
                 </div>
