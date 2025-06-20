@@ -106,10 +106,10 @@
 }
 
 @keyframes floatParticles {
-    0% { transform: translateY(100vh) translateX(0px); opacity: 0; }
+    0% { transform: translateY(-10vh) translateX(0px); opacity: 0; } /* Start above viewport */
     10% { opacity: 1; }
     90% { opacity: 1; }
-    100% { transform: translateY(-100px) translateX(50px); opacity: 0; }
+    100% { transform: translateY(100vh) translateX(25px); opacity: 0; } /* End below viewport, slight X drift */
 }
 
 @keyframes twinkle {
