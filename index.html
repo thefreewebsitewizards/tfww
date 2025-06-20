@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Free Website Wizards - Websites Made Easy</title>
+    <link rel="icon" type="image/png" href="Images/tfwwicontransparentbackground.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
 </head>
 <body class="font-poppins bg-black text-gray-800 overflow-x-hidden">
     <!-- Add this mobile menu button in your header -->
@@ -25,7 +25,10 @@
     <div class="flex flex-col items-center justify-center h-full space-y-8">
         <a href="#why" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Why Website</a>
         <a href="#services" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Services</a>
+        <a href="#our-work" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Our Work</a>
+        <a href="#faq" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">FAQ</a>
         <a href="#apply" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Apply</a>
+        <a href="#contact" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Contact</a>
         <button id="mobile-menu-close" class="text-white text-3xl hover:text-purple-400 transition-colors">
             <i class="fas fa-times"></i>
         </button>
@@ -49,7 +52,7 @@
             
             <!-- Main Headline -->
             <h1 class="font-montserrat font-black hero-title mb-6 leading-tight fade-in-up" style="animation-delay: 0.6s;">
-                <span class="gradient-text">Your Business, Website-Ready — For Free.</span>
+                <span class="gradient-text">Your Free Website is Waiting...</span>
             </h1>
             
             <!-- Subheading -->
@@ -124,8 +127,8 @@
     <section id="why" class="py-20 bg-black mb-12">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 fade-in slide-in-left float">
-                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Business Website" class="rounded-lg shadow-xl w-full max-w-md mx-auto float hover:shadow-[0_0_15px_#9333EA] transition-all duration-300 purple-glow">
+                <div class="md:w-1/2 mb-10 md:mb-0 fade-in slide-in-left">
+                    <img src="Images/20250619_1724_Wizard Web Magic_remix_01jy515grbfgf8nq89jmma3zr3.png" alt="Business Website" class="rounded-lg shadow-xl w-full max-w-md mx-auto float hover:shadow-[0_0_15px_#9333EA] transition-all duration-300 purple-glow">
                 </div>
                 <div class="md:w-1/2 md:pl-12 fade-in slide-in-right">
                     <h2 class="font-monument text-purple-400 text-3xl md:text-4xl mb-6 glow-text">Why Every Business Deserves a Website</h2>
@@ -413,7 +416,7 @@
                             <span class="text-yellow-400">⚠️ Varies (10–15 hrs)</span>
                         </td>
                         <td class="comparison-cell p-4 text-center border-b border-purple-400/20 border-l border-purple-400/20">
-                            <span class="text-green-400">✅ 7–10 hrs</span>
+                            <span class="text-yellow-400">⚠️ 7–10 hrs</span>
                         </td>
                         <td class="comparison-cell p-4 text-center border-b border-purple-400/20 border-l border-purple-400/20 bg-purple-500/10">
                             <span class="text-green-400 glow-text">✅ 17–20 hrs</span>
@@ -645,7 +648,7 @@
                 <!-- Right Image -->
                 <div class="lg:w-1/2 fade-in slide-in-right">
                     <div class="relative">
-                        <img src="https://images.pexels.com/photos/3765030/pexels-photo-3765030.jpeg" alt="Professional guidance" class="rounded-lg shadow-2xl w-full max-w-lg mx-auto float">
+                        <img src="Images/20250619_1718_Wizard with Glowing Orb_remix_01jy50v33tejda9r6b6xx5n0w3.png" alt="Professional guidance" class="rounded-lg shadow-2xl w-full max-w-lg mx-auto float">
                         <!-- Decorative elements -->
                         <div class="absolute -top-4 -right-4 w-8 h-8 bg-purple-400 rounded-full opacity-60 animate-pulse"></div>
                         <div class="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-300 rounded-full opacity-40 animate-pulse" style="animation-delay: 0.5s;"></div>
@@ -783,10 +786,10 @@
     
            <!-- Modal Popup -->
     <div id="wizardModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div id="modalCard" class="bg-gradient-to-br from-purple-900 via-gray-900 to-black rounded-2xl shadow-2xl max-w-md w-full relative transform scale-95 transition-transform duration-300 border border-purple-400/30" style="box-shadow: 0 0 50px rgba(168, 85, 247, 0.3);">
+        <div class="flex items-center justify-center min-h-screen p-2">
+            <div id="modalCard" class="bg-gradient-to-br from-purple-900 via-gray-900 to-black rounded-2xl shadow-2xl max-w-6xl w-full relative transform scale-95 transition-transform duration-300 border border-purple-400/30 max-h-screen" style="box-shadow: 0 0 50px rgba(168, 85, 247, 0.3);">
                 <!-- Close Button -->
-                <button id="closeModalBtn" onclick="alert('Button clicked!')" class="absolute top-4 right-4 text-white  text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-purple-400/20 ">
+                <button id="closeModalBtn" class="absolute top-4 right-4 text-white text-xl w-10 h-10 flex items-center justify-center rounded-full bg-gray-800/50 hover:bg-red-500/80 transition-all duration-200 border border-gray-600 hover:border-red-400 z-20 cursor-pointer">
                     <i class="fas fa-times"></i>
                 </button>
                 
@@ -794,65 +797,69 @@
                 <div class="absolute inset-0 opacity-10 rounded-2xl" style="background-image: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);"></div>
                 
                 <!-- Modal Content -->
-                <div class="p-8 relative z-10">
+                <div class="p-4 relative z-10 h-full flex flex-col">
                     <!-- Header -->
-                    <div class="text-center mb-8">
-                        <div class="text-purple-400 text-4xl mb-4">
-                            🔮
+                    <div class="text-center mb-4 flex-shrink-0">
+                        <div class="mb-2 flex justify-center">
+                            <img src="Images/logo-transparent.png" alt="Logo" class="h-40 w-auto">
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-2">Let's Create Your Website</h3>
-                        <p class="text-gray-300 text-sm">Just a few quick questions to get started</p>
+                        <h3 class="text-xl font-bold text-white mb-1">Let's Create Your Website</h3>
+                        <p class="text-gray-300 text-xs">Just a few quick questions to get started</p>
                     </div>
                     
                     <!-- Progress Bar -->
-                    <div class="mb-8">
+                    <div class="mb-4 flex-shrink-0">
                         <div class="flex justify-between items-center mb-2">
-                            <span class="text-sm text-gray-400">Step <span id="currentStep">1</span> of 4</span>
-                            <span class="text-sm text-purple-400" id="progressPercent">25%</span>
+                            <span class="text-xs text-gray-400">Step <span id="currentStep">1</span> of 4</span>
+                            <span class="text-xs text-purple-400" id="progressPercent">25%</span>
                         </div>
                         <div class="w-full bg-gray-700 rounded-full h-2">
                             <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full transition-all duration-500" style="width: 25%;"></div>
                         </div>
                     </div>
                     
-                    <!-- Form Steps -->
-                    <form id="wizardForm">
-                        <!-- Step 1 -->
-                        <div class="step-content" id="step1">
-                            <label class="block text-white font-medium mb-3">Describe the website you want to build:</label>
-                            <textarea id="websiteDescription" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Tell us about your business and what kind of website you need..."></textarea>
-                        </div>
-                        
-                        <!-- Step 2 -->
-                        <div class="step-content hidden" id="step2">
-                            <label class="block text-white font-medium mb-3">What is your first name?</label>
-                            <input type="text" id="firstName" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Enter your first name">
-                        </div>
-                        
-                        <!-- Step 3 -->
-                        <div class="step-content hidden" id="step3">
-                            <label class="block text-white font-medium mb-3">What is your email?</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="your@email.com">
-                        </div>
-                        
-                        <!-- Step 4 -->
-                        <div class="step-content hidden" id="step4">
-                            <label class="block text-white font-medium mb-3">(Optional) What's your phone number?</label>
-                            <input type="tel" id="phoneNumber" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="+1 (555) 123-4567">
-                        </div>
-                        
-                        <!-- Success Message -->
-                        <div class="step-content hidden text-center" id="successStep">
-                            <div class="text-6xl text-green-400 mb-4 animate-bounce">
-                                <i class="fas fa-check-circle"></i>
+                    <!-- Form Steps Container -->
+                    <div class="flex-grow flex flex-col justify-center">
+                        <!-- Form Steps -->
+                        <form id="wizardForm">
+                            <!-- Step 1 -->
+                            <div class="step-content" id="step1">
+                                <label class="block text-white font-medium mb-3">Describe the website you want to build:</label>
+                                <textarea id="websiteDescription" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Tell us about your business and what kind of website you need..."></textarea>
                             </div>
-                            <h4 class="text-2xl font-bold text-white mb-2">🎉 Awesome!</h4>
-                            <p class="text-gray-300">We'll reach out soon to start building your magical website!</p>
-                        </div>
-                    </form>
+                            
+                            <!-- Step 2 -->
+                            <div class="step-content hidden" id="step2">
+                                <label class="block text-white font-medium mb-3">What is your name?</label>
+                                <input type="text" id="firstName" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Enter your name">
+                            </div>
+                            
+                            <!-- Step 3 -->
+                            <div class="step-content hidden" id="step3">
+                                <label class="block text-white font-medium mb-3">What is your email?</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="your@email.com">
+                                <div id="emailError" class="text-red-400 text-sm mt-2 hidden">Hm that email doesn't look right</div>
+                            </div>
+                            
+                            <!-- Step 4 -->
+                            <div class="step-content hidden" id="step4">
+                                <label class="block text-white font-medium mb-3">(Optional) What's your phone number?</label>
+                                <input type="tel" id="phoneNumber" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="+1 (555) 123-4567">
+                            </div>
+                            
+                            <!-- Success Message -->
+                            <div class="step-content hidden text-center" id="successStep">
+                                <div class="text-5xl text-green-400 mb-3 animate-bounce">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-white mb-2">🎉 Awesome!</h4>
+                                <p class="text-gray-300 text-sm">We'll reach out soon to start building your magical website!</p>
+                            </div>
+                        </form>
+                    </div>
                     
                     <!-- Navigation Buttons -->
-                    <div class="flex justify-between mt-8" id="navigationButtons">
+                    <div class="flex justify-between mt-4 flex-shrink-0" id="navigationButtons">
                         <button type="button" id="backBtn" class="px-6 py-3 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-purple-400 transition-all duration-200 hidden">
                             <i class="fas fa-arrow-left mr-2"></i>Back
                         </button>
@@ -895,6 +902,16 @@
                 <div class="space-y-4">
                     <div class="faq-item border border-gray-600 rounded-lg bg-gray-900">
                         <button class="faq-question w-full text-left p-6 font-bold text-white hover:text-purple-400 transition-colors duration-300 flex justify-between items-center">
+                            <span>HOW DO YOU MAKE MONEY?</span>
+                            <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-answer hidden p-6 pt-0 text-gray-300">
+                            <p>We've noticed that 1 in 5 people that receive a free website from us come back to us to ask for larger paid projects like a large complex website or a mobile app. These allow us to keep doing what we're doing. Additionally, the web hosting we're partnered with pays for our labor in exchange for promoting their service, all while still giving our customers a discount!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-600 rounded-lg bg-gray-900">
+                        <button class="faq-question w-full text-left p-6 font-bold text-white hover:text-purple-400 transition-colors duration-300 flex justify-between items-center">
                             <span>WHY DO YOU BUILD FREE WEBSITES?</span>
                             <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
                         </button>
@@ -925,23 +942,15 @@
                     
                     <div class="faq-item border border-gray-600 rounded-lg bg-gray-900">
                         <button class="faq-question w-full text-left p-6 font-bold text-white hover:text-purple-400 transition-colors duration-300 flex justify-between items-center">
-                            <span>I ALREADY HAVE WEB HOSTING WITH ANOTHER COMPANY. AM I STILL ELIGIBLE?</span>
+                            <span>I ALREADY HAVE MY OWN WEB HOSTING.</span>
                             <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-answer hidden p-6 pt-0 text-gray-300">
-                            <p>Absolutely! We can work with your existing hosting provider. We'll build your website and help you deploy it to your current hosting account.</p>
+                            <p>No problem however in order to qualify for the free web hosting you have to sign up with our partner, who we use and has some of the best rates and performance in the industry.</p>
                         </div>
                     </div>
                     
-                    <div class="faq-item border border-gray-600 rounded-lg bg-gray-900">
-                        <button class="faq-question w-full text-left p-6 font-bold text-white hover:text-purple-400 transition-colors duration-300 flex justify-between items-center">
-                            <span>I'M ALREADY SIGNED UP WITH BLUEHOST OR NEXCESS.</span>
-                            <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-answer hidden p-6 pt-0 text-gray-300">
-                            <p>Perfect! We work seamlessly with both Bluehost and Nexcess. We can integrate with your existing hosting setup and get your website live quickly.</p>
-                        </div>
-                    </div>
+
                     
                     <div class="faq-item border border-gray-600 rounded-lg bg-gray-900">
                         <button class="faq-question w-full text-left p-6 font-bold text-white hover:text-purple-400 transition-colors duration-300 flex justify-between items-center">
@@ -959,7 +968,7 @@
                             <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-answer hidden p-6 pt-0 text-gray-300">
-                            <p>We can build your website and provide you with all the files. You can then choose to host it wherever you'd like, or we can recommend affordable hosting options when you're ready.</p>
+                            <p>Sure thing! If you don't want to sign up with our partner then we can still build your website tailored to your preferred hosting for a small fee.</p>
                         </div>
                     </div>
                     
@@ -1014,7 +1023,7 @@
                             <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-answer hidden p-6 pt-0 text-gray-300">
-                            <p>We typically review applications within 24-48 hours. If your application is approved, we'll contact you immediately to start the website development process.</p>
+                            <p>We typically review applications within 24 hours. If your application is approved, we'll contact you immediately to start the website development process.</p>
                         </div>
                     </div>
                 </div>
@@ -1029,7 +1038,7 @@
                             <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-answer hidden p-6 pt-0 text-gray-300">
-                            <p>We use modern, responsive web technologies including HTML5, CSS3, and JavaScript. We also work with popular platforms like WordPress when appropriate for your needs.</p>
+                            <p>We use modern, responsive web technologies including HTML5, CSS3, and JavaScript to build custom websites tailored to your specific needs.</p>
                         </div>
                     </div>
                     
@@ -1069,7 +1078,7 @@
                             <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-answer hidden p-6 pt-0 text-gray-300">
-                            <p>Most websites are completed within 1-2 weeks, depending on complexity and how quickly you provide feedback and content. We'll give you a timeline estimate after reviewing your specific needs.</p>
+                            <p>Most websites are completed within 1-3 days, depending on complexity and how quickly you provide feedback and content. We'll give you a timeline estimate after reviewing your specific needs.</p>
                         </div>
                     </div>
                     
@@ -1089,7 +1098,7 @@
                             <i class="fas fa-plus text-purple-400 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-answer hidden p-6 pt-0 text-gray-300">
-                            <p>Yes! We build websites that are easy to update. We'll provide training and documentation so you can make content changes, add new pages, and update information whenever you need to.</p>
+                            <p>Yes, if you would like us to edit your site for you we can do that or if you want to do it yourself we can teach you how to make updates and changes to your website.</p>
                         </div>
                     </div>
                     
@@ -1179,7 +1188,7 @@
                         <span class="text-gray-300 text-sm font-medium">Email:</span>
                     </div>
                     <div class="text-white">
-                        <p class="font-semibold">hello@thefreewebsiteguys.com</p>
+                        <p class="font-semibold">dylan@thefreewebsitewizards.com</p>
                     </div>
                 </div>
             </div>
@@ -1216,6 +1225,7 @@
                     <li><a href="#guide" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Step by Step Guide</a></li>
                     <li><a href="#benefits" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Website Benefits</a></li>
                     <li><a href="#why-free" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Why Free?</a></li>
+                    <li><a href="examples.html" class="text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Examples</a></li>
                 </ul>
             </div>
             
@@ -1224,25 +1234,25 @@
                 <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">SOCIAL MEDIA</h3>
                 <ul class="space-y-3">
                     <li>
-                        <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
+                        <a href="https://www.facebook.com/profile.php?id=61577287178455" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
                             <i class="fab fa-facebook mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Facebook
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
+                        <a href="https://www.tiktok.com/@thefreewebsitewizards" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
                             <i class="fab fa-tiktok mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Tiktok
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
+                        <a href="https://www.instagram.com/thefreewebsitewizards" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
                             <i class="fab fa-instagram mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Instagram
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
+                        <a href="https://wa.me/17066641792" class="text-gray-300 hover:text-white transition-all duration-300 flex items-center hover:translate-x-2 hover:scale-105">
                             <i class="fab fa-whatsapp mr-3 transition-transform duration-300 hover:rotate-12"></i>
                             Whatsapp
                         </a>
@@ -1256,15 +1266,15 @@
                 <ul class="space-y-3">
                     <li class="text-gray-300 transition-all duration-300 hover:text-white hover:translate-x-2">
                         <i class="fas fa-envelope mr-3 transition-transform duration-300 hover:scale-110"></i>
-                        info@freewebsitewizards.com
+                        dylan@thefreewebsitewizards.com
                     </li>
                     <li class="text-gray-300 transition-all duration-300 hover:text-white hover:translate-x-2">
                         <i class="fas fa-phone mr-3 transition-transform duration-300 hover:scale-110"></i>
-                        +1 (555) 123-4567
+                        +1 (706)-664-1792
                     </li>
                     <li class="text-gray-300 transition-all duration-300 hover:text-white hover:translate-x-2">
                         <i class="fas fa-clock mr-3 transition-transform duration-300 hover:scale-110"></i>
-                        Mon-Fri 9AM-6PM EST
+                        24/7 Available
                     </li>
                     <li>
                         <a href="#apply" class="text-purple-400 hover:text-purple-300 transition-all duration-300 smooth-scroll hover:translate-x-2 hover:scale-105 inline-block">
@@ -1285,8 +1295,8 @@
                     <span class="text-gray-300">©. All rights reserved.</span>
                 </div>
                 <div class="flex items-center space-x-6">
-                    <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Privacy Policy</a>
-                    <a href="#" class="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Terms and Conditions</a>
+                    <a href="privacy-policy.html" class="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Privacy Policy</a>
+                    <a href="terms-of-service.html" class="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105">Terms and Conditions</a>
                     <div class="flex items-center text-gray-300 transition-all duration-300 hover:text-white">
                         <i class="fas fa-globe mr-2 transition-transform duration-300 hover:rotate-12"></i>
                         <span>English (United States)</span>
@@ -1468,7 +1478,6 @@
             closeModalBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Close button clicked'); // Debug log
                 closeModal();
             });
             
@@ -1546,6 +1555,23 @@
             if (nextBtn) {
                 nextBtn.addEventListener('click', (e) => {
                     e.preventDefault();
+                    
+                    // Email validation for step 3
+                    if (currentStepIndex === 3) {
+                        const emailInput = document.getElementById('email');
+                        const emailError = document.getElementById('emailError');
+                        const email = emailInput.value.trim();
+                        if (!email.includes('@') || !email.includes('.')) {
+                            emailInput.style.borderColor = '#ef4444';
+                            emailError.classList.remove('hidden');
+                            emailInput.focus();
+                            return;
+                        } else {
+                            emailInput.style.borderColor = '#9333ea';
+                            emailError.classList.add('hidden');
+                        }
+                    }
+                    
                     if (currentStepIndex < totalSteps) {
                         currentStepIndex++;
                         showStep(currentStepIndex);
