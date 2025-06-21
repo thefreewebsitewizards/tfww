@@ -446,51 +446,71 @@
             });
         });
 
-        // Hero Image Carousel
-        let heroCurrentSlide = 0;
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const heroTotalSlides = heroSlides.length;
-        const heroSlider = document.querySelector('.hero-image-slider');
-        const heroDots = document.querySelectorAll('.hero-dot');
-
-        function updateHeroSlider() {
-            const translateX = -heroCurrentSlide * 100;
-            heroSlider.style.transform = `translateX(${translateX}%)`;
+        // Replace the existing hero carousel code with this wrapped version:
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero Image Carousel
+            let heroCurrentSlide = 0;
+            const heroSlides = document.querySelectorAll('.hero-slide');
+            const heroTotalSlides = heroSlides.length;
+            const heroSlider = document.querySelector('.hero-image-slider');
+            const heroDots = document.querySelectorAll('.hero-dot');
+        
+            // Only proceed if elements exist
+            if (heroSlides.length === 0 || !heroSlider) {
+                console.warn('Hero carousel elements not found');
+                return;
+            }
+        
+            function updateHeroSlider() {
+                if (heroSlider) {
+                    const translateX = -heroCurrentSlide * 100;
+                    heroSlider.style.transform = `translateX(${translateX}%)`;
+                    
+                    // Update dots
+                    heroDots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === heroCurrentSlide);
+                    });
+                }
+            }
+        
+            function nextHeroSlide() {
+                heroCurrentSlide = (heroCurrentSlide + 1) % heroTotalSlides;
+                updateHeroSlider();
+            }
+        
+            function prevHeroSlide() {
+                heroCurrentSlide = (heroCurrentSlide - 1 + heroTotalSlides) % heroTotalSlides;
+                updateHeroSlider();
+            }
+        
+            function goToHeroSlide(slideIndex) {
+                heroCurrentSlide = slideIndex;
+                updateHeroSlider();
+            }
+        
+            // Event listeners for hero carousel - only add if elements exist
+            const heroNext = document.querySelector('.hero-next');
+            const heroPrev = document.querySelector('.hero-prev');
             
-            // Update dots
+            if (heroNext) {
+                heroNext.addEventListener('click', nextHeroSlide);
+            }
+            if (heroPrev) {
+                heroPrev.addEventListener('click', prevHeroSlide);
+            }
+        
             heroDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === heroCurrentSlide);
+                dot.addEventListener('click', () => goToHeroSlide(index));
             });
-        }
-
-        function nextHeroSlide() {
-            heroCurrentSlide = (heroCurrentSlide + 1) % heroTotalSlides;
+        
+            // Auto-play hero carousel - only if slides exist
+            if (heroTotalSlides > 0) {
+                setInterval(nextHeroSlide, 5000);
+            }
+        
+            // Initialize hero slider
             updateHeroSlider();
-        }
-
-        function prevHeroSlide() {
-            heroCurrentSlide = (heroCurrentSlide - 1 + heroTotalSlides) % heroTotalSlides;
-            updateHeroSlider();
-        }
-
-        function goToHeroSlide(slideIndex) {
-            heroCurrentSlide = slideIndex;
-            updateHeroSlider();
-        }
-
-        // Event listeners for hero carousel
-        document.querySelector('.hero-next').addEventListener('click', nextHeroSlide);
-        document.querySelector('.hero-prev').addEventListener('click', prevHeroSlide);
-
-        heroDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToHeroSlide(index));
         });
-
-        // Auto-play hero carousel
-        setInterval(nextHeroSlide, 5000);
-
-        // Initialize hero slider
-        updateHeroSlider();
 
               // Modal functionality - Wrap in DOMContentLoaded to ensure elements exist
         document.addEventListener('DOMContentLoaded', function() {

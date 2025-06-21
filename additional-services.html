@@ -325,19 +325,34 @@
             updateHeroSlider();
         }
 
-        // Event listeners for hero carousel
-        document.querySelector('.hero-next').addEventListener('click', nextHeroSlide);
-        document.querySelector('.hero-prev').addEventListener('click', prevHeroSlide);
-
-        heroDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToHeroSlide(index));
+        // Replace the existing hero carousel event listeners with this wrapped version:
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero Image Carousel Event Listeners
+            const heroNext = document.querySelector('.hero-next');
+            const heroPrev = document.querySelector('.hero-prev');
+            const heroDots = document.querySelectorAll('.hero-dot');
+            
+            // Only add event listeners if elements exist
+            if (heroNext) {
+                heroNext.addEventListener('click', nextHeroSlide);
+            }
+            if (heroPrev) {
+                heroPrev.addEventListener('click', prevHeroSlide);
+            }
+        
+            heroDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToHeroSlide(index));
+            });
+        
+            // Auto-play hero carousel - only if slides exist
+            const heroSlides = document.querySelectorAll('.hero-slide');
+            if (heroSlides.length > 0) {
+                setInterval(nextHeroSlide, 5000);
+            }
+        
+            // Initialize hero slider
+            updateHeroSlider();
         });
-
-        // Auto-play hero carousel
-        setInterval(nextHeroSlide, 5000);
-
-        // Initialize hero slider
-        updateHeroSlider();
 
               // Modal functionality - Wrap in DOMContentLoaded to ensure elements exist
         document.addEventListener('DOMContentLoaded', function() {
