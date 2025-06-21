@@ -507,7 +507,7 @@
         
         <!-- CTA Button -->
         <div class="fade-in" style="animation-delay: 0.9s;">
-            <a  href="#apply"class="bg-gradient-to-r from-blue-400 to-purple-500 text-black font-bold px-12 py-6 rounded-full text-xl hover:shadow-2xl hover:shadow-yellow-400/30 transition-all duration-300 transform hover:scale-105 pulse-button">
+            <a href="#apply" class="bg-gradient-to-r from-blue-400 to-purple-500 text-black font-bold px-12 py-6 rounded-full text-xl hover:shadow-2xl hover:shadow-yellow-400/30 transition-all duration-300 transform hover:scale-105 pulse-button">
                 Apply to get your website built by professionals — for free!
             </a>
         </div>
@@ -608,7 +608,7 @@
                     </div>
                 </div>
                 <div class="md:w-1/2 md:pl-12 fade-in slide-in-right ">
-                    <img src="Images/assets_task_01jy7f9wqdfrgrvbpd822qj94z_1750450197_img_1.webp" alt="Abstract visual design" class="rounded-lg shadow-xl w-full max-w-md mx-auto float purple-glow-container">
+                    <img src="Images/assets_task_01jy7f9wqdfrgrvbpd822qj94z_1750450197_img_1.png" alt="Abstract visual design" class="rounded-lg shadow-xl w-full max-w-md mx-auto float purple-glow-container">
                 </div>
             </div>
         </div>
@@ -694,7 +694,7 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <p class="text-lg mb-6 leading-relaxed text-gray-100">
-                            Couldn't believe it's free — and it looks amazing! The Free Website Wizards transformed my small bakery's online presence in just days.
+                            Amazing results! The Free Website Wizards created a professional website that perfectly showcases our pressure washing services. Our online bookings have increased significantly!
                         </p>
                         <div class="flex items-center">
                             <div class="mr-4">
@@ -716,7 +716,7 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <p class="text-lg mb-6 leading-relaxed text-gray-100">
-                            Professional, fast, and super easy. The team was fantastic to work with and understood exactly what I needed for my consulting business.
+                            Couldn't believe it's free — and it looks amazing! The Free Website Wizards transformed our daycare's online presence and made it so much easier for parents to find us.
                         </p>
                         <div class="flex items-center">
                             <div class="mr-4">
@@ -776,16 +776,16 @@
         </section>
     
            <!-- Modal Popup -->
-    <div id="wizardModal" class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
-        <div class="flex items-center justify-center min-h-screen p-2">
-            <div id="modalCard" class="bg-gradient-to-br from-purple-900 via-gray-900 to-black rounded-2xl shadow-2xl max-w-6xl w-full relative transform scale-95 transition-transform duration-300 border border-purple-400/30 max-h-screen" style="box-shadow: 0 0 50px rgba(168, 85, 247, 0.3);">
+    <div id="wizardModal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center">
+        <div class="w-full h-full flex items-center justify-center p-4">
+            <div id="modalCard" class="rounded-2xl shadow-2xl w-[85vw] max-w-none max-h-[90vh] overflow-hidden relative border border-purple-400/30" style="background-image: url('Images/20250618_1545_Starry Night Sky_remix_01jy294mf9e7ys6f0v49bbqe88.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <!-- Dark overlay for better text readability -->
+                <div class="absolute inset-0 bg-black bg-opacity-40 rounded-2xl"></div>
+                
                 <!-- Close Button -->
                 <button id="closeModalBtn" class="absolute top-4 right-4 text-white text-xl w-10 h-10 flex items-center justify-center rounded-full bg-gray-800/50 hover:bg-red-500/80 transition-all duration-200 border border-gray-600 hover:border-red-400 z-20 cursor-pointer">
                     <i class="fas fa-times"></i>
                 </button>
-                
-                <!-- Magical Background Pattern -->
-                <div class="absolute inset-0 opacity-10 rounded-2xl" style="background-image: radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.2) 0%, transparent 50%), radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);"></div>
                 
                 <!-- Modal Content -->
                 <div class="p-4 relative z-10 h-full flex flex-col">
@@ -794,46 +794,70 @@
                         <div class="mb-2 flex justify-center">
                             <img src="Images/logo-transparent.png" alt="Logo" class="h-40 w-auto">
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-1">Let's Create Your Website</h3>
-                        <p class="text-gray-300 text-xs">Just a few quick questions to get started</p>
+                        <h3 class="text-xl font-bold text-white mb-1 drop-shadow-lg">Let's Create Your Website</h3>
+                        <p class="text-gray-200 text-xs drop-shadow-lg">Just a few quick questions to get started</p>
                     </div>
                     
                     <!-- Progress Bar -->
                     <div class="mb-4 flex-shrink-0">
                         <div class="flex justify-between items-center mb-2">
-                            <span class="text-xs text-gray-400">Step <span id="currentStep">1</span> of 4</span>
-                            <span class="text-xs text-purple-400" id="progressPercent">25%</span>
+                            <span class="text-xs text-gray-200 drop-shadow-lg">Step <span id="currentStep">1</span> of 6</span>
+                            <span class="text-xs text-purple-300 drop-shadow-lg" id="progressPercent">17%</span>
                         </div>
-                        <div class="w-full bg-gray-700 rounded-full h-2">
-                            <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full transition-all duration-500" style="width: 25%;"></div>
+                        <div class="w-full bg-gray-700/50 rounded-full h-2">
+                            <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-purple-400 h-2 rounded-full transition-all duration-500" style="width: 17%;"></div>
                         </div>
                     </div>
                     
                     <!-- Form Steps Container -->
                     <div class="flex-grow flex flex-col justify-center">
                         <!-- Form Steps -->
-                        <form id="wizardForm">
-                            <!-- Step 1 -->
+                        <form id="wizardForm" class="w-full">
+                            <!-- Step 1: Do you already have a website? -->
                             <div class="step-content" id="step1">
+                                <h3 class="text-2xl font-bold text-white mb-6 text-center">Do you already have a website?</h3>
+                                <p class="text-gray-400 text-center mb-8">(Don't worry, this doesn't affect the odds of your application being chosen)</p>
+                                <div class="space-y-4">
+                                    <label class="flex items-center p-4 border border-gray-600 rounded-lg cursor-pointer hover:border-purple-400 transition-all duration-200">
+                                        <input type="radio" name="hasWebsite" value="yes" class="mr-3 text-purple-500">
+                                        <span class="text-white">Yes, I already have a website</span>
+                                    </label>
+                                    <label class="flex items-center p-4 border border-gray-600 rounded-lg cursor-pointer hover:border-purple-400 transition-all duration-200">
+                                        <input type="radio" name="hasWebsite" value="no" class="mr-3 text-purple-500">
+                                        <span class="text-white">No, I don't have a website yet</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2: Website Name -->
+                            <div class="step-content hidden" id="step2">
+                                <h3 id="websiteNameTitle" class="text-2xl font-bold text-white mb-6 text-center">What is your dream website name?</h3>
+                                <div class="space-y-4">
+                                    <input type="text" id="websiteName" name="websiteName" placeholder="Enter your website name" class="w-full p-4 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-purple-400 focus:outline-none transition-all duration-200">
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3: Website Description -->
+                            <div class="step-content hidden" id="step3">
                                 <label class="block text-white font-medium mb-3">Describe the website you want to build:</label>
                                 <textarea id="websiteDescription" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Tell us about your business and what kind of website you need..."></textarea>
                             </div>
                             
-                            <!-- Step 2 -->
-                            <div class="step-content hidden" id="step2">
+                            <!-- Step 4: Name -->
+                            <div class="step-content hidden" id="step4">
                                 <label class="block text-white font-medium mb-3">What is your name?</label>
                                 <input type="text" id="firstName" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="Enter your name">
                             </div>
                             
-                            <!-- Step 3 -->
-                            <div class="step-content hidden" id="step3">
+                            <!-- Step 5: Email -->
+                            <div class="step-content hidden" id="step5">
                                 <label class="block text-white font-medium mb-3">What is your email?</label>
                                 <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="your@email.com">
                                 <div id="emailError" class="text-red-400 text-sm mt-2 hidden">Hm that email doesn't look right</div>
                             </div>
                             
-                            <!-- Step 4 -->
-                            <div class="step-content hidden" id="step4">
+                            <!-- Step 6: Phone Number -->
+                            <div class="step-content hidden" id="step6">
                                 <label class="block text-white font-medium mb-3">(Optional) What's your phone number?</label>
                                 <input type="tel" id="phoneNumber" class="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800/50 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-200" placeholder="+1 (555) 123-4567">
                             </div>
@@ -851,10 +875,10 @@
                     
                     <!-- Navigation Buttons -->
                     <div class="flex justify-between mt-4 flex-shrink-0" id="navigationButtons">
-                        <button type="button" id="backBtn" class="px-6 py-3 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-purple-400 transition-all duration-200 hidden">
+                        <button type="button" id="backBtn" class="px-4 py-2 rounded-lg border border-gray-600 text-gray-300 hover:text-white hover:border-purple-400 transition-all duration-200 hidden text-sm">
                             <i class="fas fa-arrow-left mr-2"></i>Back
                         </button>
-                        <button type="button" id="nextBtn" class="ml-auto px-8 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105" style="box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);">
+                        <button type="button" id="nextBtn" class="ml-auto px-6 py-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105 text-sm" style="box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);">
                             Next <i class="fas fa-arrow-right ml-2"></i>
                         </button>
                     </div>
@@ -1211,7 +1235,6 @@
             <div class="transform transition-all duration-500 hover:translate-y-[-8px]">
                 <h3 class="text-lg font-bold mb-6 text-white uppercase tracking-wider transition-colors duration-300 hover:text-purple-300">EXPLORE</h3>
                 <ul class="space-y-3">
-                    <li><a href="#our-work" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Our Work</a></li>
                     <li><a href="#testimonials" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Testimonials</a></li>
                     <li><a href="#guide" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Step by Step Guide</a></li>
                     <li><a href="#benefits" class="text-gray-300 hover:text-white transition-all duration-300 smooth-scroll hover:translate-x-2 inline-block">Website Benefits</a></li>
@@ -1373,73 +1396,89 @@
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
             });
-        });
-
-        // Hero Image Carousel
-        let heroCurrentSlide = 0;
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const heroTotalSlides = heroSlides.length;
-        const heroSlider = document.querySelector('.hero-image-slider');
-        const heroDots = document.querySelectorAll('.hero-dot');
-        
-        function updateHeroSlider() {
-            const translateX = -heroCurrentSlide * 100;
-            heroSlider.style.transform = `translateX(${translateX}%)`;
             
-            // Update dots
+            // Move hero carousel code inside DOMContentLoaded
+            // Hero Image Carousel
+            let heroCurrentSlide = 0;
+            const heroSlides = document.querySelectorAll('.hero-slide');
+            const heroTotalSlides = heroSlides.length;
+            const heroSlider = document.querySelector('.hero-image-slider');
+            const heroDots = document.querySelectorAll('.hero-dot');
+            
+            function updateHeroSlider() {
+                if (heroSlider) {
+                    const translateX = -heroCurrentSlide * 100;
+                    heroSlider.style.transform = `translateX(${translateX}%)`;
+                    
+                    // Update dots
+                    heroDots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === heroCurrentSlide);
+                    });
+                }
+            }
+            
+            function nextHeroSlide() {
+                heroCurrentSlide = (heroCurrentSlide + 1) % heroTotalSlides;
+                updateHeroSlider();
+            }
+            
+            function prevHeroSlide() {
+                heroCurrentSlide = (heroCurrentSlide - 1 + heroTotalSlides) % heroTotalSlides;
+                updateHeroSlider();
+            }
+            
+            function goToHeroSlide(slideIndex) {
+                heroCurrentSlide = slideIndex;
+                updateHeroSlider();
+            }
+            
+            // Event listeners for hero carousel - only add if elements exist
+            const heroNext = document.querySelector('.hero-next');
+            const heroPrev = document.querySelector('.hero-prev');
+            
+            if (heroNext) {
+                heroNext.addEventListener('click', nextHeroSlide);
+            }
+            if (heroPrev) {
+                heroPrev.addEventListener('click', prevHeroSlide);
+            }
+            
             heroDots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === heroCurrentSlide);
+                dot.addEventListener('click', () => goToHeroSlide(index));
             });
-        }
-        
-        function nextHeroSlide() {
-            heroCurrentSlide = (heroCurrentSlide + 1) % heroTotalSlides;
+            
+            // Auto-play hero carousel
+            if (heroTotalSlides > 0) {
+                setInterval(nextHeroSlide, 5000);
+            }
+            
+            // Initialize hero slider
             updateHeroSlider();
-        }
-        
-        function prevHeroSlide() {
-            heroCurrentSlide = (heroCurrentSlide - 1 + heroTotalSlides) % heroTotalSlides;
-            updateHeroSlider();
-        }
-        
-        function goToHeroSlide(slideIndex) {
-            heroCurrentSlide = slideIndex;
-            updateHeroSlider();
-        }
-        
-        // Event listeners for hero carousel
-        document.querySelector('.hero-next').addEventListener('click', nextHeroSlide);
-        document.querySelector('.hero-prev').addEventListener('click', prevHeroSlide);
-        
-        heroDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToHeroSlide(index));
         });
-        
-        // Auto-play hero carousel
-        setInterval(nextHeroSlide, 5000);
-        
-        // Initialize hero slider
-        updateHeroSlider();
 
               // Modal functionality - Wrap in DOMContentLoaded to ensure elements exist
         document.addEventListener('DOMContentLoaded', function() {
             // Modal functionality
             let currentStepIndex = 1;
-            const totalSteps = 4;
+            const totalSteps = 6;
             
+            // Modal elements
             const modal = document.getElementById('wizardModal');
             const modalCard = document.getElementById('modalCard');
             const openModalBtn = document.getElementById('openModalBtn');
             const closeModalBtn = document.getElementById('closeModalBtn');
+            
+            // Form elements
+            const wizardForm = document.getElementById('wizardForm');
             const nextBtn = document.getElementById('nextBtn');
             const backBtn = document.getElementById('backBtn');
             const progressBar = document.getElementById('progressBar');
-            const currentStepSpan = document.getElementById('currentStep');
             const progressPercent = document.getElementById('progressPercent');
+            const currentStepSpan = document.getElementById('currentStep');
             const navigationButtons = document.getElementById('navigationButtons');
-            const wizardForm = document.getElementById('wizardForm');
+            
             const formErrorDisplay = document.createElement('p');
-            formErrorDisplay.className = 'text-red-400 text-sm mb-3 text-center'; // Added text-center
+            formErrorDisplay.className = 'text-red-400 text-sm mb-3 text-center';
             // Insert it once before navigationButtons, initially hidden
             const navigationButtonsDiv = document.getElementById('navigationButtons');
             if (navigationButtonsDiv) {
@@ -1447,90 +1486,72 @@
             }
             formErrorDisplay.style.display = 'none';
             
-            // New refined check:
+            // Check if essential elements exist
             if (!modal) {
                 console.error('Modal container (wizardModal) not found!');
-                return; // Critical, cannot proceed
+                return;
             }
-            // if (!openModalBtn) { //This was the original openModalBtn
-            //     console.error('Open modal button (openModalBtn) not found!');
-            //     return; // Critical for opening modal
-            // }
-            if (!modalCard) {
-                console.error('Modal card (modalCard) not found!');
-                // Non-critical for basic opening, but log it.
-            }
-            if (!closeModalBtn) {
-                console.error('Close modal button (closeModalBtn) not found!');
-                // Non-critical for opening, but log it.
-            }
-            // Other elements like nextBtn, backBtn, progressBar etc. can be checked similarly if needed,
-            // but their absence shouldn't prevent the openModalBtn listener from being attached.
             
-            const openModalButton = document.getElementById('openModalBtn'); // Ensure this ID is correct
-            const wizardModalElement = document.getElementById('wizardModal'); // Ensure this ID is correct
-            const wizardModalCardElement = document.getElementById('modalCard'); // Ensure this ID is correct
-
-            if (openModalButton && wizardModalElement) {
-                openModalButton.addEventListener('click', function(event) {
-                    event.preventDefault();
-
-                    // Make sure display is not 'none' before starting transitions
-                    wizardModalElement.style.display = 'flex'; // The modal uses flex for centering
-
-                    // Remove 'hidden' class that might set display:none
-                    wizardModalElement.classList.remove('hidden');
-
-                    // Start transitions after a brief moment to ensure display change has taken effect
-                    setTimeout(() => {
-                        wizardModalElement.classList.remove('opacity-0');
-                        if (wizardModalCardElement) {
-                            wizardModalCardElement.classList.remove('scale-95');
-                            wizardModalCardElement.classList.add('scale-100');
-                        }
-                    }, 10); // Small delay for CSS transitions to pick up
-
-                    // console.log('Modal open attempt: display set to flex, hidden class removed, transitions initiated.');
-                });
-            } else {
-                if (!openModalButton) {
-                    console.error('CRITICAL: openModalBtn (ID: openModalBtn) not found. Modal cannot be opened.');
-                }
-                if (!wizardModalElement) {
-                    console.error('CRITICAL: wizardModal (ID: wizardModal) not found. Modal cannot be opened.');
-                }
+            if (!openModalBtn) {
+                console.error('Open modal button (openModalBtn) not found!');
+                return;
             }
+            
+            // Open modal functionality
+            openModalBtn.addEventListener('click', function(event) {
+                event.preventDefault();
+                console.log('Modal button clicked!'); // Debug log
+                
+                // Show the modal
+                modal.style.display = 'flex';
+                modal.classList.remove('hidden');
+                
+                // Start transitions after a brief moment
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    if (modalCard) {
+                        modalCard.classList.remove('scale-95');
+                        modalCard.classList.add('scale-100');
+                    }
+                }, 10);
+            });
             
             // Close modal function
             function closeModal() {
-                modal.classList.add('opacity-0');
-                modalCard.classList.remove('scale-100');
-                modalCard.classList.add('scale-95');
-                setTimeout(() => {
-                    modal.classList.add('hidden');
-                    resetForm();
-                }, 300);
+                if (modal && modalCard) {
+                    modal.classList.add('opacity-0');
+                    modalCard.classList.remove('scale-100');
+                    modalCard.classList.add('scale-95');
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        modal.style.display = 'none';
+                        resetForm();
+                    }, 300);
+                }
             }
             
             // Close modal with X button
-            closeModalBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                closeModal();
-            });
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    closeModal();
+                });
+            }
             
-            // Close modal when clicking outside (backdrop)
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    console.log('Backdrop clicked'); // Debug log
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
                     closeModal();
                 }
             });
             
             // Prevent modal from closing when clicking inside the modal card
-            modalCard.addEventListener('click', (e) => {
-                e.stopPropagation();
-            });
+            if (modalCard) {
+                modalCard.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                });
+            }
             
             // Reset form
             function resetForm() {
@@ -1584,29 +1605,60 @@
             // Show step with animation
             function showStep(stepIndex) {
                 document.querySelectorAll('.step-content').forEach(step => {
+                    step.style.opacity = '0';
+                    step.style.transform = 'translateY(10px) scale(0.98)';
                     step.classList.add('hidden');
                 });
                 
-                const targetStep = document.getElementById('step' + stepIndex);
-                if (!targetStep) return;
-                targetStep.classList.remove('hidden');
-                targetStep.style.opacity = '0';
-                targetStep.style.transform = 'translateX(20px)';
+                const targetStep = document.getElementById(`step${stepIndex}`);
+                if (targetStep) {
+                    targetStep.classList.remove('hidden');
+                    setTimeout(() => {
+                        targetStep.style.opacity = '1';
+                        targetStep.style.transform = 'translateY(0) scale(1)';
+                    }, 50);
+                }
                 
-                setTimeout(() => {
-                    targetStep.style.transition = 'all 0.3s ease';
-                    targetStep.style.opacity = '1';
-                    targetStep.style.transform = 'translateX(0)';
-                }, 10);
+                updateProgress();
+                updateButtons();
             }
             
+            // Add radio button change listeners for immediate title update
+            document.querySelectorAll('input[name="hasWebsite"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const websiteNameTitle = document.getElementById('websiteNameTitle');
+                    if (this.value === 'yes') {
+                        websiteNameTitle.textContent = 'What is your current website name?';
+                    } else {
+                        websiteNameTitle.textContent = 'What is your dream website name?';
+                    }
+                });
+            });
+
             // Next button functionality
             if (nextBtn) {
                 nextBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     
-                    // Email validation for step 3
-                    if (currentStepIndex === 3) {
+                    // Validation for step 1 (website selection)
+                    if (currentStepIndex === 1) {
+                        const hasWebsiteRadio = document.querySelector('input[name="hasWebsite"]:checked');
+                        if (!hasWebsiteRadio) {
+                            // Show error or highlight that selection is required
+                            return;
+                        }
+                        
+                        // Update step 2 title based on selection
+                        const websiteNameTitle = document.getElementById('websiteNameTitle');
+                        if (hasWebsiteRadio.value === 'yes') {
+                            websiteNameTitle.textContent = 'What is your current website name?';
+                        } else {
+                            websiteNameTitle.textContent = 'What is your dream website name?';
+                        }
+                    }
+                    
+                    // Email validation for step 5
+                    if (currentStepIndex === 5) {
                         const emailInput = document.getElementById('email');
                         const emailError = document.getElementById('emailError');
                         const email = emailInput.value.trim();
@@ -1674,12 +1726,16 @@
                 if (nextBtn) nextBtn.disabled = true; // Disable submit button during processing
                 if (backBtn) backBtn.disabled = true; // Disable back button too
 
+                const hasWebsite = document.querySelector('input[name="hasWebsite"]:checked')?.value;
+                const websiteName = document.getElementById('websiteName').value;
                 const websiteDescription = document.getElementById('websiteDescription').value;
                 const firstName = document.getElementById('firstName').value;
                 const email = document.getElementById('email').value;
                 const phoneNumber = document.getElementById('phoneNumber').value;
 
                 const formData = {
+                    hasWebsite: hasWebsite,
+                    websiteName: websiteName,
                     websiteDescription: websiteDescription,
                     firstName: firstName,
                     email: email,
