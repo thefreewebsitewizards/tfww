@@ -139,11 +139,6 @@
                     <p class="text-lg text-white font-montserrat mb-6"> <!-- Adjusted margin -->
                         In a digital world, your website is your home online. Without one, you're invisible. A website makes your business searchable, professional, and ready for growth — and we'll build yours for free.
                     </p>
-                    <div class="my-8 p-6 bg-gray-800 rounded-lg shadow-lg border border-yellow-500/50"> <!-- Standalone container for tagline -->
-                        <p class="text-xl font-semibold text-yellow-400 text-center glow-text">
-                            Better than the #1 Rated Web Development Company
-                        </p>
-                    </div>
                     <div class="flex items-center py-8">
                         <div class="mr-4 text-purple-400 text-3xl">
                             🪄
@@ -256,6 +251,14 @@
                 View Our Services
             </a>
         </div>
+    </div>
+</section>
+
+<section class="py-12 bg-black text-center">
+    <div class="container mx-auto px-6">
+        <p class="text-xl font-semibold text-yellow-400 glow-text">
+            Better than the #1 Rated Web Development Company
+        </p>
     </div>
 </section>
     
@@ -605,7 +608,7 @@
                     </div>
                 </div>
                 <div class="md:w-1/2 md:pl-12 fade-in slide-in-right ">
-                    <img src="Images/assets_task_01jy7f9wqdfrgrvbpd822qj94z_1750450197_img_1.webp" alt="Team working" class="rounded-lg shadow-xl w-full max-w-md mx-auto float purple-glow-container">
+                    <img src="Images/assets_task_01jy7f9wqdfrgrvbpd822qj94z_1750450197_img_1.webp" alt="Abstract visual design" class="rounded-lg shadow-xl w-full max-w-md mx-auto float purple-glow-container">
                 </div>
             </div>
         </div>
@@ -695,11 +698,11 @@
                         </p>
                         <div class="flex items-center">
                             <div class="mr-4">
-                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">SJ</div>
+                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">AG</div>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-white">Sarah Johnson</h4>
-                                <p class="text-purple-400">Sweet Treats Bakery</p>
+                                <h4 class="font-bold text-lg text-white">Alex G.</h4>
+                                <p class="text-purple-400">Olympic Softwash</p>
                             </div>
                         </div>
                     </div>
@@ -717,11 +720,11 @@
                         </p>
                         <div class="flex items-center">
                             <div class="mr-4">
-                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">MT</div>
+                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">BP</div>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-white">Michael Thompson</h4>
-                                <p class="text-purple-400">Business Consultant</p>
+                                <h4 class="font-bold text-lg text-white">Brenda P.</h4>
+                                <p class="text-purple-400">Carrying Cubs Daycare</p>
                             </div>
                         </div>
                     </div>
@@ -739,11 +742,11 @@
                         </p>
                         <div class="flex items-center">
                             <div class="mr-4">
-                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">LM</div>
+                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">KW</div>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-white">Lisa Martinez</h4>
-                                <p class="text-purple-400">Local Florist</p>
+                                <h4 class="font-bold text-lg text-white">Kevin W.</h4>
+                                <p class="text-purple-400">Kar Haus Auto</p>
                             </div>
                         </div>
                     </div>
@@ -764,7 +767,7 @@
                     
                     <div class="text-center">
                         <button id="openModalBtn" class="bg-purple-400 text-black font-bold px-8 py-4 rounded-full text-lg hover:shadow-lg hover:shadow-purple-400/30 transition-all duration-300 transform hover:scale-105 glow">
-                            Start My Website — For Free
+                            Apply for a Free Website Now
                         </button>
                         <p class="text-sm text-gray-400 mt-3">Takes less than 2 minutes • No hidden fees</p>
                     </div>
@@ -1434,23 +1437,69 @@
             const currentStepSpan = document.getElementById('currentStep');
             const progressPercent = document.getElementById('progressPercent');
             const navigationButtons = document.getElementById('navigationButtons');
-            
-            // Check if elements exist before adding event listeners
-            if (!modal || !modalCard || !openModalBtn || !closeModalBtn) {
-                console.error('Modal elements not found');
-                return;
+            const wizardForm = document.getElementById('wizardForm');
+            const formErrorDisplay = document.createElement('p');
+            formErrorDisplay.className = 'text-red-400 text-sm mb-3 text-center'; // Added text-center
+            // Insert it once before navigationButtons, initially hidden
+            const navigationButtonsDiv = document.getElementById('navigationButtons');
+            if (navigationButtonsDiv) {
+                navigationButtonsDiv.parentNode.insertBefore(formErrorDisplay, navigationButtonsDiv);
             }
+            formErrorDisplay.style.display = 'none';
             
-            // Open modal
-            openModalBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.classList.remove('opacity-0');
-                    modalCard.classList.remove('scale-95');
-                    modalCard.classList.add('scale-100');
-                }, 10);
-            });
+            // New refined check:
+            if (!modal) {
+                console.error('Modal container (wizardModal) not found!');
+                return; // Critical, cannot proceed
+            }
+            // if (!openModalBtn) { //This was the original openModalBtn
+            //     console.error('Open modal button (openModalBtn) not found!');
+            //     return; // Critical for opening modal
+            // }
+            if (!modalCard) {
+                console.error('Modal card (modalCard) not found!');
+                // Non-critical for basic opening, but log it.
+            }
+            if (!closeModalBtn) {
+                console.error('Close modal button (closeModalBtn) not found!');
+                // Non-critical for opening, but log it.
+            }
+            // Other elements like nextBtn, backBtn, progressBar etc. can be checked similarly if needed,
+            // but their absence shouldn't prevent the openModalBtn listener from being attached.
+            
+            const openModalButton = document.getElementById('openModalBtn'); // Ensure this ID is correct
+            const wizardModalElement = document.getElementById('wizardModal'); // Ensure this ID is correct
+            const wizardModalCardElement = document.getElementById('modalCard'); // Ensure this ID is correct
+
+            if (openModalButton && wizardModalElement) {
+                openModalButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    // Make sure display is not 'none' before starting transitions
+                    wizardModalElement.style.display = 'flex'; // The modal uses flex for centering
+
+                    // Remove 'hidden' class that might set display:none
+                    wizardModalElement.classList.remove('hidden');
+
+                    // Start transitions after a brief moment to ensure display change has taken effect
+                    setTimeout(() => {
+                        wizardModalElement.classList.remove('opacity-0');
+                        if (wizardModalCardElement) {
+                            wizardModalCardElement.classList.remove('scale-95');
+                            wizardModalCardElement.classList.add('scale-100');
+                        }
+                    }, 10); // Small delay for CSS transitions to pick up
+
+                    // console.log('Modal open attempt: display set to flex, hidden class removed, transitions initiated.');
+                });
+            } else {
+                if (!openModalButton) {
+                    console.error('CRITICAL: openModalBtn (ID: openModalBtn) not found. Modal cannot be opened.');
+                }
+                if (!wizardModalElement) {
+                    console.error('CRITICAL: wizardModal (ID: wizardModal) not found. Modal cannot be opened.');
+                }
+            }
             
             // Close modal function
             function closeModal() {
@@ -1494,6 +1543,17 @@
                 const form = document.getElementById('wizardForm');
                 if (form) form.reset();
                 if (navigationButtons) navigationButtons.classList.remove('hidden');
+                if (formErrorDisplay) formErrorDisplay.style.display = 'none';
+            }
+
+            function showSubmissionError(message) {
+                if (formErrorDisplay) {
+                    formErrorDisplay.textContent = message;
+                    formErrorDisplay.style.display = 'block';
+                }
+                if (navigationButtons) navigationButtons.classList.remove('hidden'); // Ensure buttons are visible
+                if (nextBtn) nextBtn.disabled = false; // Re-enable submit button
+                if (backBtn) backBtn.disabled = false; // Re-enable back button
             }
             
             // Update progress bar
@@ -1567,8 +1627,8 @@
                         updateProgress();
                         updateButtons();
                     } else {
-                        // Submit form
-                        submitForm();
+                        // This is the submit action
+                        submitForm(); // Call the new function with fetch logic
                     }
                 });
             }
@@ -1586,25 +1646,72 @@
                 });
             }
             
-            // Submit form
-            function submitForm() {
+            // This was the old submitForm, now renamed
+            function handleSuccessfulSubmission() {
                 // Hide navigation buttons
                 if (navigationButtons) navigationButtons.classList.add('hidden');
-                
+                if (formErrorDisplay) formErrorDisplay.style.display = 'none'; // Hide error on success too
+
                 // Show success message
                 document.querySelectorAll('.step-content').forEach(step => step.classList.add('hidden'));
                 const successStep = document.getElementById('successStep');
                 if (successStep) successStep.classList.remove('hidden');
-                
+
                 // Update progress to 100%
                 if (progressBar) progressBar.style.width = '100%';
                 if (progressPercent) progressPercent.textContent = '100%';
                 if (currentStepSpan) currentStepSpan.textContent = '✓';
-                
+
                 // Auto close after 3 seconds
                 setTimeout(() => {
                     closeModal();
                 }, 3000);
+            }
+
+            // New function to handle the actual submission logic
+            function submitForm() {
+                if (formErrorDisplay) formErrorDisplay.style.display = 'none'; // Clear previous errors
+                if (nextBtn) nextBtn.disabled = true; // Disable submit button during processing
+                if (backBtn) backBtn.disabled = true; // Disable back button too
+
+                const websiteDescription = document.getElementById('websiteDescription').value;
+                const firstName = document.getElementById('firstName').value;
+                const email = document.getElementById('email').value;
+                const phoneNumber = document.getElementById('phoneNumber').value;
+
+                const formData = {
+                    websiteDescription: websiteDescription,
+                    firstName: firstName,
+                    email: email,
+                    phoneNumber: phoneNumber
+                };
+
+                fetch('/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json(); // Or response.text() if not expecting JSON back
+                    }
+                    // If response is not ok, throw an error to be caught by .catch()
+                    // You might want to parse error response from backend if available
+                    return response.text().then(text => { throw new Error(text || 'Network response was not ok') });
+                })
+                .then(data => {
+                    console.log('Submission successful:', data);
+                    handleSuccessfulSubmission();
+                })
+                .catch(error => {
+                    console.error('Submission error:', error);
+                    showSubmissionError('There was a problem submitting your application. Please try again later.');
+                    // Re-enable buttons only on error, success will close modal
+                    if (nextBtn) nextBtn.disabled = false;
+                    if (backBtn) backBtn.disabled = false;
+                });
             }
             
             // Keyboard navigation
@@ -1622,6 +1729,23 @@
             // Initialize the form
             updateProgress();
             updateButtons();
+
+            if (wizardForm) {
+                wizardForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
+                    // This explicitly handles form submission if Enter key is pressed on a field
+                    // or if a submit button (if any of type="submit") is clicked.
+                    // We ensure our custom logic is called.
+                    if (currentStepIndex === totalSteps) { // Only submit if on the last step
+                         submitForm();
+                    } else {
+                         // If not on the last step, an Enter key press might try to submit.
+                         // Instead, we can advance to the next step if desired, or do nothing.
+                         // For now, we'll just log it, as nextBtn handles step progression.
+                         console.log('Form submit event captured on non-final step.');
+                    }
+                });
+            }
         });
                 // FAQ Functionality
                 document.addEventListener('DOMContentLoaded', function() {

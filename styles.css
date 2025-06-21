@@ -1410,3 +1410,67 @@ footer .fab:hover {
         min-width: 500px;
     }
 }
+
+@media (min-width: 768px) {
+  .business-example {
+    /* Base styles for transition and layout - these are direct children of a space-y-16 container */
+    /* Ensure examples are centered if they don't take full width of their column in the parent grid (if any) */
+    margin-left: auto;
+    margin-right: auto;
+    /* Transition for max-width and potentially other properties like box-shadow or padding */
+    transition: max-width 0.4s ease-in-out, box-shadow 0.3s ease-in-out, padding 0.3s ease-in-out;
+    /* Default "small" state */
+    max-width: 60%; /* Or a fixed value like max-w-2xl from Tailwind, e.g., 42rem */
+                     /* Using percentage makes it relative to parent container width */
+    /* Add some padding to maintain internal spacing if needed, or adjust padding on children */
+    padding: 1rem; /* Default padding, adjust as needed */
+    border: 1px solid transparent; /* Prepare for hover border if desired */
+  }
+
+  .business-example:hover {
+    /* "Large" state on hover */
+    max-width: 90%; /* Expand to take more width, e.g. 90% or a larger fixed value like max-w-5xl */
+    z-index: 10; /* Bring to front */
+    /* Optional: enhance with a subtle shadow or border */
+    box-shadow: 0 10px 25px rgba(147, 51, 234, 0.2), 0 0 30px rgba(147, 51, 234, 0.1);
+    border-color: rgba(147, 51, 234, 0.3);
+    /* Padding might adjust on hover if the content needs more/less space */
+    padding: 1.5rem;
+  }
+
+  /* Remove any conflicting .business-example.visible scaling rules */
+  /* Ensure this is removed if it exists from previous attempts:
+  .business-example.visible {
+    transform: translateY(0) scale(0.5);
+    opacity: 1;
+    margin-bottom: -100px;
+  }
+  .business-example.visible:hover {
+    transform: translateY(0) scale(1);
+    z-index: 10;
+    margin-bottom: 0;
+  }
+  */
+}
+
+/* Class for mobile tap enlarge */
+.example-enlarged {
+  transform: scale(1) !important; /* Important to override desktop scaling if necessary */
+  z-index: 20 !important;
+  /* Add any other styles needed for the enlarged state on mobile */
+}
+
+/* Styling for the 'NEW' ticker next to service titles */
+.new-ticker {
+  background-color: #FFD700; /* Gold */
+  color: #000000; /* Black text */
+  padding: 0.1rem 0.4rem; /* Small padding */
+  font-size: 0.7rem; /* Slightly smaller than main text */
+  border-radius: 0.25rem; /* Slightly rounded corners */
+  margin-left: 0.5rem; /* Space from the title */
+  font-weight: bold;
+  display: inline-block; /* Allows padding and margin */
+  vertical-align: middle; /* Aligns nicely with the title text */
+  line-height: normal; /* Resets line-height if inherited strangely */
+  text-transform: uppercase; /* Make text uppercase like NEW */
+}
