@@ -1034,9 +1034,10 @@ animation-duration: 15s;
     }
     
     /* Prevent horizontal scroll */
-    * {
+    /* Removing the overly broad max-width rule as body already has overflow-x: hidden */
+    /* * {
         max-width: 100% !important;
-    }
+    } */
     
     img {
         max-width: 100% !important;
@@ -1455,9 +1456,43 @@ footer .fab:hover {
 
 /* Class for mobile tap enlarge */
 .example-enlarged {
-  transform: scale(1) !important; /* Important to override desktop scaling if necessary */
+  transform: scale(1) !important; /* Expand to normal size */
   z-index: 20 !important;
   /* Add any other styles needed for the enlarged state on mobile */
+}
+
+@media (max-width: 767px) {
+  .business-example {
+    transform: scale(0.9); /* Shrunk by default on mobile */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 1rem; /* Add some space between shrunk items */
+    border: 1px solid rgba(147, 51, 234, 0.2); /* Subtle border for shrunk state */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 0.5rem; /* Reduce padding when shrunk */
+  }
+
+  .business-example.example-enlarged {
+    transform: scale(1); /* Explicitly scale to 1 when enlarged */
+    box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3), 0 0 30px rgba(147, 51, 234, 0.15);
+    border-color: rgba(147, 51, 234, 0.5);
+    padding: 1rem; /* Restore padding when enlarged */
+  }
+
+  /* Adjust grid items padding when parent is shrunk */
+  .business-example:not(.example-enlarged) .item-a,
+  .business-example:not(.example-enlarged) .item-b,
+  .business-example:not(.example-enlarged) .item-c,
+  .business-example:not(.example-enlarged) .item-d {
+    padding: 0.25rem; /* Reduce padding of grid items */
+  }
+   .business-example:not(.example-enlarged) .text-xs {
+    font-size: 0.65rem; /* Smaller text for captions */
+  }
+  .business-example:not(.example-enlarged) .neon-button {
+    padding: 0.25rem 0.5rem; /* Smaller button */
+    font-size: 0.7rem;
+  }
+
 }
 
 /* Styling for the 'NEW' ticker next to service titles */

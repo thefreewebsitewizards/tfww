@@ -23,14 +23,11 @@
 <!-- Mobile menu overlay -->
 <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-40 hidden md:hidden">
     <div class="flex flex-col items-center justify-center h-full space-y-8">
-        <a href="#why" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Why Website</a>
-        <a href="#services" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Services</a>
-        <a href="#our-work" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Our Work</a>
-        <a href="#faq" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">FAQ</a>
-        <a href="#apply" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Apply</a>
-        <a href="#contact" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Contact</a>
-        <a href="additional-services.html" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Additional Services</a>
-        <button id="mobile-menu-close" class="text-white text-3xl hover:text-purple-400 transition-colors">
+        <a href="index.html" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors mobile-menu-link">Home</a>
+        <a href="examples.html" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors mobile-menu-link">Examples</a>
+        <a href="additional-services.html" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors mobile-menu-link">Additional Services</a>
+        <a href="index.html#apply" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors mobile-menu-link">Apply</a>
+        <button id="mobile-menu-close" class="text-white text-3xl hover:text-purple-400 transition-colors mt-8">
             <i class="fas fa-times"></i>
         </button>
     </div>
@@ -53,29 +50,26 @@
                 <h3 class="font-montserrat text-2xl md:text-3xl font-bold text-white mb-8 text-center glow-text">Olympic Softwash</h3>
                 <div class="example-sketch-grid grid grid-cols-1 md:grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)] gap-4 p-3 border-2 border-gray-700 rounded-xl shadow-lg">
 
-                    <!-- Item A: Website Layout Image (Left Column, Spans full height of parent grid) -->
+                    <!-- Item D: Button (Moved to top, spans full on desktop) -->
+                    <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-blue-900 md:col-span-3 order-first mb-4 md:mb-0">
+                        <a href="https://olympic-soft-wash.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
+                            Visit Olympic Softwash
+                        </a>
+                    </div>
+
+                    <!-- Item A: Website Layout Image (Left Column) -->
                     <div class="item-a bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-blue-900 order-1">
                         <img src="Images/Website Layouts/softwash_grid_collage_1080x1350.jpg" alt="Olympic Softwash Layout" class="w-full h-full object-contain rounded-md">
                         <p class="text-center text-gray-300 mt-1 text-xs">Website Layout</p>
                     </div>
 
-                    <!-- Middle Column Container (for B and D) -->
-                    <div class="middle-column flex flex-col gap-4 order-2">
-                        <!-- Item B: Desktop Video (Middle Column, Top part) -->
-                        <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-blue-900 flex-1"> <!-- flex-1 to take available space -->
-                            <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (3).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
-                            <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
-                        </div>
-
-                        <!-- Item D: Button (Middle Column, Bottom part) -->
-                        <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-blue-900 flex-1"> <!-- flex-1 to take available space -->
-                            <a href="https://olympic-soft-wash.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
-                                Visit Olympic Softwash
-                            </a>
-                        </div>
+                    <!-- Item B: Desktop Video (Middle Column) -->
+                    <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-blue-900 order-2 flex-1">
+                        <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (3).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
+                        <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
                     </div>
 
-                    <!-- Item C: Mobile Video (Right Column, Spans full height of parent grid) -->
+                    <!-- Item C: Mobile Video (Right Column) -->
                     <div class="item-c bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-blue-900 order-3">
                         <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-47-17_1olympicsoftwash.mp4" autoplay loop muted playsinline class="w-full h-full object-contain rounded-md"></video>
                         <p class="text-center text-gray-300 mt-1 text-xs">Mobile Version</p>
@@ -88,29 +82,26 @@
                 <h3 class="font-montserrat text-2xl md:text-3xl font-bold text-white mb-8 text-center glow-text">Carrying Cubs</h3>
                 <div class="example-sketch-grid grid grid-cols-1 md:grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)] gap-4 p-3 border-2 border-gray-700 rounded-xl shadow-lg">
 
-                    <!-- Item A: Website Layout Image (Left Column, Spans full height of parent grid) -->
+                    <!-- Item D: Button (Moved to top, spans full on desktop) -->
+                    <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-yellow-500 md:col-span-3 order-first mb-4 md:mb-0">
+                        <a href="https://carrying-cubs-daycare.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
+                            Visit Carrying Cubs
+                        </a>
+                    </div>
+
+                    <!-- Item A: Website Layout Image (Left Column) -->
                     <div class="item-a bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-yellow-500 order-1">
                         <img src="Images/Website Layouts/carrying_cubs_grid_collage_1080x1350.jpg" alt="Carrying Cubs Layout" class="w-full h-full object-contain rounded-md">
                         <p class="text-center text-gray-300 mt-1 text-xs">Website Layout</p>
                     </div>
 
-                    <!-- Middle Column Container (for B and D) -->
-                    <div class="middle-column flex flex-col gap-4 order-2">
-                        <!-- Item B: Desktop Video (Middle Column, Top part) -->
-                        <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-yellow-500 flex-1">
-                            <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (4).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
-                            <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
-                        </div>
-
-                        <!-- Item D: Button (Middle Column, Bottom part) -->
-                        <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-yellow-500 flex-1">
-                            <a href="https://carrying-cubs-daycare.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
-                                Visit Carrying Cubs
-                            </a>
-                        </div>
+                    <!-- Item B: Desktop Video (Middle Column) -->
+                    <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-yellow-500 order-2 flex-1">
+                        <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (4).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
+                        <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
                     </div>
 
-                    <!-- Item C: Mobile Video (Right Column, Spans full height of parent grid) -->
+                    <!-- Item C: Mobile Video (Right Column) -->
                     <div class="item-c bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-yellow-500 order-3">
                         <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-47-41_1carryingcubs.mp4" autoplay loop muted playsinline class="w-full h-full object-contain rounded-md"></video>
                         <p class="text-center text-gray-300 mt-1 text-xs">Mobile Version</p>
@@ -123,29 +114,26 @@
                 <h3 class="font-montserrat text-2xl md:text-3xl font-bold text-white mb-8 text-center glow-text">Kar Haus</h3>
                 <div class="example-sketch-grid grid grid-cols-1 md:grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)] gap-4 p-3 border-2 border-gray-700 rounded-xl shadow-lg">
 
-                    <!-- Item A: Website Layout Image (Left Column, Spans full height of parent grid) -->
+                    <!-- Item D: Button (Moved to top, spans full on desktop) -->
+                    <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-orange-500 md:col-span-3 order-first mb-4 md:mb-0">
+                        <a href="https://karhaus.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
+                            Visit Kar Haus
+                        </a>
+                    </div>
+
+                    <!-- Item A: Website Layout Image (Left Column) -->
                     <div class="item-a bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-orange-500 order-1">
                         <img src="Images/Website Layouts/ChatGPT Image Jun 18, 2025, 09_31_19 PM.png" alt="Kar Haus Layout" class="w-full h-full object-contain rounded-md">
                         <p class="text-center text-gray-300 mt-1 text-xs">Website Layout</p>
                     </div>
 
-                    <!-- Middle Column Container (for B and D) -->
-                    <div class="middle-column flex flex-col gap-4 order-2">
-                        <!-- Item B: Desktop Video (Middle Column, Top part) -->
-                        <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-orange-500 flex-1">
-                            <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (7).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
-                            <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
-                        </div>
-
-                        <!-- Item D: Button (Middle Column, Bottom part) -->
-                        <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-orange-500 flex-1">
-                            <a href="https://karhaus.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
-                                Visit Kar Haus
-                            </a>
-                        </div>
+                    <!-- Item B: Desktop Video (Middle Column) -->
+                    <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-orange-500 order-2 flex-1">
+                        <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (7).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
+                        <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
                     </div>
 
-                    <!-- Item C: Mobile Video (Right Column, Spans full height of parent grid) -->
+                    <!-- Item C: Mobile Video (Right Column) -->
                     <div class="item-c bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-orange-500 order-3">
                         <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-48-03_1karhaus.mp4" autoplay loop muted playsinline class="w-full h-full object-contain rounded-md"></video>
                         <p class="text-center text-gray-300 mt-1 text-xs">Mobile Version</p>
@@ -158,29 +146,26 @@
                 <h3 class="font-montserrat text-2xl md:text-3xl font-bold text-white mb-8 text-center glow-text">All Season Long Landscaping</h3>
                 <div class="example-sketch-grid grid grid-cols-1 md:grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)] gap-4 p-3 border-2 border-gray-700 rounded-xl shadow-lg">
 
-                    <!-- Item A: Website Layout Image (Left Column, Spans full height of parent grid) -->
+                    <!-- Item D: Button (Moved to top, spans full on desktop) -->
+                    <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-green-800 md:col-span-3 order-first mb-4 md:mb-0">
+                        <a href="https://all-season-long.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
+                            Visit All Season Long Landscaping
+                        </a>
+                    </div>
+
+                    <!-- Item A: Website Layout Image (Left Column) -->
                     <div class="item-a bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-green-800 order-1">
                         <img src="Images/Website Layouts/all_season_long_landscaping_grid_1080x1350.jpg" alt="All Season Long Landscaping Layout" class="w-full h-full object-contain rounded-md">
                         <p class="text-center text-gray-300 mt-1 text-xs">Website Layout</p>
                     </div>
 
-                    <!-- Middle Column Container (for B and D) -->
-                    <div class="middle-column flex flex-col gap-4 order-2">
-                        <!-- Item B: Desktop Video (Middle Column, Top part) -->
-                        <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-green-800 flex-1">
-                            <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (6).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
-                            <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
-                        </div>
-
-                        <!-- Item D: Button (Middle Column, Bottom part) -->
-                        <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-green-800 flex-1">
-                            <a href="https://all-season-long.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
-                                Visit All Season Long Landscaping
-                            </a>
-                        </div>
+                    <!-- Item B: Desktop Video (Middle Column) -->
+                    <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-green-800 order-2 flex-1">
+                        <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (6).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
+                        <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
                     </div>
 
-                    <!-- Item C: Mobile Video (Right Column, Spans full height of parent grid) -->
+                    <!-- Item C: Mobile Video (Right Column) -->
                     <div class="item-c bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-green-800 order-3">
                         <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-48-30_1allseasonlonglandscaping.mp4" autoplay loop muted playsinline class="w-full h-full object-contain rounded-md"></video>
                         <p class="text-center text-gray-300 mt-1 text-xs">Mobile Version</p>
@@ -193,29 +178,26 @@
                 <h3 class="font-montserrat text-2xl md:text-3xl font-bold text-white mb-8 text-center glow-text">Kurt's Magical Painting</h3>
                 <div class="example-sketch-grid grid grid-cols-1 md:grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)] gap-4 p-3 border-2 border-gray-700 rounded-xl shadow-lg">
 
-                    <!-- Item A: Website Layout Image (Left Column, Spans full height of parent grid) -->
+                     <!-- Item D: Button (Moved to top, spans full on desktop) -->
+                    <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-gray-500 md:col-span-3 order-first mb-4 md:mb-0">
+                        <a href="https://kurts-magical-painting.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
+                            Visit Kurt's Magical Painting
+                        </a>
+                    </div>
+
+                    <!-- Item A: Website Layout Image (Left Column) -->
                     <div class="item-a bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-gray-500 order-1">
                         <img src="Images/Website Layouts/painting_magic_grid_collage_1080x1350 (1).jpg" alt="Kurt's Magical Painting Layout" class="w-full h-full object-contain rounded-md">
                         <p class="text-center text-gray-300 mt-1 text-xs">Website Layout</p>
                     </div>
 
-                    <!-- Middle Column Container (for B and D) -->
-                    <div class="middle-column flex flex-col gap-4 order-2">
-                        <!-- Item B: Desktop Video (Middle Column, Top part) -->
-                        <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-gray-500 flex-1">
-                            <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (5).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
-                            <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
-                        </div>
-
-                        <!-- Item D: Button (Middle Column, Bottom part) -->
-                        <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-gray-500 flex-1">
-                            <a href="https://kurts-magical-painting.onrender.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
-                                Visit Kurt's Magical Painting
-                            </a>
-                        </div>
+                    <!-- Item B: Desktop Video (Middle Column) -->
+                    <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-gray-500 order-2 flex-1">
+                        <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (5).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
+                        <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
                     </div>
 
-                    <!-- Item C: Mobile Video (Right Column, Spans full height of parent grid) -->
+                    <!-- Item C: Mobile Video (Right Column) -->
                     <div class="item-c bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-gray-500 order-3">
                         <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-49-04_1kurtsmagicalpainting.mp4" autoplay loop muted playsinline class="w-full h-full object-contain rounded-md"></video>
                         <p class="text-center text-gray-300 mt-1 text-xs">Mobile Version</p>
@@ -228,29 +210,26 @@
                 <h3 class="font-montserrat text-2xl md:text-3xl font-bold text-white mb-8 text-center glow-text">Kim's Fresh Start</h3>
                 <div class="example-sketch-grid grid grid-cols-1 md:grid-cols-[minmax(0,_2fr)_minmax(0,_2fr)_minmax(0,_1fr)] gap-4 p-3 border-2 border-gray-700 rounded-xl shadow-lg">
 
-                    <!-- Item A: Website Layout Image (Left Column, Spans full height of parent grid) -->
+                    <!-- Item D: Button (Moved to top, spans full on desktop) -->
+                    <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-sky-400 md:col-span-3 order-first mb-4 md:mb-0">
+                        <a href="https://kimsfreshstart.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
+                            Visit Kim's Fresh Start
+                        </a>
+                    </div>
+
+                    <!-- Item A: Website Layout Image (Left Column) -->
                     <div class="item-a bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-sky-400 order-1">
                         <img src="Images/Website Layouts/ChatGPT Image Jun 18, 2025, 09_36_03 PM.png" alt="Kim's Fresh Start Layout" class="w-full h-full object-contain rounded-md">
                         <p class="text-center text-gray-300 mt-1 text-xs">Website Layout</p>
                     </div>
 
-                    <!-- Middle Column Container (for B and D) -->
-                    <div class="middle-column flex flex-col gap-4 order-2">
-                        <!-- Item B: Desktop Video (Middle Column, Top part) -->
-                        <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-sky-400 flex-1">
-                            <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (8).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
-                            <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
-                        </div>
-
-                        <!-- Item D: Button (Middle Column, Bottom part) -->
-                        <div class="item-d bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-sky-400 flex-1">
-                            <a href="https://kimsfreshstart.com/" target="_blank" class="neon-button inline-block text-white font-bold px-6 py-3 rounded-full text-sm md:text-md transform transition-all duration-300 text-center">
-                                Visit Kim's Fresh Start
-                            </a>
-                        </div>
+                    <!-- Item B: Desktop Video (Middle Column) -->
+                    <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-sky-400 order-2 flex-1">
+                        <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (8).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
+                        <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
                     </div>
 
-                    <!-- Item C: Mobile Video (Right Column, Spans full height of parent grid) -->
+                    <!-- Item C: Mobile Video (Right Column) -->
                     <div class="item-c bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-sky-400 order-3">
                         <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-50-17_1kimsfreshstart.mp4" autoplay loop muted playsinline class="w-full h-full object-contain rounded-md"></video>
                         <p class="text-center text-gray-300 mt-1 text-xs">Mobile Version</p>
@@ -775,6 +754,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
     if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
         mobileMenuBtn.addEventListener('click', () => {
@@ -790,6 +770,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target === mobileMenu) {
                 mobileMenu.classList.add('hidden');
             }
+        });
+
+        // Close menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
     }
 });

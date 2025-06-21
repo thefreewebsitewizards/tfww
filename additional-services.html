@@ -23,14 +23,11 @@
 <!-- Mobile menu overlay -->
 <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-40 hidden md:hidden">
     <div class="flex flex-col items-center justify-center h-full space-y-8">
-        <a href="#why" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Why Website</a>
-        <a href="#services" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Services</a>
-        <a href="#our-work" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Our Work</a>
-        <a href="#faq" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">FAQ</a>
-        <a href="#apply" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Apply</a>
-        <a href="#contact" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Contact</a>
-        <a href="additional-services.html" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors">Additional Services</a>
-        <button id="mobile-menu-close" class="text-white text-3xl hover:text-purple-400 transition-colors">
+        <a href="index.html" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors mobile-menu-link">Home</a>
+        <a href="examples.html" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors mobile-menu-link">Examples</a>
+        <a href="additional-services.html" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors mobile-menu-link">Additional Services</a>
+        <a href="index.html#apply" class="text-white text-2xl font-semibold hover:text-purple-400 transition-colors mobile-menu-link">Apply</a>
+        <button id="mobile-menu-close" class="text-white text-3xl hover:text-purple-400 transition-colors mt-8">
             <i class="fas fa-times"></i>
         </button>
     </div>
@@ -617,6 +614,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
     if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
         mobileMenuBtn.addEventListener('click', () => {
@@ -632,6 +630,13 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target === mobileMenu) {
                 mobileMenu.classList.add('hidden');
             }
+        });
+
+        // Close menu when a link is clicked
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
     }
 });
