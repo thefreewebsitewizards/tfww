@@ -152,8 +152,14 @@
 }
 
 @keyframes nerdGlow {
-    0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
-  50% { filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.8)); }
+    0%, 100% { 
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.6));
+        transform: scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 0 35px rgba(255, 255, 255, 1)) drop-shadow(0 0 60px rgba(255, 255, 255, 0.9));
+        transform: scale(1.02);
+    }
 }
 
 /* Font Families */
@@ -670,17 +676,40 @@ animation: bounce 1s ease infinite;
 }
 
 /* Secret Section Animations */
+.nerd-background-float {
+    animation: nerd-float 8s ease-in-out infinite;
+}
+
+@keyframes nerd-float {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.2;
+    }
+    25% {
+        transform: translateY(-10px) scale(1.02);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translateY(-5px) scale(1.01);
+        opacity: 0.3;
+    }
+    75% {
+        transform: translateY(-15px) scale(1.03);
+        opacity: 0.25;
+    }
+}
+
 .glow-text {
-text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.7), 0 0 75px rgba(255, 255, 255, 0.5);
 animation: glow-pulse 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow-pulse {
 from {
-text-shadow: 0 0 20px rgba(245, 245, 220, 0.8), 0 0 40px rgba(245, 245, 220, 0.6);
+text-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 50px rgba(255, 255, 255, 0.7), 0 0 75px rgba(255, 255, 255, 0.5);
 }
 to {
-text-shadow: 0 0 30px rgba(245, 245, 220, 1), 0 0 60px rgba(245, 245, 220, 0.8), 0 0 80px rgba(245, 245, 220, 0.4);
+text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.9), 0 0 120px rgba(255, 255, 255, 0.7), 0 0 160px rgba(255, 255, 255, 0.4);
 }
 }
 
