@@ -2059,21 +2059,39 @@
 
                 console.log('Submitting form data:', formData);
 
-                // Retry function for robust form submission
+                // Retry function for robust form submission - isolated from external scripts
                 async function submitWithRetry(data, maxRetries = 3) {
                     for (let attempt = 1; attempt <= maxRetries; attempt++) {
                         try {
                             console.log(`Submission attempt ${attempt}/${maxRetries}`);
                             
-                            const response = await fetch("https://www.leadneedle.com/submit-wizard", {
-                                method: 'POST',
-                                mode: 'cors',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Accept': 'application/json',
-                                },
-                                body: JSON.stringify(data)
-                                // Removed AbortController - let the browser handle timeouts naturally
+                            // Use XMLHttpRequest as primary method to avoid external script interference
+                            const response = await new Promise((resolve, reject) => {
+                                const xhr = new XMLHttpRequest();
+                                xhr.open('POST', 'https://www.leadneedle.com/submit-wizard', true);
+                                xhr.setRequestHeader('Content-Type', 'application/json');
+                                xhr.setRequestHeader('Accept', 'application/json');
+                                
+                                // Set a generous timeout (2 minutes) to avoid premature cancellation
+                                xhr.timeout = 120000;
+                                
+                                xhr.onload = function() {
+                                    resolve({
+                                        ok: xhr.status >= 200 && xhr.status < 300,
+                                        status: xhr.status,
+                                        statusText: xhr.statusText,
+                                        text: () => Promise.resolve(xhr.responseText),
+                                        json: () => Promise.resolve(JSON.parse(xhr.responseText)),
+                                        headers: {
+                                            get: (name) => xhr.getResponseHeader(name)
+                                        }
+                                    });
+                                };
+                                
+                                xhr.onerror = () => reject(new Error('Network error'));
+                                xhr.ontimeout = () => reject(new Error('Request timeout'));
+                                
+                                xhr.send(JSON.stringify(data));
                             });
 
                             console.log('Response status:', response.status);
