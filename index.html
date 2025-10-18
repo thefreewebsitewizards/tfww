@@ -2061,7 +2061,7 @@
 
                 // Add timeout to the fetch request
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+                const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
                 fetch("https://www.leadneedle.com/submit-wizard", {
                     method: 'POST',
