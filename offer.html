@@ -10173,24 +10173,77 @@ if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_c
       try{
         var data = {}; new FormData(form).forEach((v,k)=>{data[k]=v});
         data.source = 'tfww-offer';
+        
+        // Create AbortController for timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+        
         fetch('https://www.leadneedle.com/submit-wizard',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
-          body: JSON.stringify(data)
+          body: JSON.stringify(data),
+          signal: controller.signal
         }).then(function(res){
-          if(res.ok){ if(window.fbq){fbq('track','Lead');} alert('Thanks. Your application was sent.'); form.reset(); }
-          else{ 
+          clearTimeout(timeoutId);
+          if(res.ok){ 
+            if(window.fbq){fbq('track','Lead');} 
+            alert('Thanks. Your application was sent.'); 
+            form.reset(); 
+          } else { 
+            // Handle specific HTTP status codes
+            let errorMessage;
+            switch(res.status) {
+              case 400:
+                errorMessage = 'Invalid form data. Please check your entries and try again.';
+                break;
+              case 401:
+                errorMessage = 'Authentication error. Please refresh the page and try again.';
+                break;
+              case 403:
+                errorMessage = 'Access denied. Please contact support if this continues.';
+                break;
+              case 404:
+                errorMessage = 'Service not found. Please try again later.';
+                break;
+              case 429:
+                errorMessage = 'Too many requests. Please wait a moment and try again.';
+                break;
+              case 500:
+                errorMessage = 'Server error. Our team has been notified. Please try again in a few minutes.';
+                break;
+              case 502:
+              case 503:
+              case 504:
+                errorMessage = 'Service temporarily unavailable. Please try again in a few minutes.';
+                break;
+              default:
+                errorMessage = `Server returned error ${res.status}. Please try again later.`;
+            }
+            
             if (typeof showSubmissionError === 'function') {
-              showSubmissionError('There was a problem submitting your application. Please try again later.');
+              showSubmissionError(errorMessage);
             } else {
-              alert('We could not submit right now. Try again or use the backup form.');
+              alert(errorMessage);
             }
           }
-        }).catch(function(){ 
-          if (typeof showSubmissionError === 'function') {
-            showSubmissionError('Network error. Please try again.');
+        }).catch(function(error){ 
+          clearTimeout(timeoutId);
+          let errorMessage;
+          
+          if (error.name === 'AbortError') {
+            errorMessage = 'Request timed out. Please check your internet connection and try again.';
+          } else if (error.message && error.message.includes('Failed to fetch')) {
+            errorMessage = 'Network connection error. Please check your internet and try again.';
+          } else if (error.message && error.message.includes('CORS')) {
+            errorMessage = 'Security error. Please refresh the page and try again.';
           } else {
-            alert('Network error. Please try again.');
+            errorMessage = 'Network error. Please check your connection and try again.';
+          }
+          
+          if (typeof showSubmissionError === 'function') {
+            showSubmissionError(errorMessage);
+          } else {
+            alert(errorMessage);
           }
         });
         e.preventDefault();
