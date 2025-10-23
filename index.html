@@ -1489,10 +1489,8 @@
             
             // Initialize hero slider
             updateHeroSlider();
-        });
 
-              // Modal functionality - Wrap in DOMContentLoaded to ensure elements exist
-        document.addEventListener('DOMContentLoaded', function() {
+            // Modal functionality
             // Country data with phone codes
             const countries = [
                 { name: "Afghanistan", code: "+93" },
@@ -2045,146 +2043,82 @@
                     return;
                 }
 
-                const formData = {
-                    hasWebHosting: hasWebHosting,
-                    websiteDescription: websiteDescription,
-                    firstName: firstName,
-                    email: email,
-                    phoneNumber: phoneNumber,
-                    countryCode: selectedCountry.code,
-                    countryName: selectedCountry.name,
-                    timestamp: new Date().toISOString(),
-                    source: 'tfww-wizard'
-                };
-
-                console.log('Submitting form data:', formData);
-
-                // Retry function for robust form submission - isolated from external scripts
-                async function submitWithRetry(data, maxRetries = 3) {
+                // build payload safely 
+                const formData = { 
+                    hasWebHosting, 
+                    websiteDescription, 
+                    firstName, 
+                    email, 
+                    phoneNumber, 
+                    countryCode: (window.selectedCountry?.code) || "", 
+                    countryName: (window.selectedCountry?.name) || "", 
+                    timestamp: new Date().toISOString(), 
+                    source: "tfww-wizard" 
+                }; 
+                
+                console.log("Submitting form data:", formData); 
+                
+                // retrying XHR helper (already defined above) 
+                async function submitWithRetry(payload, maxRetries = 3) {
                     for (let attempt = 1; attempt <= maxRetries; attempt++) {
                         try {
                             console.log(`Submission attempt ${attempt}/${maxRetries}`);
-                            
-                            // Use XMLHttpRequest as primary method to avoid external script interference
+
                             const response = await new Promise((resolve, reject) => {
                                 const xhr = new XMLHttpRequest();
-                                xhr.open('POST', 'https://leadneedle-57ad.onrender.com/submit-wizard', true);
-                                xhr.setRequestHeader('Content-Type', 'application/json');
-                                xhr.setRequestHeader('Accept', 'application/json');
-                                
-                                // Set a generous timeout (2 minutes) to avoid premature cancellation
+                                xhr.open("POST", "https://script.google.com/macros/s/AKfycbyWKY5Z-NhmmHSt-OWM7pZ84kgPLsNDiX5rX-QCzGuIp_KA80i7T3y3Y0CJE82FcRM3/exec", true);
+
+                                // no headers, send FormData to avoid CORS preflight
+                                const fd = new FormData();
+                                for (const k in payload) fd.append(k, payload[k] ?? "");
+
                                 xhr.timeout = 120000;
-                                
-                                xhr.onload = function() {
-                                    resolve({
-                                        ok: xhr.status >= 200 && xhr.status < 300,
-                                        status: xhr.status,
-                                        statusText: xhr.statusText,
-                                        text: () => Promise.resolve(xhr.responseText),
-                                        json: () => Promise.resolve(JSON.parse(xhr.responseText)),
-                                        headers: {
-                                            get: (name) => xhr.getResponseHeader(name)
-                                        }
-                                    });
-                                };
-                                
-                                xhr.onerror = () => reject(new Error('Network error'));
-                                xhr.ontimeout = () => reject(new Error('Request timeout'));
-                                
-                                xhr.send(JSON.stringify(data));
+                                xhr.onload = () => resolve(xhr);
+                                xhr.onerror = () => reject(new Error("Network error"));
+                                xhr.ontimeout = () => reject(new Error("Request timeout"));
+
+                                xhr.send(fd);
                             });
 
-                            console.log('Response status:', response.status);
-                            console.log('Response headers:', response.headers);
-                            
-                            if (response.ok) {
-                                // Try to parse as JSON first, fallback to text
-                                const contentType = response.headers.get('content-type');
-                                if (contentType && contentType.includes('application/json')) {
-                                    return await response.json();
-                                } else {
-                                    return await response.text();
-                                }
+                            if (response.status >= 200 && response.status < 300) {
+                                return response.responseText;
                             } else {
-                                // Enhanced error handling with status codes
-                                const text = await response.text();
-                                let errorMessage = `Server error (${response.status}): `;
-                                switch(response.status) {
-                                    case 400:
-                                        errorMessage += 'Invalid form data. Please check your entries.';
-                                        break;
-                                    case 401:
-                                        errorMessage += 'Authentication required.';
-                                        break;
-                                    case 403:
-                                        errorMessage += 'Access forbidden.';
-                                        break;
-                                    case 404:
-                                        errorMessage += 'Submission endpoint not found.';
-                                        break;
-                                    case 429:
-                                        errorMessage += 'Too many requests. Please wait and try again.';
-                                        break;
-                                    case 500:
-                                        errorMessage += 'Internal server error. Please try again later.';
-                                        break;
-                                    case 502:
-                                    case 503:
-                                    case 504:
-                                        errorMessage += 'Server temporarily unavailable. Please try again later.';
-                                        break;
-                                    default:
-                                        errorMessage += text || 'Unknown server error.';
-                                }
-                                throw new Error(errorMessage);
+                                throw new Error(`HTTP ${response.status}`);
                             }
-                        } catch (error) {
-                            console.error(`Attempt ${attempt} failed:`, error);
-                            
-                            // If this is the last attempt, throw the error
-                            if (attempt === maxRetries) {
-                                throw error;
-                            }
-                            
-                            // Wait before retrying (exponential backoff)
+
+                        } catch (err) {
+                            console.error(`Attempt ${attempt} failed:`, err);
+                            if (attempt === maxRetries) throw err;
                             const delay = Math.min(1000 * Math.pow(2, attempt - 1), 5000);
                             console.log(`Retrying in ${delay}ms...`);
-                            await new Promise(resolve => setTimeout(resolve, delay));
+                            await new Promise(r => setTimeout(r, delay));
                         }
                     }
                 }
+                
+                // actually send it and handle the result 
+                (async () => { 
+                    try { 
+                        const text = await submitWithRetry(formData, 3); 
+                        let json = null; 
+                        try { json = JSON.parse(text); } catch {} 
+                        if (json && json.success) { 
+                            handleSuccessfulSubmission(); 
+                        } else { 
+                            const msg = (json && (json.error || json.message)) || `Unexpected response: ${text}`; 
+                            showSubmissionError(msg); 
+                        } 
+                    } catch (err) { 
+                        console.error(err); 
+                        showSubmissionError(err?.message || "Network error"); 
+                    } finally { 
+                        if (nextBtn) nextBtn.disabled = false; 
+                        if (backBtn) backBtn.disabled = false; 
+                    } 
+                })();
 
-                // Submit with retry logic
-                submitWithRetry(formData)
-                .then(data => {
-                    console.log('Submission successful:', data);
-                    handleSuccessfulSubmission();
-                })
-                .catch(error => {
-                    console.error('Submission error:', error);
-                    
-                    // Enhanced error messages for better user experience
-                    let userMessage = 'There was an error submitting your form. ';
-                    
-                    if (error.message.includes('Failed to fetch')) {
-                        userMessage += 'Please check your internet connection and try again.';
-                    } else if (error.message.includes('NetworkError')) {
-                        userMessage += 'Network error occurred. Please check your connection.';
-                    } else if (error.message.includes('CORS')) {
-                        userMessage += 'Security error occurred. Please contact support.';
-                    } else if (error.message.includes('Server error')) {
-                        userMessage += error.message;
-                    } else {
-                        userMessage += 'Please try again later or contact support if the problem persists.';
-                    }
-                    
-                    showSubmissionError(userMessage);
-                    
-                    // Re-enable buttons only on error, success will close modal
-                    if (nextBtn) nextBtn.disabled = false;
-                    if (backBtn) backBtn.disabled = false;
-                });
-            }
+
+      
             
             // Keyboard navigation
             document.addEventListener('keydown', (e) => {
@@ -2199,55 +2133,47 @@
             });
             
             // Initialize the form
-            updateProgress();
-            updateButtons();
+updateProgress();
+updateButtons();
 
-            if (wizardForm) {
-                wizardForm.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Prevent default form submission
-                    // This explicitly handles form submission if Enter key is pressed on a field
-                    // or if a submit button (if any of type="submit") is clicked.
-                    // We ensure our custom logic is called.
-                    if (currentStepIndex === totalSteps) { // Only submit if on the last step
-                         submitForm();
-                    } else {
-                         // If not on the last step, an Enter key press might try to submit.
-                         // Instead, we can advance to the next step if desired, or do nothing.
-                         // For now, we'll just log it, as nextBtn handles step progression.
-                         console.log('Form submit event captured on non-final step.');
-                    }
-                });
-            }
-        });
-                // FAQ Functionality
-                document.addEventListener('DOMContentLoaded', function() {
-            // Tab switching
-            const faqTabs = document.querySelectorAll('.faq-tab');
-            const faqContents = document.querySelectorAll('.faq-tab-content');
-            
-            faqTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const targetTab = this.getAttribute('data-tab');
-                    
-                    // Remove active class from all tabs
-                    faqTabs.forEach(t => {
-                        t.classList.remove('active', 'bg-purple-500', 'text-white');
-                        t.classList.add('bg-gray-700', 'text-gray-200');
-                    });
-                    
-                    // Add active class to clicked tab
-                    this.classList.add('active', 'bg-purple-500', 'text-white');
-                    this.classList.remove('bg-gray-700', 'text-gray-200');
-                    
-                    // Hide all content
-                    faqContents.forEach(content => {
-                        content.classList.add('hidden');
-                    });
-                    
-                    // Show target content
-                    document.getElementById(targetTab + '-content').classList.remove('hidden');
-                });
-            });
+if (wizardForm) {
+  wizardForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (currentStepIndex === totalSteps) {
+      submitForm();
+    } else {
+      console.log('Form submit event captured on non-final step.');
+    }
+  });
+}
+
+// FAQ Functionality (keep this inside the same DOMContentLoaded block)
+const faqTabs = document.querySelectorAll('.faq-tab');
+const faqContents = document.querySelectorAll('.faq-tab-content');
+
+faqTabs.forEach(tab => {
+  tab.addEventListener('click', function () {
+    const targetTab = this.getAttribute('data-tab');
+
+    // Deactivate all tabs
+    faqTabs.forEach(t => {
+      t.classList.remove('active', 'bg-purple-500', 'text-white');
+      t.classList.add('bg-gray-700', 'text-gray-200');
+    });
+
+    // Activate clicked tab
+    this.classList.add('active', 'bg-purple-500', 'text-white');
+    this.classList.remove('bg-gray-700', 'text-gray-200');
+
+    // Hide all content
+    faqContents.forEach(content => content.classList.add('hidden'));
+
+    // Show target content
+    const targetEl = document.getElementById(`${targetTab}-content`);
+    if (targetEl) targetEl.classList.remove('hidden');
+  });
+});
+
             
             // FAQ accordion functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
@@ -2271,39 +2197,39 @@
                     }
                 });
             });
-        });
-        // Add this to your existing JavaScript section
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-    
-    if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-        
-        mobileMenuClose.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-        
-        // Close menu when clicking outside
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
+        }
 
-        // Close menu when a link is clicked
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+            
+            mobileMenuClose.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
-        });
-    }
-});
+            
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
 
+            // Close menu when a link is clicked
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+    }); // Close the main DOMContentLoaded event listener
     </script>
 </body>
 </html>

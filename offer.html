@@ -10175,37 +10175,43 @@ if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_c
         data.source = 'tfww-offer';
         
         // Retry function for robust form submission - isolated from external scripts
-        async function submitWithRetry(formData, maxRetries = 3) {
-          for (let attempt = 1; attempt <= maxRetries; attempt++) {
-            try {
-              console.log(`Submission attempt ${attempt}/${maxRetries}`);
-              
-              // Use XMLHttpRequest as primary method to avoid external script interference
-              const response = await new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('POST', 'https://leadneedle-57ad.onrender.com/submit-wizard', true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                
-                // Set a generous timeout (2 minutes) to avoid premature cancellation
-                xhr.timeout = 120000;
-                
-                xhr.onload = function() {
-                  resolve({
-                    ok: xhr.status >= 200 && xhr.status < 300,
-                    status: xhr.status,
-                    statusText: xhr.statusText,
-                    text: () => Promise.resolve(xhr.responseText),
-                    json: () => Promise.resolve(JSON.parse(xhr.responseText)),
-                    headers: {
-                      get: (name) => xhr.getResponseHeader(name)
-                    }
-                  });
-                };
-                
-                xhr.onerror = () => reject(new Error('Network error'));
-                xhr.ontimeout = () => reject(new Error('Request timeout'));
-                
-                xhr.send(JSON.stringify(formData));
+async function submitWithRetry(payload, maxRetries = 3) {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      console.log(`Submission attempt ${attempt}/${maxRetries}`);
+
+      const response = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://script.google.com/macros/s/AKfycbyWKY5Z-NhmmHSt-OWM7pZ84kgPLsNDiX5rX-QCzGuIp_KA80i7T3y3Y0CJE82FcRM3/exec", true);
+
+        // no headers, send FormData to avoid CORS preflight
+        const fd = new FormData();
+        for (const k in payload) fd.append(k, payload[k] ?? "");
+
+        xhr.timeout = 120000;
+        xhr.onload = () => resolve(xhr);
+        xhr.onerror = () => reject(new Error("Network error"));
+        xhr.ontimeout = () => reject(new Error("Request timeout"));
+
+        xhr.send(fd);
+      });
+
+      if (response.status >= 200 && response.status < 300) {
+        return response.responseText;
+      } else {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+    } catch (err) {
+      console.error(`Attempt ${attempt} failed:`, err);
+      if (attempt === maxRetries) throw err;
+      const delay = Math.min(1000 * Math.pow(2, attempt - 1), 5000);
+      console.log(`Retrying in ${delay}ms...`);
+      await new Promise(r => setTimeout(r, delay));
+    }
+  }
+}
+
               });
               
               if (response.ok) {
