@@ -14,12 +14,14 @@
     
     <!-- Meta Pixel Code -->
     <script>
+    if (!/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) {
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
     (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '3032047526979670'); fbq('track', 'PageView');
+    }
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=3032047526979670&ev=PageView&noscript=1"/></noscript>
@@ -198,7 +200,7 @@
                     <div class="middle-column flex flex-col gap-4 order-2">
                         <!-- Item B: Desktop Video (Middle Column, Top part) -->
                         <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-blue-500 flex-1"> <!-- flex-1 to take available space -->
-                            <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (4).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
+                            <video src="Images/desktop-video-4.mp4" autoplay loop muted playsinline preload="metadata" class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
                             <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
                         </div>
 
@@ -212,7 +214,7 @@
 
                     <!-- Item C: Mobile Video (Right Column, Spans full height of parent grid) -->
                     <div class="item-c bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-green-500 order-3">
-                        <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-47-41_1carryingcubs.mp4" autoplay loop muted playsinline class="w-full h-full object-contain rounded-md"></video>
+                        <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-47-41_1carryingcubs.mp4" autoplay loop muted playsinline preload="metadata" class="w-full h-full object-contain rounded-md"></video>
                         <p class="text-center text-gray-300 mt-1 text-xs">Mobile Version</p>
                     </div>
                 </div>
@@ -293,7 +295,7 @@
                     <tr class="bg-gradient-to-r from-purple-600/20 to-purple-800/20">
                         <th class="comparison-header text-left p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30">Feature</th>
                         <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">Typical Web Agencies</th>
-                        <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">The Free Website Wizards</th>
+                        <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">The Free Website Guys</th>
                         <th class="comparison-header text-center p-6 text-white font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20 relative">
                             The Free Website Wizards
                         </th>
@@ -1716,6 +1718,7 @@
             ];
 
             let selectedCountry = countries.find(c => c.name === "United States") || countries[0];
+            window.selectedCountry = selectedCountry;
 
             // Country dropdown functionality
             function initializeCountryDropdown() {
@@ -1736,6 +1739,7 @@
                         countryItem.innerHTML = `${country.name} (${country.code})`;
                         countryItem.addEventListener('click', () => {
                             selectedCountry = country;
+                            window.selectedCountry = country;
                             selectedCountrySpan.textContent = `${country.name} (${country.code})`;
                             dropdownMenu.classList.add('hidden');
                             countrySearch.value = '';
@@ -2043,23 +2047,32 @@
                     return;
                 }
 
-                // build payload safely 
-                const formData = { 
-                    hasWebHosting, 
-                    websiteDescription, 
-                    firstName, 
-                    email, 
-                    phoneNumber, 
-                    countryCode: (window.selectedCountry?.code) || "", 
-                    countryName: (window.selectedCountry?.name) || "", 
-                    timestamp: new Date().toISOString(), 
-                    source: "tfww-wizard" 
-                }; 
+                // build payload safely using FormData
+                const formData = new FormData();
+                formData.append('hasWebHosting', hasWebHosting);
+                formData.append('websiteDescription', websiteDescription);
+                formData.append('firstName', firstName);
+                formData.append('email', email);
+                formData.append('phoneNumber', phoneNumber || '');
+                formData.append('countryCode', (window.selectedCountry?.code) || '');
+                formData.append('countryName', (window.selectedCountry?.name) || '');
+                formData.append('timestamp', new Date().toISOString());
+                formData.append('source', 'tfww-wizard');
                 
-                console.log("Submitting form data:", formData); 
+                console.log("Submitting form data:", {
+                    hasWebHosting,
+                    websiteDescription,
+                    firstName,
+                    email,
+                    phoneNumber,
+                    countryCode: (window.selectedCountry?.code) || '',
+                    countryName: (window.selectedCountry?.name) || '',
+                    timestamp: new Date().toISOString(),
+                    source: 'tfww-wizard'
+                }); 
                 
                 // retrying XHR helper (already defined above) 
-                async function submitWithRetry(payload, maxRetries = 3) {
+                async function submitWithRetry(formData, maxRetries = 3) {
                     for (let attempt = 1; attempt <= maxRetries; attempt++) {
                         try {
                             console.log(`Submission attempt ${attempt}/${maxRetries}`);
@@ -2068,16 +2081,13 @@
                                 const xhr = new XMLHttpRequest();
                                 xhr.open("POST", "https://script.google.com/macros/s/AKfycbyWKY5Z-NhmmHSt-OWM7pZ84kgPLsNDiX5rX-QCzGuIp_KA80i7T3y3Y0CJE82FcRM3/exec", true);
 
-                                // no headers, send FormData to avoid CORS preflight
-                                const fd = new FormData();
-                                for (const k in payload) fd.append(k, payload[k] ?? "");
-
+                                // Send FormData directly (no headers needed to avoid CORS preflight)
                                 xhr.timeout = 120000;
                                 xhr.onload = () => resolve(xhr);
                                 xhr.onerror = () => reject(new Error("Network error"));
                                 xhr.ontimeout = () => reject(new Error("Request timeout"));
 
-                                xhr.send(fd);
+                                xhr.send(formData);
                             });
 
                             if (response.status >= 200 && response.status < 300) {
