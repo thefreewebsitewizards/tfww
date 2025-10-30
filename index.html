@@ -14,12 +14,14 @@
     
     <!-- Meta Pixel Code -->
     <script>
+    if (!/^(127\.0\.0\.1|localhost)$/.test(location.hostname)) {
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
     t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
     (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '3032047526979670'); fbq('track', 'PageView');
+    }
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=3032047526979670&ev=PageView&noscript=1"/></noscript>
@@ -198,7 +200,7 @@
                     <div class="middle-column flex flex-col gap-4 order-2">
                         <!-- Item B: Desktop Video (Middle Column, Top part) -->
                         <div class="item-b bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center border-4 border-blue-500 flex-1"> <!-- flex-1 to take available space -->
-                            <video src="Images/Desktop Sites/Untitled video - Made with Clipchamp (4).mp4" autoplay loop muted playsinline class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
+                            <video src="Images/desktop-video-4.mp4" autoplay loop muted playsinline preload="metadata" class="w-full h-auto object-contain rounded-md max-h-[250px] md:max-h-full"></video>
                             <p class="text-center text-gray-300 mt-1 text-xs">Desktop Version</p>
                         </div>
 
@@ -212,7 +214,7 @@
 
                     <!-- Item C: Mobile Video (Right Column, Spans full height of parent grid) -->
                     <div class="item-c bg-gray-800 p-2 rounded-lg shadow-md flex flex-col justify-center items-center h-full border-4 border-green-500 order-3">
-                        <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-47-41_1carryingcubs.mp4" autoplay loop muted playsinline class="w-full h-full object-contain rounded-md"></video>
+                        <video src="Images/Mobile Sites/ScreenRecording_06-18-2025 21-47-41_1carryingcubs.mp4" autoplay loop muted playsinline preload="metadata" class="w-full h-full object-contain rounded-md"></video>
                         <p class="text-center text-gray-300 mt-1 text-xs">Mobile Version</p>
                     </div>
                 </div>
@@ -293,7 +295,7 @@
                     <tr class="bg-gradient-to-r from-purple-600/20 to-purple-800/20">
                         <th class="comparison-header text-left p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30">Feature</th>
                         <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">Typical Web Agencies</th>
-                        <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">The Free Website Wizards</th>
+                        <th class="comparison-header text-center p-6 text-gray-300 font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20">The Free Website Guys</th>
                         <th class="comparison-header text-center p-6 text-white font-bold text-lg border-b border-purple-400/30 border-l border-purple-400/20 relative">
                             The Free Website Wizards
                         </th>
@@ -1489,10 +1491,8 @@
             
             // Initialize hero slider
             updateHeroSlider();
-        });
 
-              // Modal functionality - Wrap in DOMContentLoaded to ensure elements exist
-        document.addEventListener('DOMContentLoaded', function() {
+            // Modal functionality
             // Country data with phone codes
             const countries = [
                 { name: "Afghanistan", code: "+93" },
@@ -1718,6 +1718,7 @@
             ];
 
             let selectedCountry = countries.find(c => c.name === "United States") || countries[0];
+            window.selectedCountry = selectedCountry;
 
             // Country dropdown functionality
             function initializeCountryDropdown() {
@@ -1738,6 +1739,7 @@
                         countryItem.innerHTML = `${country.name} (${country.code})`;
                         countryItem.addEventListener('click', () => {
                             selectedCountry = country;
+                            window.selectedCountry = country;
                             selectedCountrySpan.textContent = `${country.name} (${country.code})`;
                             dropdownMenu.classList.add('hidden');
                             countrySearch.value = '';
@@ -2045,121 +2047,88 @@
                     return;
                 }
 
-                const formData = {
-                    hasWebHosting: hasWebHosting,
-                    websiteDescription: websiteDescription,
-                    firstName: firstName,
-                    email: email,
-                    phoneNumber: phoneNumber,
-                    countryCode: selectedCountry.code,
-                    countryName: selectedCountry.name,
+                // build payload safely using FormData
+                const formData = new FormData();
+                formData.append('hasWebHosting', hasWebHosting);
+                formData.append('websiteDescription', websiteDescription);
+                formData.append('firstName', firstName);
+                formData.append('email', email);
+                formData.append('phoneNumber', phoneNumber || '');
+                formData.append('countryCode', (window.selectedCountry?.code) || '');
+                formData.append('countryName', (window.selectedCountry?.name) || '');
+                formData.append('timestamp', new Date().toISOString());
+                formData.append('source', 'tfww-wizard');
+                
+                console.log("Submitting form data:", {
+                    hasWebHosting,
+                    websiteDescription,
+                    firstName,
+                    email,
+                    phoneNumber,
+                    countryCode: (window.selectedCountry?.code) || '',
+                    countryName: (window.selectedCountry?.name) || '',
                     timestamp: new Date().toISOString(),
                     source: 'tfww-wizard'
-                };
+                }); 
+                
+                // retrying XHR helper (already defined above) 
+                async function submitWithRetry(formData, maxRetries = 3) {
+                    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+                        try {
+                            console.log(`Submission attempt ${attempt}/${maxRetries}`);
 
-                console.log('Submitting form data:', formData);
+                            const response = await new Promise((resolve, reject) => {
+                                const xhr = new XMLHttpRequest();
+                                xhr.open("POST", "https://script.google.com/macros/s/AKfycbyWKY5Z-NhmmHSt-OWM7pZ84kgPLsNDiX5rX-QCzGuIp_KA80i7T3y3Y0CJE82FcRM3/exec", true);
 
-                // Add timeout to the fetch request
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
+                                // Send FormData directly (no headers needed to avoid CORS preflight)
+                                xhr.timeout = 120000;
+                                xhr.onload = () => resolve(xhr);
+                                xhr.onerror = () => reject(new Error("Network error"));
+                                xhr.ontimeout = () => reject(new Error("Request timeout"));
 
-                // Create FormData for Apps Script submission
-                const submitData = new FormData();
-                submitData.append('firstName', formData.firstName);
-                submitData.append('email', formData.email);
-                submitData.append('phoneNumber', formData.phoneNumber);
-                submitData.append('countryCode', formData.countryCode);
-                submitData.append('countryName', formData.countryName);
-                submitData.append('hasWebHosting', formData.hasWebHosting);
-                submitData.append('websiteDescription', formData.websiteDescription);
-                submitData.append('source', formData.source);
-                submitData.append('timestamp', formData.timestamp);
-                // Add shared secret for backend validation (never expose this in client-side JS)
-                submitData.append('secret', 'tfww-secure-2024');
+                                xhr.send(formData);
+                            });
 
-                fetch("https://script.google.com/macros/s/AKfycbxCC2LBCk0US9JUSiztbjPlx5OxEVHvclH3NSI_dN-ex8NES662Ya5foLPKBq543i4P/exec", {
-                    method: 'POST',
-                    mode: 'cors',
-                    body: submitData,
-                    signal: controller.signal
-                })
-                .then(response => {
-                    clearTimeout(timeoutId);
-                    console.log('Response status:', response.status);
-                    console.log('Response headers:', response.headers);
-                    
-                    if (response.ok) {
-                        // Try to parse as JSON first, fallback to text
-                        const contentType = response.headers.get('content-type');
-                        if (contentType && contentType.includes('application/json')) {
-                            return response.json();
-                        } else {
-                            return response.text();
-                        }
-                    } else {
-                        // Enhanced error handling with status codes
-                        return response.text().then(text => {
-                            let errorMessage = `Server error (${response.status}): `;
-                            switch(response.status) {
-                                case 400:
-                                    errorMessage += 'Invalid form data. Please check your entries.';
-                                    break;
-                                case 401:
-                                    errorMessage += 'Authentication required.';
-                                    break;
-                                case 403:
-                                    errorMessage += 'Access forbidden.';
-                                    break;
-                                case 404:
-                                    errorMessage += 'Submission endpoint not found.';
-                                    break;
-                                case 429:
-                                    errorMessage += 'Too many requests. Please wait and try again.';
-                                    break;
-                                case 500:
-                                    errorMessage += 'Internal server error. Please try again later.';
-                                    break;
-                                case 502:
-                                case 503:
-                                case 504:
-                                    errorMessage += 'Server temporarily unavailable. Please try again later.';
-                                    break;
-                                default:
-                                    errorMessage += text || 'Unknown server error.';
+                            if (response.status >= 200 && response.status < 300) {
+                                return response.responseText;
+                            } else {
+                                throw new Error(`HTTP ${response.status}`);
                             }
-                            throw new Error(errorMessage);
-                        });
+
+                        } catch (err) {
+                            console.error(`Attempt ${attempt} failed:`, err);
+                            if (attempt === maxRetries) throw err;
+                            const delay = Math.min(1000 * Math.pow(2, attempt - 1), 5000);
+                            console.log(`Retrying in ${delay}ms...`);
+                            await new Promise(r => setTimeout(r, delay));
+                        }
                     }
-                })
-                .then(data => {
-                    console.log('Submission successful:', data);
-                    handleSuccessfulSubmission();
-                })
-                .catch(error => {
-                    clearTimeout(timeoutId);
-                    console.error('Submission error:', error);
-                    
-                    let errorMessage = 'There was a problem submitting your application. ';
-                    
-                    if (error.name === 'AbortError') {
-                        errorMessage += 'Request timed out. Please check your internet connection and try again.';
-                    } else if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
-                        errorMessage += 'Network connection error. Please check your internet connection and try again.';
-                    } else if (error.message.includes('CORS')) {
-                        errorMessage += 'Cross-origin request blocked. Please contact support.';
-                    } else if (error.message.startsWith('Server error')) {
-                        errorMessage = error.message;
-                    } else {
-                        errorMessage += 'Please try again later or contact support if the problem persists.';
-                    }
-                    
-                    showSubmissionError(errorMessage);
-                    
-                    // Re-enable buttons only on error, success will close modal
-                    if (nextBtn) nextBtn.disabled = false;
-                    if (backBtn) backBtn.disabled = false;
-                });
-            }
+                }
+                
+                // actually send it and handle the result 
+                (async () => { 
+                    try { 
+                        const text = await submitWithRetry(formData, 3); 
+                        let json = null; 
+                        try { json = JSON.parse(text); } catch {} 
+                        if (json && json.success) { 
+                            handleSuccessfulSubmission(); 
+                        } else { 
+                            const msg = (json && (json.error || json.message)) || `Unexpected response: ${text}`; 
+                            showSubmissionError(msg); 
+                        } 
+                    } catch (err) { 
+                        console.error(err); 
+                        showSubmissionError(err?.message || "Network error"); 
+                    } finally { 
+                        if (nextBtn) nextBtn.disabled = false; 
+                        if (backBtn) backBtn.disabled = false; 
+                    } 
+                })();
+
+
+      
             
             // Keyboard navigation
             document.addEventListener('keydown', (e) => {
@@ -2174,55 +2143,47 @@
             });
             
             // Initialize the form
-            updateProgress();
-            updateButtons();
+updateProgress();
+updateButtons();
 
-            if (wizardForm) {
-                wizardForm.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Prevent default form submission
-                    // This explicitly handles form submission if Enter key is pressed on a field
-                    // or if a submit button (if any of type="submit") is clicked.
-                    // We ensure our custom logic is called.
-                    if (currentStepIndex === totalSteps) { // Only submit if on the last step
-                         submitForm();
-                    } else {
-                         // If not on the last step, an Enter key press might try to submit.
-                         // Instead, we can advance to the next step if desired, or do nothing.
-                         // For now, we'll just log it, as nextBtn handles step progression.
-                         console.log('Form submit event captured on non-final step.');
-                    }
-                });
-            }
-        });
-                // FAQ Functionality
-                document.addEventListener('DOMContentLoaded', function() {
-            // Tab switching
-            const faqTabs = document.querySelectorAll('.faq-tab');
-            const faqContents = document.querySelectorAll('.faq-tab-content');
-            
-            faqTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    const targetTab = this.getAttribute('data-tab');
-                    
-                    // Remove active class from all tabs
-                    faqTabs.forEach(t => {
-                        t.classList.remove('active', 'bg-purple-500', 'text-white');
-                        t.classList.add('bg-gray-700', 'text-gray-200');
-                    });
-                    
-                    // Add active class to clicked tab
-                    this.classList.add('active', 'bg-purple-500', 'text-white');
-                    this.classList.remove('bg-gray-700', 'text-gray-200');
-                    
-                    // Hide all content
-                    faqContents.forEach(content => {
-                        content.classList.add('hidden');
-                    });
-                    
-                    // Show target content
-                    document.getElementById(targetTab + '-content').classList.remove('hidden');
-                });
-            });
+if (wizardForm) {
+  wizardForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (currentStepIndex === totalSteps) {
+      submitForm();
+    } else {
+      console.log('Form submit event captured on non-final step.');
+    }
+  });
+}
+
+// FAQ Functionality (keep this inside the same DOMContentLoaded block)
+const faqTabs = document.querySelectorAll('.faq-tab');
+const faqContents = document.querySelectorAll('.faq-tab-content');
+
+faqTabs.forEach(tab => {
+  tab.addEventListener('click', function () {
+    const targetTab = this.getAttribute('data-tab');
+
+    // Deactivate all tabs
+    faqTabs.forEach(t => {
+      t.classList.remove('active', 'bg-purple-500', 'text-white');
+      t.classList.add('bg-gray-700', 'text-gray-200');
+    });
+
+    // Activate clicked tab
+    this.classList.add('active', 'bg-purple-500', 'text-white');
+    this.classList.remove('bg-gray-700', 'text-gray-200');
+
+    // Hide all content
+    faqContents.forEach(content => content.classList.add('hidden'));
+
+    // Show target content
+    const targetEl = document.getElementById(`${targetTab}-content`);
+    if (targetEl) targetEl.classList.remove('hidden');
+  });
+});
+
             
             // FAQ accordion functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
@@ -2246,39 +2207,39 @@
                     }
                 });
             });
-        });
-        // Add this to your existing JavaScript section
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-    
-    if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-        
-        mobileMenuClose.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-        
-        // Close menu when clicking outside
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) {
-                mobileMenu.classList.add('hidden');
-            }
-        });
+        }
 
-        // Close menu when a link is clicked
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        
+        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+            
+            mobileMenuClose.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
             });
-        });
-    }
-});
+            
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
 
+            // Close menu when a link is clicked
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+    }); // Close the main DOMContentLoaded event listener
     </script>
 </body>
 </html>

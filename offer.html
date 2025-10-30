@@ -10173,25 +10173,124 @@ if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_c
       try{
         var data = {}; new FormData(form).forEach((v,k)=>{data[k]=v});
         data.source = 'tfww-offer';
-        fetch('https://www.leadneedle.com/submit-wizard',{
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body: JSON.stringify(data)
-        }).then(function(res){
-          if(res.ok){ if(window.fbq){fbq('track','Lead');} alert('Thanks. Your application was sent.'); form.reset(); }
-          else{ 
-            if (typeof showSubmissionError === 'function') {
-              showSubmissionError('There was a problem submitting your application. Please try again later.');
-            } else {
-              alert('We could not submit right now. Try again or use the backup form.');
+        
+        // Retry function for robust form submission - isolated from external scripts
+async function submitWithRetry(payload, maxRetries = 3) {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    try {
+      console.log(`Submission attempt ${attempt}/${maxRetries}`);
+
+      const response = await new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://script.google.com/macros/s/AKfycbyWKY5Z-NhmmHSt-OWM7pZ84kgPLsNDiX5rX-QCzGuIp_KA80i7T3y3Y0CJE82FcRM3/exec", true);
+
+        // no headers, send FormData to avoid CORS preflight
+        const fd = new FormData();
+        for (const k in payload) fd.append(k, payload[k] ?? "");
+
+        xhr.timeout = 120000;
+        xhr.onload = () => resolve(xhr);
+        xhr.onerror = () => reject(new Error("Network error"));
+        xhr.ontimeout = () => reject(new Error("Request timeout"));
+
+        xhr.send(fd);
+      });
+
+      if (response.status >= 200 && response.status < 300) {
+        return response.responseText;
+      } else {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+    } catch (err) {
+      console.error(`Attempt ${attempt} failed:`, err);
+      if (attempt === maxRetries) throw err;
+      const delay = Math.min(1000 * Math.pow(2, attempt - 1), 5000);
+      console.log(`Retrying in ${delay}ms...`);
+      await new Promise(r => setTimeout(r, delay));
+    }
+  }
+}
+
+              });
+              
+              if (response.ok) {
+                return await response.text();
+              } else {
+                // Enhanced error handling with status codes
+                const text = await response.text();
+                let errorMessage = `Server error (${response.status}): `;
+                switch(response.status) {
+                  case 400:
+                    errorMessage += 'Invalid form data. Please check your entries.';
+                    break;
+                  case 401:
+                    errorMessage += 'Authentication required.';
+                    break;
+                  case 403:
+                    errorMessage += 'Access forbidden.';
+                    break;
+                  case 404:
+                    errorMessage += 'Submission endpoint not found.';
+                    break;
+                  case 429:
+                    errorMessage += 'Too many requests. Please wait and try again.';
+                    break;
+                  case 500:
+                    errorMessage += 'Internal server error. Please try again later.';
+                    break;
+                  case 502:
+                  case 503:
+                  case 504:
+                    errorMessage += 'Server temporarily unavailable. Please try again later.';
+                    break;
+                  default:
+                    errorMessage += text || 'Unknown server error.';
+                }
+                throw new Error(errorMessage);
+              }
+            } catch (error) {
+              console.error(`Attempt ${attempt} failed:`, error);
+              
+              // If this is the last attempt, throw the error
+              if (attempt === maxRetries) {
+                throw error;
+              }
+              
+              // Wait before retrying (exponential backoff)
+              const delay = Math.min(1000 * Math.pow(2, attempt - 1), 5000);
+              console.log(`Retrying in ${delay}ms...`);
+              await new Promise(resolve => setTimeout(resolve, delay));
             }
           }
-        }).catch(function(){ 
-          if (typeof showSubmissionError === 'function') {
-            showSubmissionError('Network error. Please try again.');
+        }
+        
+        // Submit with retry logic
+        submitWithRetry(data)
+        .then(function(result){
+          if(window.fbq){fbq('track','Lead');} 
+          alert('Thanks. Your application was sent.'); 
+          form.reset(); 
+        })
+        .catch(function(error){
+          console.error('Submission error:', error);
+          
+          // Enhanced error messages for better user experience
+          let userMessage = 'There was an error submitting your form. ';
+          
+          if (error.message.includes('Failed to fetch')) {
+            userMessage += 'Please check your internet connection and try again.';
+          } else if (error.message.includes('NetworkError')) {
+            userMessage += 'Network error occurred. Please check your connection.';
+          } else if (error.message.includes('CORS')) {
+            userMessage += 'Security error occurred. Please contact support.';
+          } else if (error.message.includes('Server error')) {
+            userMessage += error.message;
           } else {
-            alert('Network error. Please try again.');
+            userMessage += 'Please try again later or contact support if the problem persists.';
           }
+          
+          alert(userMessage);
         });
         e.preventDefault();
       }catch(err){ console.error(err); }
